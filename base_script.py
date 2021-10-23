@@ -29,17 +29,18 @@ api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
 Request = namedtuple("Request", ["thing", "place", "result"])
 
 # FUTURE: make list of namedtuples
-template = ["The ", " is in a "]
+template1 = ["The ", " is in a "]
+template2 = ["The ", " is in an "]
 
-human_list = {"person", "child", "man", "officer"}
-animal_list = {"tiger", "iguana", "toad", "butterfly"}
-urban_list = {"theater", "building", "city", "street"}
-nature_list = {"meadow", "mountain", "pond", "desert"}
+human_list = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist", "architect"}
+animal_list = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito", "horse" }
+urban_list = {"theater", "building", "city", "street", "shop", "school", "office", "house" }
+nature_list = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp", "valley" }
 
-human_ambig = {"human", "toddler", "woman", "doctor"}
-animal_ambig = {"hawk", "elephant", "ant", "mouse"}
-urban_ambig = {"skyscraper", "restaurant", "alley", "store"}
-nature_ambig = {"ocean", "hills", "forest", "cave"}
+human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", }
+animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander", "beetle"}
+urban_ambig = {"skyscraper", "restaurant", "alley", "store", "arpartment", "condominium", ""}
+nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah", ""}
 
 
 def generate_human_urban_requests_context():
@@ -89,6 +90,7 @@ def convert_to_sent(r):
     """
     Makes and returns an English sentence from the pair of words passed in, r.
     """
+    template = template2 if r.place[0].lower() in "aeiuo" else template1
     return template[0] + r.thing + template[1] + r.place + "."
 
 
