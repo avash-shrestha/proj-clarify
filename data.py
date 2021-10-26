@@ -34,7 +34,7 @@ def analyze_generic():
             # 2 is first thing, 6 is first place, 8 is first answer
             # 11 is second thing, 15 is second place, 17 is second answer
             # 20 is third thing, 24 is third place
-            #first check if ambig or not by comparing third thing and thrid place
+            #first check if ambig or not by comparing third thing and third place
                 #if ambig20 is in human and ambig24 is nature or ambig20 is in animal and ambig24 is in urban
             if prompt[20] in bs.human_ambig and prompt[24] in bs.nature_ambig or prompt[20] in bs.animal_ambig and prompt[24] in bs.urban_ambig: 
                 is_ambig = True
@@ -119,4 +119,4 @@ def analyze():
         print(tmp_set)
 
 
-analyze_generic()
+analyze_generic() '''

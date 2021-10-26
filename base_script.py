@@ -77,7 +77,8 @@ def query_requests():
     while completed_queries < num_queries:
         c1 = random.choice(tuple(human_urban_ctxt))  # Context True
         c2 = random.choice(tuple(animal_nature_ctxt))  # Context False
-        pick = random.choice(tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
+        pick = random.choice(
+            tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
         if (c1, c2, pick) in used_set:
             continue
         used_set.add((c1, c2, pick))
@@ -212,6 +213,8 @@ def query_non_ambig_requests():
         time.sleep(3.1)
     data_file.close()
 
-query_requests()
+
+for i in range(12):
+    query_requests()
 # query_ambig_requests()
 # query_non_ambig_requests()
