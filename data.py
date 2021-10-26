@@ -15,17 +15,6 @@ import requests
 import seaborn as sns
 import base_script as bs
 
-
-'''human_context = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist"}
-animal_context = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito"}
-urban_context = {"theater", "building", "city", "street", "shop", "school", "dwelling"}
-nature_context = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp"}
-
-human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", "architect"}
-animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander"}
-urban_ambig = {"skyscraper", "restaurant", "alley", "store", "apartment", "condominium", "house", "office"}
-nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah"}'''
-
 FILENAME = "responses_2021-10-24T_19-46-36Z.txt"
 
 
