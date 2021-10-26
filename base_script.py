@@ -212,6 +212,6 @@ def query_non_ambig_requests():
         time.sleep(3.1)
     data_file.close()
 
-query_requests()
+#query_requests()
 # query_ambig_requests()
 # query_non_ambig_requests()
