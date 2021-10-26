@@ -122,6 +122,10 @@ def analyze():
         print(tmp_set)
 
 
+<<<<<<< HEAD
 analyze_generic()
 '''
 analyze_generic()
+=======
+analyze_generic() '''
+>>>>>>> 771367af84f069e5dc13f2d05a862905544e0ac0
