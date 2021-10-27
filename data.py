@@ -17,8 +17,12 @@ import base_script as bs
 import os
 
 #FILENAME = "responses_2021-10-25T_03-09-31Z.txt"
-
-
+'''fin = open("test_dataframe__responses_2021-10-25T_07-40-27Z.csv", "rb")
+df = pd.read_csv(fin)
+g = sns.FacetGrid(df, col= "is_ambig")
+g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
+g.add_legend()
+plt.show()'''
 def analyze_generic():
     for filename in os.listdir("responses"): 
         with open("responses\\" + filename, "r", encoding="utf8") as f:
@@ -38,9 +42,9 @@ def analyze_generic():
                 # 20 is third thing, 24 is third place
                 #first check if ambig or not by comparing third thing and thrid place
                     #if ambig20 is in human and ambig24 is nature or ambig20 is in animal and ambig24 is in urban
-                if prompt[20] in bs.human_ambig and prompt[24] in bs.nature_ambig or prompt[20] in bs.animal_ambig and prompt[24] in bs.urban_ambig: 
+                if (prompt[20] in bs.human_ambig and prompt[24].strip('.') in bs.nature_ambig) or (prompt[20] in bs.animal_ambig and prompt[24].strip('.') in bs.urban_ambig): 
                     is_ambig = True
-                if prompt[20] in bs.human_ambig and completion == "TRUE" or prompt[20] in bs.animal_ambig and completion == "FALSE": 
+                if (prompt[20] in bs.human_ambig and completion == "TRUE") or (prompt[20] in bs.animal_ambig and completion == "FALSE"): 
                     is_correct = True
                 if prompt[20] in bs.human_ambig: 
                     is_human = True
@@ -63,7 +67,7 @@ def analyze_generic():
                 datadict["percent_certainty_of_correct"].append(percent_certain)
 
             df = pd.DataFrame(datadict)
-            outf = open("dataframe_files\dataframe__" + filename + ".csv", "wb")
+            outf = open("dataframe_files\\test_dataframe__" + filename.strip(".txt")+ ".csv", "wb")
             df.to_csv(outf)
             outf.close()
         f.close()
@@ -122,10 +126,6 @@ def analyze():
         print(tmp_set)
 
 
-<<<<<<< HEAD
 analyze_generic()
 '''
 analyze_generic()
-=======
-analyze_generic() '''
->>>>>>> 771367af84f069e5dc13f2d05a862905544e0ac0

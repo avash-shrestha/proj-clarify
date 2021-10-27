@@ -213,15 +213,9 @@ def query_non_ambig_requests():
         time.sleep(3.1)
     data_file.close()
 
-<<<<<<< HEAD
-#query_requests()
-=======
-# <<<<<<< HEAD
-#query_requests()
-# =======
 
-query_requests()
-# >>>>>>> 771367af84f069e5dc13f2d05a862905544e0ac0
->>>>>>> 09c846bebb22c0777fd659b4af25df19f27c63aa
+
+#query_requests()
+
 # query_ambig_requests()
 # query_non_ambig_requests()
