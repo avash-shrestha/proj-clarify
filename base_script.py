@@ -213,12 +213,6 @@ def query_non_ambig_requests():
         time.sleep(3.1)
     data_file.close()
 
-<<<<<<< HEAD
 #query_requests()
-=======
-
-for i in range(12):
-    query_requests()
->>>>>>> 771367af84f069e5dc13f2d05a862905544e0ac0
 # query_ambig_requests()
 # query_non_ambig_requests()
