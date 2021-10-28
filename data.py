@@ -11,6 +11,7 @@ from datetime import date, datetime
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from pandas.io.parsers import read_csv
 import requests
 import seaborn as sns
 import base_script as bs
@@ -23,6 +24,118 @@ g = sns.FacetGrid(df, col= "is_ambig")
 g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
 g.add_legend()
 plt.show()'''
+def split_dataframes(): 
+    numCorrect_dict = {"value": [], 'label': []}
+    certaintyCorrect_dict = {"value": [], 'label': []}
+    #numCorrect_dict = {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
+    #certaintyCorrect_dict =  {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
+
+    for filename in os.listdir("dataframe_files\\main_dfs"):
+        # filename = "test_dataframe__responses_2021-10-25T_03-09-31Z.csv"
+        with open("dataframe_files\\main_dfs\\" + filename, "r") as f: 
+            df = read_csv(f)
+            df_ambig = df[df["is_ambig"] == True]
+            df_nambig = df[df["is_ambig"] == False]
+           
+            ambig_certainty = df_ambig.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "is_ambig"])
+           
+            nambig_certainty = df_nambig.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "is_ambig"])
+           
+            '''numCorrect_dict["T_F_F"].append(ambig_certainty.iat[0, 0])
+            numCorrect_dict["T_F_T"].append(ambig_certainty.iat[1, 0])
+            numCorrect_dict["T_T_F"].append(ambig_certainty.iat[2, 0])
+            numCorrect_dict["T_T_T"].append(ambig_certainty.iat[3, 0])'''
+            numCorrect_dict["value"].append(ambig_certainty.iat[0, 0])
+            numCorrect_dict["label"].append("T_F_F")
+            numCorrect_dict["value"].append(ambig_certainty.iat[1, 0])
+            numCorrect_dict["label"].append("T_F_T")
+            numCorrect_dict["value"].append(ambig_certainty.iat[2, 0])
+            numCorrect_dict["label"].append("T_T_F")
+            numCorrect_dict["value"].append(ambig_certainty.iat[3, 0])
+            numCorrect_dict["label"].append("T_T_T")
+
+      
+
+            certaintyCorrect_dict["value"].append(ambig_certainty.iat[0, 1])
+            certaintyCorrect_dict["label"].append("T_F_F")
+            
+            certaintyCorrect_dict["value"].append(ambig_certainty.iat[1, 1])
+            certaintyCorrect_dict["label"].append("T_F_T")
+            
+            certaintyCorrect_dict["value"].append(ambig_certainty.iat[2, 1])
+            certaintyCorrect_dict["label"].append("T_T_F")
+            
+            certaintyCorrect_dict["value"].append(ambig_certainty.iat[3, 1])
+            certaintyCorrect_dict["label"].append("T_T_T")
+            
+
+          
+            numCorrect_dict["value"].append(nambig_certainty.iat[0, 0])
+            numCorrect_dict["label"].append("F_F_F")
+            numCorrect_dict["value"].append(nambig_certainty.iat[1, 0])
+            numCorrect_dict["label"].append("F_F_T")
+            numCorrect_dict["value"].append(nambig_certainty.iat[2, 0])
+            numCorrect_dict["label"].append("F_T_F")
+            numCorrect_dict["value"].append(nambig_certainty.iat[3, 0])
+            numCorrect_dict["label"].append("F_T_T")            
+            
+
+            
+            certaintyCorrect_dict["value"].append(nambig_certainty.iat[0, 1])
+            certaintyCorrect_dict["label"].append("F_F_F")
+            
+            certaintyCorrect_dict["value"].append(nambig_certainty.iat[1, 1])
+            certaintyCorrect_dict["label"].append("F_F_T")
+            
+            certaintyCorrect_dict["value"].append(nambig_certainty.iat[2, 1])
+            certaintyCorrect_dict["label"].append("F_T_F")
+            
+            certaintyCorrect_dict["value"].append(nambig_certainty.iat[3, 1])
+            certaintyCorrect_dict["label"].append("F_T_T")
+            
+    numCorrect_frame = pd.DataFrame(data = numCorrect_dict)
+    percentCertain_frame = pd.DataFrame(data = certaintyCorrect_dict)
+    numCorrectFile = open("numCorrectMainDF", "w")
+    numCorrect_frame.to_csv(numCorrectFile)
+    certaintyCorrectFile = open("certaintyCorrectMainDF", "w")
+    percentCertain_frame.to_csv(certaintyCorrectFile)
+
+
+# split_dataframes()
+
+def scatter(): 
+    certaintyDF = pd.read_csv(open("certaintyCorrectMainDF", "r"))
+    #print(certaintyDF)
+    numCorrectDF = pd.read_csv(open("numCorrectMainDF", "r"))
+    df1 = certaintyDF.query(
+    "label == 'F_T_F' or label == 'F_T_T'"
+    )   
+
+    sns.barplot(data = df1, x = "label", y = "value").set_ybound(0,1)
+    plt.text(0.35, 0.65, 'x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example', color='black', 
+        bbox=dict(facecolor='darkgrey', edgecolor='black', boxstyle='round,pad=1'))
+    # plt.text(.75,.75,"x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example")
+    plt.title("Percent Certainty of Correct Response by Query Category")
+    plt.xlabel("Category")
+    plt.ylabel("%Certainty")
+    plt.show()
+scatter()
+def temp(): 
+    for filename in os.listdir("dataframe_files\\nambig_dfs"):
+        with open("dataframe_files\\nambig_dfs\\" + filename, "r") as inf: 
+            df = pd.read_csv(inf)
+            ambig_is_correct = df.groupby(["is_context_true_first", "is_human", "is_correct"]).size()
+            # print(type(ambig_is_correct))
+            ambig_certainty = df.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "Unnamed: 0.1", "is_ambig"])
+            print(ambig_certainty)
+            """nambig_is_correct = 
+            ambig_certainty = 
+            nambig_certainty =
+            g = sns.FacetGrid(df, col= "is_context_true_first")
+            g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
+            g.add_legend()
+            plt.show()"""
+#temp()
 def analyze_generic():
     for filename in os.listdir("responses"): 
         with open("responses\\" + filename, "r", encoding="utf8") as f:
@@ -128,4 +241,4 @@ def analyze():
 
 analyze_generic()
 '''
-analyze_generic()
+#analyze_generic()
