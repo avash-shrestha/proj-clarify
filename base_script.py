@@ -56,6 +56,86 @@ def convert_to_sent(r):
 
 
 # Return true if the sentence contains a human, false if it contains an animal
+def multiple_context_requests(shots, alternate = True):
+    human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
+    animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
+    # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
+    pick_set = set()
+    pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
+                    generate_x_y_requests(human_ambig, urban_ambig),
+                    generate_x_y_requests(animal_ambig, nature_ambig),
+                    generate_x_y_requests(animal_ambig, urban_ambig))
+    actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
+    data_file = open(str(shots) + "shots_responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    num_queries = NUM_QUERIES
+    completed_queries = 0
+
+    # creates a 3 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
+    # from the ambig_set
+    usedLists = set()
+    while completed_queries < num_queries:
+        contextTrue = []
+        for i in range(shots): 
+            ctxTrue = random.choice(tuple(human_urban_ctxt))
+            while(ctxTrue in contextTrue):
+                ctxTrue = random.choice(tuple(human_urban_ctxt))
+            contextTrue.append(ctxTrue)
+        print("true list complete")
+        contextTrue = tuple(contextTrue)
+        contextFalse = []
+        for i in range(shots): 
+            ctxFalse = random.choice(tuple(animal_nature_ctxt))
+            while(ctxFalse in contextFalse):
+                ctxFalse = random.choice(tuple(animal_nature_ctxt))
+            contextFalse.append(ctxFalse)
+        print("false list complete")
+        contextFalse = tuple(contextFalse)
+        pick = random.choice(
+            tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
+        if (contextTrue, contextFalse, pick) in usedLists:
+            print("lists used")
+            continue
+        usedLists.add((contextTrue, contextFalse, pick))
+        prompt = ""
+        if random.choice([True, False]):  # Put Context True first
+            for i in range(shots): 
+                prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+
+            prompt += "A: "
+        else:  # Put Context False first
+            for i in range(shots): 
+                prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+            prompt += "A: "
+        prompt = prompt.strip()
+        
+        # expect either TRUE or FALSE as the answer
+        response = str(requests.post(
+            "https://api.ai21.com/studio/v1/j1-jumbo/complete",
+            headers={"Authorization": "Bearer " + api_key},
+            json={
+                "prompt": prompt,
+                "numResults": 1,
+                "maxTokens": 1,
+                "stopSequences": ["."],
+                "topKReturn": 10,
+                "temperature": 0.0
+            }
+        ).json())
+        if response.startswith("{'detail':"):
+            
+            continue
+        data_file.write(response)
+        data_file.write("\n")
+        if response == "{'detail': 'Quota exceeded.'}":
+            print(response)
+            break
+        completed_queries += 1
+        time.sleep(3.1)
+        
+    data_file.close()
+multiple_context_requests(2)
 def query_requests():
     # human_urban and animal_nature are the context sets
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
