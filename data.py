@@ -17,30 +17,34 @@ import seaborn as sns
 import base_script as bs
 import os
 
-#FILENAME = "responses_2021-10-25T_03-09-31Z.txt"
+# FILENAME = "responses_2021-10-25T_03-09-31Z.txt"
 '''fin = open("test_dataframe__responses_2021-10-25T_07-40-27Z.csv", "rb")
 df = pd.read_csv(fin)
 g = sns.FacetGrid(df, col= "is_ambig")
 g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
 g.add_legend()
 plt.show()'''
-def split_dataframes(): 
+
+
+def split_dataframes():
     numCorrect_dict = {"value": [], 'label': []}
     certaintyCorrect_dict = {"value": [], 'label': []}
-    #numCorrect_dict = {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
-    #certaintyCorrect_dict =  {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
+    # numCorrect_dict = {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
+    # certaintyCorrect_dict =  {"T_T_T" : [], "T_T_F" : [], "T_F_T":[], "T_F_F":[], "F_T_T":[], "F_T_F":[], "F_F_T":[], "F_F_F":[]}
 
     for filename in os.listdir("dataframe_files\\main_dfs"):
         # filename = "test_dataframe__responses_2021-10-25T_03-09-31Z.csv"
-        with open("dataframe_files\\main_dfs\\" + filename, "r") as f: 
+        with open("dataframe_files\\main_dfs\\" + filename, "r") as f:
             df = read_csv(f)
             df_ambig = df[df["is_ambig"] == True]
             df_nambig = df[df["is_ambig"] == False]
-           
-            ambig_certainty = df_ambig.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "is_ambig"])
-           
-            nambig_certainty = df_nambig.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "is_ambig"])
-           
+
+            ambig_certainty = df_ambig.groupby(["is_context_true_first", "is_human"]).mean().drop(
+                columns=["Unnamed: 0", "is_ambig"])
+
+            nambig_certainty = df_nambig.groupby(["is_context_true_first", "is_human"]).mean().drop(
+                columns=["Unnamed: 0", "is_ambig"])
+
             '''numCorrect_dict["T_F_F"].append(ambig_certainty.iat[0, 0])
             numCorrect_dict["T_F_T"].append(ambig_certainty.iat[1, 0])
             numCorrect_dict["T_T_F"].append(ambig_certainty.iat[2, 0])
@@ -54,22 +58,18 @@ def split_dataframes():
             numCorrect_dict["value"].append(ambig_certainty.iat[3, 0])
             numCorrect_dict["label"].append("T_T_T")
 
-      
-
             certaintyCorrect_dict["value"].append(ambig_certainty.iat[0, 1])
             certaintyCorrect_dict["label"].append("T_F_F")
-            
+
             certaintyCorrect_dict["value"].append(ambig_certainty.iat[1, 1])
             certaintyCorrect_dict["label"].append("T_F_T")
-            
+
             certaintyCorrect_dict["value"].append(ambig_certainty.iat[2, 1])
             certaintyCorrect_dict["label"].append("T_T_F")
-            
+
             certaintyCorrect_dict["value"].append(ambig_certainty.iat[3, 1])
             certaintyCorrect_dict["label"].append("T_T_T")
-            
 
-          
             numCorrect_dict["value"].append(nambig_certainty.iat[0, 0])
             numCorrect_dict["label"].append("F_F_F")
             numCorrect_dict["value"].append(nambig_certainty.iat[1, 0])
@@ -77,24 +77,22 @@ def split_dataframes():
             numCorrect_dict["value"].append(nambig_certainty.iat[2, 0])
             numCorrect_dict["label"].append("F_T_F")
             numCorrect_dict["value"].append(nambig_certainty.iat[3, 0])
-            numCorrect_dict["label"].append("F_T_T")            
-            
+            numCorrect_dict["label"].append("F_T_T")
 
-            
             certaintyCorrect_dict["value"].append(nambig_certainty.iat[0, 1])
             certaintyCorrect_dict["label"].append("F_F_F")
-            
+
             certaintyCorrect_dict["value"].append(nambig_certainty.iat[1, 1])
             certaintyCorrect_dict["label"].append("F_F_T")
-            
+
             certaintyCorrect_dict["value"].append(nambig_certainty.iat[2, 1])
             certaintyCorrect_dict["label"].append("F_T_F")
-            
+
             certaintyCorrect_dict["value"].append(nambig_certainty.iat[3, 1])
             certaintyCorrect_dict["label"].append("F_T_T")
-            
-    numCorrect_frame = pd.DataFrame(data = numCorrect_dict)
-    percentCertain_frame = pd.DataFrame(data = certaintyCorrect_dict)
+
+    numCorrect_frame = pd.DataFrame(data=numCorrect_dict)
+    percentCertain_frame = pd.DataFrame(data=certaintyCorrect_dict)
     numCorrectFile = open("numCorrectMainDF", "w")
     numCorrect_frame.to_csv(numCorrectFile)
     certaintyCorrectFile = open("certaintyCorrectMainDF", "w")
@@ -102,46 +100,67 @@ def split_dataframes():
 
 
 # split_dataframes()
+def show_values(axs, orient="v", space=.01):
+    def _single(ax):
+        if orient == "v":
+            for p in ax.patches:
+                _x = p.get_x() + p.get_width() / 2
+                _y = p.get_y() + p.get_height() + .025 #(p.get_height()*0.1)
+                value = '{:.4f}'.format(p.get_height())
+                ax.text(_x, _y, value, ha="center", color="black")
+        elif orient == "h":
+            for p in ax.patches:
+                _x = p.get_x() + p.get_width() + float(space)
+                _y = p.get_y() + p.get_height() - (p.get_height()*0.5)
+                value = '{:.4f}'.format(p.get_width())
+                ax.text(_x, _y, value, ha="left")
 
-def scatter(): 
+    if isinstance(axs, np.ndarray):
+        for idx, ax in np.ndenumerate(axs):
+            _single(ax)
+    else:
+        _single(axs)
+
+def scatter():
     certaintyDF = pd.read_csv(open("certaintyCorrectMainDF", "r"))
-    #print(certaintyDF)
     numCorrectDF = pd.read_csv(open("numCorrectMainDF", "r"))
-    df1 = certaintyDF.query(
-    "label == 'F_T_F' or label == 'F_T_T'"
-    )   
+    # df1 = certaintyDF.query("label == 'F_T_F' or label == 'F_T_T'")
 
-    sns.barplot(data = df1, x = "label", y = "value").set_ybound(0,1)
-    plt.text(0.35, 0.65, 'x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example', color='black', 
-        bbox=dict(facecolor='darkgrey', edgecolor='black', boxstyle='round,pad=1'))
+    g = sns.barplot(data=numCorrectDF, x="label", y="value")
+    plt.text(0.75, 0.75,
+             'x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example',
+             color='black',
+             bbox=dict(facecolor='darkgrey', edgecolor='black', boxstyle='round,pad=1'))
     # plt.text(.75,.75,"x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example")
-    plt.title("Percent Certainty of Correct Response by Query Category")
+    plt.title("Probability of Model Answering the Correct Response by Query Category")
     plt.xlabel("Category")
-    plt.ylabel("%Certainty")
+    plt.ylabel("Probability of Model Answering Correctly")
+    x1, x2, y1, y2 = plt.axis()
+    plt.axis((x1, x2, 0, 1))
+    show_values(g)
     plt.show()
+
+def tmp():
+    data = sns.load_dataset("tips")
+    p = sns.barplot(x="day", y="tip", data=data, ci=None).set_ybound
+
+    # show values on barplot
+    print(type(p))
+    return
+    show_values(p)
+# tmp()
+
 scatter()
-def temp(): 
-    for filename in os.listdir("dataframe_files\\nambig_dfs"):
-        with open("dataframe_files\\nambig_dfs\\" + filename, "r") as inf: 
-            df = pd.read_csv(inf)
-            ambig_is_correct = df.groupby(["is_context_true_first", "is_human", "is_correct"]).size()
-            # print(type(ambig_is_correct))
-            ambig_certainty = df.groupby(["is_context_true_first", "is_human"]).mean().drop(columns = ["Unnamed: 0", "Unnamed: 0.1", "is_ambig"])
-            print(ambig_certainty)
-            """nambig_is_correct = 
-            ambig_certainty = 
-            nambig_certainty =
-            g = sns.FacetGrid(df, col= "is_context_true_first")
-            g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
-            g.add_legend()
-            plt.show()"""
-#temp()
+
+
+# temp()
 def analyze_generic():
-    for filename in os.listdir("responses"): 
+    for filename in os.listdir("responses"):
         with open("responses\\" + filename, "r", encoding="utf8") as f:
             data = f.readlines()
             tmp_set = set()
-            datadict = {"is_ambig" : [], "is_correct" : [], "is_human" : [], "is_context_true_first": [], "percent_certainty_of_correct" : []}
+            datadict = {"is_ambig": [], "is_correct": [], "is_human": [], "is_context_true_first": [],
+                        "percent_certainty_of_correct": []}
             for line in data:
                 is_correct = False
                 is_ambig = False
@@ -153,15 +172,17 @@ def analyze_generic():
                 # 2 is first thing, 6 is first place, 8 is first answer
                 # 11 is second thing, 15 is second place, 17 is second answer
                 # 20 is third thing, 24 is third place
-                #first check if ambig or not by comparing third thing and thrid place
-                    #if ambig20 is in human and ambig24 is nature or ambig20 is in animal and ambig24 is in urban
-                if (prompt[20] in bs.human_ambig and prompt[24].strip('.') in bs.nature_ambig) or (prompt[20] in bs.animal_ambig and prompt[24].strip('.') in bs.urban_ambig): 
+                # first check if ambig or not by comparing third thing and thrid place
+                # if ambig20 is in human and ambig24 is nature or ambig20 is in animal and ambig24 is in urban
+                if (prompt[20] in bs.human_ambig and prompt[24].strip('.') in bs.nature_ambig) or (
+                        prompt[20] in bs.animal_ambig and prompt[24].strip('.') in bs.urban_ambig):
                     is_ambig = True
-                if (prompt[20] in bs.human_ambig and completion == "TRUE") or (prompt[20] in bs.animal_ambig and completion == "FALSE"): 
+                if (prompt[20] in bs.human_ambig and completion == "TRUE") or (
+                        prompt[20] in bs.animal_ambig and completion == "FALSE"):
                     is_correct = True
-                if prompt[20] in bs.human_ambig: 
+                if prompt[20] in bs.human_ambig:
                     is_human = True
-                if prompt[8] == "TRUE": 
+                if prompt[8] == "TRUE":
                     is_context_true_first = True
 
                 first_token = line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["token"].strip()
@@ -180,18 +201,10 @@ def analyze_generic():
                 datadict["percent_certainty_of_correct"].append(percent_certain)
 
             df = pd.DataFrame(datadict)
-            outf = open("dataframe_files\\test_dataframe__" + filename.strip(".txt")+ ".csv", "wb")
+            outf = open("dataframe_files\\test_dataframe__" + filename.strip(".txt") + ".csv", "wb")
             df.to_csv(outf)
             outf.close()
         f.close()
-
-    
-
-
-
-
-            
-'''
         print(tmp_set)
 
 
@@ -239,6 +252,4 @@ def analyze():
         print(tmp_set)
 
 
-analyze_generic()
-'''
-#analyze_generic()
+# analyze_generic()
