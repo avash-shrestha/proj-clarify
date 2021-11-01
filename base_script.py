@@ -80,7 +80,7 @@ def multiple_context_requests(shots, alternate = True):
             while(ctxTrue in contextTrue):
                 ctxTrue = random.choice(tuple(human_urban_ctxt))
             contextTrue.append(ctxTrue)
-        print("true list complete")
+        
         contextTrue = tuple(contextTrue)
         contextFalse = []
         for i in range(shots): 
@@ -88,52 +88,112 @@ def multiple_context_requests(shots, alternate = True):
             while(ctxFalse in contextFalse):
                 ctxFalse = random.choice(tuple(animal_nature_ctxt))
             contextFalse.append(ctxFalse)
-        print("false list complete")
+        
         contextFalse = tuple(contextFalse)
-        pick = random.choice(
-            tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
-        if (contextTrue, contextFalse, pick) in usedLists:
-            print("lists used")
-            continue
-        usedLists.add((contextTrue, contextFalse, pick))
-        prompt = ""
-        if random.choice([True, False]):  # Put Context True first
+        pick = random.choice(tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
+        if(not alternate): 
+            totalContext = tuple(random.shuffle(list(contextTrue + contextFalse)))
+            if((totalContext, pick) in usedLists): 
+                continue
+            altCheck = True
+            for i in range(len(totalContext)): 
+                if(i % 2 == 0 and totalContext[i] not in human_context): 
+                    altCheck = False
+                    break
+                if(i % 2 != 0 and totalContext[i] not in animal_context): 
+                    altCheck = False
+                    break
+
+            if(altCheck): 
+                continue
+            altCheck = True
+            for i in range(len(totalContext)): 
+                if(i % 2 == 0 and totalContext[i] not in animal_context): 
+                    altCheck = False
+                    break
+                if(i % 2 != 0 and totalContext[i] not in human_context): 
+                    altCheck = False
+                    break
+
+            if(altCheck): 
+                continue
+
             for i in range(shots): 
-                prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                if(totalContext[i] in human_context):
+                    prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                else: 
+                    prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
 
             prompt += "A: "
-        else:  # Put Context False first
-            for i in range(shots): 
-                prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-                prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-            prompt += "A: "
-        prompt = prompt.strip()
-        
-        # expect either TRUE or FALSE as the answer
-        response = str(requests.post(
-            "https://api.ai21.com/studio/v1/j1-jumbo/complete",
-            headers={"Authorization": "Bearer " + api_key},
-            json={
-                "prompt": prompt,
-                "numResults": 1,
-                "maxTokens": 1,
-                "stopSequences": ["."],
-                "topKReturn": 10,
-                "temperature": 0.0
-            }
-        ).json())
-        if response.startswith("{'detail':"):
+           
+            prompt = prompt.strip()
             
-            continue
-        data_file.write(response)
-        data_file.write("\n")
-        if response == "{'detail': 'Quota exceeded.'}":
-            print(response)
-            break
-        completed_queries += 1
-        time.sleep(3.1)
-        
+            # expect either TRUE or FALSE as the answer
+            response = str(requests.post(
+                "https://api.ai21.com/studio/v1/j1-jumbo/complete",
+                headers={"Authorization": "Bearer " + api_key},
+                json={
+                    "prompt": prompt,
+                    "numResults": 1,
+                    "maxTokens": 1,
+                    "stopSequences": ["."],
+                    "topKReturn": 10,
+                    "temperature": 0.0
+                }
+            ).json())
+            if response.startswith("{'detail':"):
+                
+                continue
+            data_file.write(response)
+            data_file.write("\n")
+            if response == "{'detail': 'Quota exceeded.'}":
+                print(response)
+                break
+            completed_queries += 1
+            time.sleep(3.1)
+            
+        else: 
+            if (contextTrue, contextFalse, pick) in usedLists:
+                continue
+            usedLists.add((contextTrue, contextFalse, pick))
+            prompt = ""
+            if random.choice([True, False]):  # Put Context True first
+                for i in range(shots): 
+                    prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                    prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+
+                prompt += "A: "
+            else:  # Put Context False first
+                for i in range(shots): 
+                    prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                    prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                prompt += "A: "
+            prompt = prompt.strip()
+            
+            # expect either TRUE or FALSE as the answer
+            response = str(requests.post(
+                "https://api.ai21.com/studio/v1/j1-jumbo/complete",
+                headers={"Authorization": "Bearer " + api_key},
+                json={
+                    "prompt": prompt,
+                    "numResults": 1,
+                    "maxTokens": 1,
+                    "stopSequences": ["."],
+                    "topKReturn": 10,
+                    "temperature": 0.0
+                }
+            ).json())
+            if response.startswith("{'detail':"):
+                
+                continue
+            data_file.write(response)
+            data_file.write("\n")
+            if response == "{'detail': 'Quota exceeded.'}":
+                print(response)
+                break
+            completed_queries += 1
+            time.sleep(3.1)
+            
     data_file.close()
 multiple_context_requests(2)
 def query_requests():
