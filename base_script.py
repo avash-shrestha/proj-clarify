@@ -20,7 +20,7 @@ import seaborn as sns
 # api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
 # Avash's api
 api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 500
+NUM_QUERIES = 10
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -91,8 +91,6 @@ def multiple_context_requests(shots, alternate=True):
         if not alternate:
             totalContext = contextTrue + contextFalse
             random.shuffle(totalContext)
-            if totalContext in usedLists:
-                continue
             # check TF alternating pattern
             altCheck = True
             for i in range(len(totalContext)):
@@ -115,7 +113,7 @@ def multiple_context_requests(shots, alternate=True):
                     break
             if altCheck:
                 continue
-            usedLists.add(totalContext)
+            usedLists.add(tuple(totalContext, pick))
             prompt = ""
             for i in range(len(totalContext)):
                 if totalContext[i] in human_urban_ctxt:
