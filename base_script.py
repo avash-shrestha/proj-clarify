@@ -120,7 +120,7 @@ def multiple_context_requests(shots, alternate=True):
                     prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                 else:
                     prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-            prompt += "A: "
+            prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
             prompt = prompt.strip()
 
             # expect either TRUE or FALSE as the answer
@@ -146,7 +146,7 @@ def multiple_context_requests(shots, alternate=True):
             completed_queries += 1
             time.sleep(3.1)
 
-        else:
+        else: #alternate = true
             if (contextTrue, contextFalse, pick) in usedLists:
                 continue
             usedLists.add((contextTrue, contextFalse, pick))
@@ -160,7 +160,7 @@ def multiple_context_requests(shots, alternate=True):
                 for i in range(shots):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                prompt += "A: "
+                prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
             prompt = prompt.strip()
 
             # expect either TRUE or FALSE as the answer
