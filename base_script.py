@@ -113,7 +113,7 @@ def multiple_context_requests(shots, alternate=True):
                     break
             if altCheck:
                 continue
-            usedLists.add(tuple(totalContext, pick))
+            usedLists.add((tuple(totalContext), pick))
             prompt = ""
             for i in range(len(totalContext)):
                 if totalContext[i] in human_urban_ctxt:
