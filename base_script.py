@@ -165,13 +165,13 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
             if(add_disambig):
                 pairDisambig = (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))), 
                                 Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-                if (contextTrue, contextFalse, pairDisambig, pick) in usedLists: 
+                if (tuple(contextTrue), tuple(contextFalse), pairDisambig, pick) in usedLists: 
                     continue
-                usedLists.add((contextTrue, contextFalse, pairDisambig, pick))
+                usedLists.add((tuple(contextTrue), tuple(contextFalse), pairDisambig, pick))
             else: 
-                if (contextTrue, contextFalse, pick) in usedLists:
+                if (tuple(contextTrue), tuple(contextFalse), pick) in usedLists:
                     continue
-                usedLists.add((contextTrue, contextFalse, pick))
+                usedLists.add((tuple(contextTrue), tuple(contextFalse), pick))
             prompt = ""
             if order == 1:  # Put Context True first
                 for i in range(shots):
