@@ -9,6 +9,7 @@ import time
 from time import gmtime, strftime
 from collections import namedtuple
 from datetime import date, datetime
+from typing import Tuple
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -20,7 +21,7 @@ import seaborn as sns
 # api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
 # Avash's api
 api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 10
+NUM_QUERIES = 300
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -28,15 +29,15 @@ Request = namedtuple("Request", ["thing", "place"])
 template1 = ["The ", " is in a "]
 template2 = ["The ", " is in an "]
 
-human_context = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist"}
-animal_context = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito"}
-urban_context = {"theater", "building", "city", "street", "shop", "school", "dwelling"}
-nature_context = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp"}
+human_context = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist", "builder", "dancer", "athlete"}
+animal_context = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito", "horse", "meerkat", "dolphin"} # "owl", "squirrel", "spider", "moose"}
+urban_context = {"theater", "building", "city", "street", "shop", "school", "dwelling", "factory",  "garage", "courthouse", "hotel", "warehouse"}
+nature_context = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp", "sea", "rainforest", "taiga", "grassland", "bay"}
 
-human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", "architect"}
-animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander"}
-urban_ambig = {"skyscraper", "restaurant", "alley", "store", "apartment", "condominium", "house", "office"}
-nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah"}
+human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", "architect", "butcher", "engineer", "student"}
+animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander", "bee", "condor", "chipmunk"}# "buffalo", "panda"}
+urban_ambig = {"skyscraper", "restaurant", "alley", "store", "apartment", "condominium", "house", "office", "museum", "casino", "hospital", "library"}# "airport"}
+nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah", "stream", "creek", "delta", "valley" }
 
 
 def generate_x_y_requests(x, y):
@@ -56,17 +57,21 @@ def convert_to_sent(r):
 
 
 # Return true if the sentence contains a human, false if it contains an animal
-def multiple_context_requests(shots, alternate=True):
+def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
     pick_set = set()
-    pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
-                    generate_x_y_requests(human_ambig, urban_ambig),
-                    generate_x_y_requests(animal_ambig, nature_ambig),
-                    generate_x_y_requests(animal_ambig, urban_ambig))
+    if ambig:
+        pick_set.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    else:
+        pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
-    data_file = open(str(shots) + "shots_responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    data_file = open(str(shots) + "shots_" + 
+    "order_" + str(order) + "_" + 
+    ("ambig_" if ambig else "NOTambig_") + 
+    ("disambig_" if add_disambig else "NONEdisambig_") + 
+    "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     num_queries = NUM_QUERIES
     completed_queries = 0
 
@@ -88,9 +93,18 @@ def multiple_context_requests(shots, alternate=True):
             contextFalse.append(ctxFalse)
         pick = random.choice(
             tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
-        if not alternate:
+        if order == 2:
             totalContext = contextTrue + contextFalse
             random.shuffle(totalContext)
+            if(add_disambig): 
+                if(random.choice([True, False])):
+                    #add human disambig first
+                    totalContext.append(Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
+                    totalContext.append(Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+                else: 
+                    #add animal disambig first
+                    totalContext.append(Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+                    totalContext.append(Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
             # check TF alternating pattern
             altCheck = True
             for i in range(len(totalContext)):
@@ -116,10 +130,11 @@ def multiple_context_requests(shots, alternate=True):
             usedLists.add((tuple(totalContext), pick))
             prompt = ""
             for i in range(len(totalContext)):
-                if totalContext[i] in human_urban_ctxt:
+                if totalContext[i][0] in human_context:
                     prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                 else:
                     prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+            
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
             prompt = prompt.strip()
 
@@ -147,20 +162,33 @@ def multiple_context_requests(shots, alternate=True):
             time.sleep(3.1)
 
         else: #alternate = true
-            if (contextTrue, contextFalse, pick) in usedLists:
-                continue
-            usedLists.add((contextTrue, contextFalse, pick))
+            if(add_disambig):
+                pairDisambig = (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))), 
+                                Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+                if (contextTrue, contextFalse, pairDisambig, pick) in usedLists: 
+                    continue
+                usedLists.add((contextTrue, contextFalse, pairDisambig, pick))
+            else: 
+                if (contextTrue, contextFalse, pick) in usedLists:
+                    continue
+                usedLists.add((contextTrue, contextFalse, pick))
             prompt = ""
-            if random.choice([True, False]):  # Put Context True first
+            if order == 1:  # Put Context True first
                 for i in range(shots):
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-                prompt += "A: "
+                if(add_disambig):
+                    prompt += "Q: " + convert_to_sent(pairDisambig[0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                    prompt += "Q: " + convert_to_sent(pairDisambig[1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
             else:  # Put Context False first
                 for i in range(shots):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
+                if(add_disambig):
+                    prompt += "Q: " + convert_to_sent(pairDisambig[1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                    prompt += "Q: " + convert_to_sent(pairDisambig[0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                
+            prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
             prompt = prompt.strip()
 
             # expect either TRUE or FALSE as the answer
@@ -188,7 +216,15 @@ def multiple_context_requests(shots, alternate=True):
     data_file.close()
 
 
-# multiple_context_requests(2, False)
+multiple_context_requests(2, 1, True, True)
+multiple_context_requests(2, 1, True, False)
+multiple_context_requests(2, 1, False, True)
+multiple_context_requests(2, 1, False, False)
+multiple_context_requests(2, 0, True, True)
+multiple_context_requests(2, 0, True, False)
+multiple_context_requests(2, 0, False, True)
+multiple_context_requests(2, 0, False, False)
+
 
 
 def query_requests():

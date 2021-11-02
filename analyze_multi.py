@@ -14,12 +14,12 @@ import pandas as pd
 from pandas.io.parsers import read_csv
 import requests
 import seaborn as sns
-import base_script as bs
+#import base_script as bs
 import os
 
 
 def analyze():
-    filename = open("2shots_responses_2021-11-02T_04-48-12Z.txt", encoding="utf-8")
+    filename = open("2shots_random_ambig_disambig_responses_2021-11-02T_05-56-30Z.txt", encoding="utf-8")
     data = filename.readlines()
     for line in data:
         line = ast.literal_eval(line)
