@@ -216,7 +216,7 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     data_file.close()
 
 
-multiple_context_requests(3, 2, True, True)
+"""multiple_context_requests(3, 2, True, True)
 multiple_context_requests(3, 2, True, False)
 multiple_context_requests(3, 2, False, True)
 multiple_context_requests(3, 2, False, False)
@@ -227,7 +227,7 @@ multiple_context_requests(3, 1, False, False)
 multiple_context_requests(3, 0, True, True)
 multiple_context_requests(3, 0, True, False)
 multiple_context_requests(3, 0, False, True)
-multiple_context_requests(3, 0, False, False)
+multiple_context_requests(3, 0, False, False)"""
 
 
 def query_requests():
