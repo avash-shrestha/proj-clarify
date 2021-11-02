@@ -101,11 +101,15 @@ def split_dataframes():
 
 # split_dataframes()
 def show_values(axs, orient="v", space=.01):
+    """
+    credits to Zach at statology.org for show_values
+    https://www.statology.org/seaborn-barplot-show-values/
+    """
     def _single(ax):
         if orient == "v":
             for p in ax.patches:
                 _x = p.get_x() + p.get_width() / 2
-                _y = p.get_y() + p.get_height() + .025 #(p.get_height()*0.1)
+                _y = p.get_y() + p.get_height() + .015 #(p.get_height()*0.1)
                 value = '{:.4f}'.format(p.get_height())
                 ax.text(_x, _y, value, ha="center", color="black")
         elif orient == "h":
@@ -126,15 +130,15 @@ def scatter():
     numCorrectDF = pd.read_csv(open("numCorrectMainDF", "r"))
     # df1 = certaintyDF.query("label == 'F_T_F' or label == 'F_T_T'")
 
-    g = sns.barplot(data=numCorrectDF, x="label", y="value")
+    g = sns.barplot(data=certaintyDF, x="label", y="value")
     plt.text(0.75, 0.75,
              'x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example',
              color='black',
              bbox=dict(facecolor='darkgrey', edgecolor='black', boxstyle='round,pad=1'))
     # plt.text(.75,.75,"x_y_z\nx: T if example is ambiguous,\n    F if example is not ambiguous\ny: T if context ordering is T->F\n    F if context ordering is F->T\nz: T if human example\n    F if animal example")
-    plt.title("Probability of Model Answering the Correct Response by Query Category")
+    plt.title("Percent Certainty of Correct Response by Query Category")
     plt.xlabel("Category")
-    plt.ylabel("Probability of Model Answering Correctly")
+    plt.ylabel("% Certainty")
     x1, x2, y1, y2 = plt.axis()
     plt.axis((x1, x2, 0, 1))
     show_values(g)

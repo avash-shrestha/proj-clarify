@@ -56,7 +56,7 @@ def convert_to_sent(r):
 
 
 # Return true if the sentence contains a human, false if it contains an animal
-def multiple_context_requests(shots, alternate = True):
+def multiple_context_requests(shots, alternate=True):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
@@ -70,64 +70,61 @@ def multiple_context_requests(shots, alternate = True):
     num_queries = NUM_QUERIES
     completed_queries = 0
 
-    # creates a 3 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
+    # creates a 2(shots) + 1 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
     # from the ambig_set
     usedLists = set()
     while completed_queries < num_queries:
         contextTrue = []
-        for i in range(shots): 
+        for i in range(shots):
             ctxTrue = random.choice(tuple(human_urban_ctxt))
-            while(ctxTrue in contextTrue):
+            while ctxTrue in contextTrue:
                 ctxTrue = random.choice(tuple(human_urban_ctxt))
             contextTrue.append(ctxTrue)
-        
-        contextTrue = tuple(contextTrue)
         contextFalse = []
-        for i in range(shots): 
+        for i in range(shots):
             ctxFalse = random.choice(tuple(animal_nature_ctxt))
-            while(ctxFalse in contextFalse):
+            while ctxFalse in contextFalse:
                 ctxFalse = random.choice(tuple(animal_nature_ctxt))
             contextFalse.append(ctxFalse)
-        
-        contextFalse = tuple(contextFalse)
-        pick = random.choice(tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
-        if(not alternate): 
-            totalContext = tuple(random.shuffle(list(contextTrue + contextFalse)))
-            if((totalContext, pick) in usedLists): 
+        pick = random.choice(
+            tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
+        if not alternate:
+            totalContext = contextTrue + contextFalse
+            random.shuffle(totalContext)
+            if totalContext in usedLists:
                 continue
+            # check TF alternating pattern
             altCheck = True
-            for i in range(len(totalContext)): 
-                if(i % 2 == 0 and totalContext[i] not in human_context): 
+            for i in range(len(totalContext)):
+                if i % 2 == 0 and totalContext[i] not in human_urban_ctxt:
                     altCheck = False
                     break
-                if(i % 2 != 0 and totalContext[i] not in animal_context): 
+                if i % 2 != 0 and totalContext[i] not in animal_nature_ctxt:
                     altCheck = False
                     break
-
-            if(altCheck): 
+            if altCheck:
                 continue
+            # check FT alternating pattern
             altCheck = True
-            for i in range(len(totalContext)): 
-                if(i % 2 == 0 and totalContext[i] not in animal_context): 
+            for i in range(len(totalContext)):
+                if i % 2 == 0 and totalContext[i] not in animal_nature_ctxt:
                     altCheck = False
                     break
-                if(i % 2 != 0 and totalContext[i] not in human_context): 
+                if i % 2 != 0 and totalContext[i] not in human_urban_ctxt:
                     altCheck = False
                     break
-
-            if(altCheck): 
+            if altCheck:
                 continue
-
-            for i in range(shots): 
-                if(totalContext[i] in human_context):
-                    prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                else: 
-                    prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-
+            usedLists.add(totalContext)
+            prompt = ""
+            for i in range(len(totalContext)):
+                if totalContext[i] in human_urban_ctxt:
+                    prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                else:
+                    prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
             prompt += "A: "
-           
             prompt = prompt.strip()
-            
+
             # expect either TRUE or FALSE as the answer
             response = str(requests.post(
                 "https://api.ai21.com/studio/v1/j1-jumbo/complete",
@@ -142,7 +139,6 @@ def multiple_context_requests(shots, alternate = True):
                 }
             ).json())
             if response.startswith("{'detail':"):
-                
                 continue
             data_file.write(response)
             data_file.write("\n")
@@ -151,25 +147,24 @@ def multiple_context_requests(shots, alternate = True):
                 break
             completed_queries += 1
             time.sleep(3.1)
-            
-        else: 
+
+        else:
             if (contextTrue, contextFalse, pick) in usedLists:
                 continue
             usedLists.add((contextTrue, contextFalse, pick))
             prompt = ""
             if random.choice([True, False]):  # Put Context True first
-                for i in range(shots): 
+                for i in range(shots):
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-
                 prompt += "A: "
             else:  # Put Context False first
-                for i in range(shots): 
+                for i in range(shots):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                 prompt += "A: "
             prompt = prompt.strip()
-            
+
             # expect either TRUE or FALSE as the answer
             response = str(requests.post(
                 "https://api.ai21.com/studio/v1/j1-jumbo/complete",
@@ -184,7 +179,6 @@ def multiple_context_requests(shots, alternate = True):
                 }
             ).json())
             if response.startswith("{'detail':"):
-                
                 continue
             data_file.write(response)
             data_file.write("\n")
@@ -193,9 +187,12 @@ def multiple_context_requests(shots, alternate = True):
                 break
             completed_queries += 1
             time.sleep(3.1)
-            
     data_file.close()
-multiple_context_requests(2)
+
+
+multiple_context_requests(2, False)
+
+
 def query_requests():
     # human_urban and animal_nature are the context sets
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
@@ -353,9 +350,7 @@ def query_non_ambig_requests():
         time.sleep(3.1)
     data_file.close()
 
-
-
-#query_requests()
+# query_requests()
 
 # query_ambig_requests()
 # query_non_ambig_requests()
