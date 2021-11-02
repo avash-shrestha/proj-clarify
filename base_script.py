@@ -188,7 +188,7 @@ def multiple_context_requests(shots, alternate=True):
     data_file.close()
 
 
-multiple_context_requests(2, False)
+# multiple_context_requests(2, False)
 
 
 def query_requests():
