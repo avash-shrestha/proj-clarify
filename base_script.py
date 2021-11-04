@@ -21,7 +21,7 @@ import seaborn as sns
 # api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
 # Avash's api
 api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 300
+NUM_QUERIES = 200
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -67,14 +67,13 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     else:
         pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
-    data_file = open(str(shots) + "shots_" + 
+    data_file = open(str(shots) + "shots_" +
     "order_" + str(order) + "_" + 
     ("ambig_" if ambig else "NOTambig_") + 
     ("disambig_" if add_disambig else "NONEdisambig_") + 
     "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     num_queries = NUM_QUERIES
     completed_queries = 0
-
     # creates a 2(shots) + 1 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
     # from the ambig_set
     usedLists = set()
@@ -216,18 +215,18 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     data_file.close()
 
 
-"""multiple_context_requests(3, 2, True, True)
+multiple_context_requests(3, 2, True, True)
 multiple_context_requests(3, 2, True, False)
-multiple_context_requests(3, 2, False, True)
-multiple_context_requests(3, 2, False, False)
+# multiple_context_requests(3, 2, False, True)
+# multiple_context_requests(3, 2, False, False)
 multiple_context_requests(3, 1, True, True)
 multiple_context_requests(3, 1, True, False)
-multiple_context_requests(3, 1, False, True)
-multiple_context_requests(3, 1, False, False)
+# multiple_context_requests(3, 1, False, True)
+# multiple_context_requests(3, 1, False, False)
 multiple_context_requests(3, 0, True, True)
 multiple_context_requests(3, 0, True, False)
-multiple_context_requests(3, 0, False, True)
-multiple_context_requests(3, 0, False, False)"""
+# multiple_context_requests(3, 0, False, True)
+# multiple_context_requests(3, 0, False, False)
 
 
 def query_requests():
