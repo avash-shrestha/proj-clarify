@@ -154,9 +154,18 @@ def tmp():
     show_values(p)
 # tmp()
 
-scatter()
+#scatter()
 
+def multiplot(): 
+    df = pd.read_csv(open("SUPERDATAv2", "r"), index_col=0)
+    df = df[df["shots"] < 10]
+    df = df[df["order"] == "Random"]
+    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "ambig", hue = "disambig")
+    plt.ylim(.4, .75)
+    
+    plt.show()
 
+multiplot()
 # temp()
 def analyze_generic():
     for filename in os.listdir("responses"):
@@ -210,6 +219,73 @@ def analyze_generic():
             outf.close()
         f.close()
         print(tmp_set)
+def addToMainDF(): 
+    inf = open("SUPERDATAw20", "r")
+    maindf = pd.read_csv(inf, index_col=0)
+    print("df loaded")
+    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [] }
+
+    dir = ""
+    for filename in os.listdir("responses_1110"):
+        with open("responses_1110\\"  + filename, "r", encoding="utf8") as f:
+            data = f.readlines()
+            tmp_set = set()
+            for line in data:
+                line = ast.literal_eval(line)
+                firstResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["token"].strip('▁'),
+                                math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["logprob"]))
+                secondResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["token"].strip('▁'),
+                                math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["logprob"]))
+                # print(firstResponse, secondResponse)
+                normalizingProb = firstResponse[1] + secondResponse[1]
+                prompt = line['prompt']['text'].split()
+                # number of shots
+                numShots = int(f.name[f.name.find("shots") - 1])
+                isDisambig = False if "NONEdisambig" in f.name else True
+                index = 18 * numShots + 3 + (18 if isDisambig else 0) - 1
+                subject = ""
+                if prompt[index] in bs.human_ambig:
+                    subject = "human"
+                    if firstResponse[0] == "TRUE":
+                        percent_certain = firstResponse[1]
+                        is_correct = True
+                        
+                    else:
+                        percent_certain = secondResponse[1]
+                        is_correct = False
+                else:  # in animal_ambig
+                    subject = "animal"
+                    if firstResponse[0] == "TRUE":
+                        percent_certain = secondResponse[1]
+                        is_correct = False
+                    else:
+                        percent_certain = firstResponse[1]
+                        is_correct = True
+                percent_certain = percent_certain / normalizingProb
+                ordern = f.name[f.name.find("order_") + len("order_")]
+                order = "TF" if ordern == "0" else ("FT" if ordern == "1" else "Random")
+
+                datadict["shots"].append(numShots)
+                datadict["correct"].append(is_correct)
+                datadict["certainty"].append(percent_certain)
+                datadict["subject"].append(subject)
+                datadict["order"].append(order)
+                datadict["ambig"].append(False if "NOT" in f.name else True)
+                datadict["disambig"].append(False if "NONE" in f.name else True)
+                
+        print("file finished")            
+            
+                
+    outf = open("SUPERDATAv2", "w")
+    tmpdf = pd.DataFrame(data = datadict)
+    print(tmpdf)
+    superdf = maindf.append(tmpdf, ignore_index= True)
+    superdf.to_csv(outf)
+    
+    outf.close()
+    
+#addToMainDF()
+
 
 
 def analyze():
@@ -256,4 +332,4 @@ def analyze():
         print(tmp_set)
 
 
-# analyze_generic()
+# #analyze_generic()
