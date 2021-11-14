@@ -21,7 +21,7 @@ import seaborn as sns
 # api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
 # Avash's api
 api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 200
+NUM_QUERIES = 100
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -55,6 +55,102 @@ def convert_to_sent(r):
     template = template2 if r.place[0].lower() in "aeiuo" else template1
     return template[0] + r.thing + template[1] + r.place + "."
 
+def multiple_disambig(shots, ambig = True, num_disambig = 0): 
+    human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
+    animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
+    # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
+    pick_set = set()
+    if ambig:
+        pick_set.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    else:
+        pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
+    actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
+    data_file = open(str(shots) + "shots_" +
+    "order_2_" + 
+    ("ambig_" if ambig else "NOTambig_") + 
+    ("disambig" + str(num_disambig) + "_") + 
+    "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    num_queries = NUM_QUERIES
+    completed_queries = 0
+    # creates a 2(shots) + 1 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
+    # from the ambig_set
+    usedLists = set()
+    while completed_queries < num_queries:
+        contextTrue = []
+        for i in range(shots - num_disambig):
+            ctxTrue = random.choice(tuple(human_urban_ctxt))
+            while ctxTrue in contextTrue:
+                ctxTrue = random.choice(tuple(human_urban_ctxt))
+            contextTrue.append(ctxTrue)
+        contextFalse = []
+        for i in range(shots - num_disambig):
+            ctxFalse = random.choice(tuple(animal_nature_ctxt))
+            while ctxFalse in contextFalse:
+                ctxFalse = random.choice(tuple(animal_nature_ctxt))
+            contextFalse.append(ctxFalse)
+        pick = random.choice(
+            tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
+        totalContext = contextTrue + contextFalse
+        for i in range(num_disambig): 
+            totalContext.append(Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
+            totalContext.append(Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+        # check TF alternating pattern
+        random.shuffle(totalContext)
+        if((tuple(totalContext), pick) in usedLists): continue
+        altCheck = True
+        for i in range(len(totalContext)):
+            if i % 2 == 0 and totalContext[i] not in human_urban_ctxt:
+                altCheck = False
+                break
+            if i % 2 != 0 and totalContext[i] not in animal_nature_ctxt:
+                altCheck = False
+                break
+        if altCheck:
+            continue
+        # check FT alternating pattern
+        altCheck = True
+        for i in range(len(totalContext)):
+            if i % 2 == 0 and totalContext[i] not in animal_nature_ctxt:
+                altCheck = False
+                break
+            if i % 2 != 0 and totalContext[i] not in human_urban_ctxt:
+                altCheck = False
+                break
+        if altCheck:
+            continue
+        usedLists.add((tuple(totalContext), pick))
+        prompt = ""
+        for i in range(len(totalContext)):
+            if totalContext[i][0] in human_context:
+                prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+            else:
+                prompt += "Q: " + convert_to_sent(totalContext[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+        
+        prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: " 
+        prompt = prompt.strip()
+
+        # expect either TRUE or FALSE as the answer
+        response = str(requests.post(
+            "https://api.ai21.com/studio/v1/j1-jumbo/complete",
+            headers={"Authorization": "Bearer " + api_key},
+            json={
+                "prompt": prompt,
+                "numResults": 1,
+                "maxTokens": 1,
+                "stopSequences": ["."],
+                "topKReturn": 10,
+                "temperature": 0.0
+            }
+        ).json())
+        if response.startswith("{'detail':"):
+            continue
+        data_file.write(response)
+        data_file.write("\n")
+        if response == "{'detail': 'Quota exceeded.'}":
+            print(response)
+            break
+        completed_queries += 1
+        time.sleep(3.1)
 
 # Return true if the sentence contains a human, false if it contains an animal
 def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
@@ -215,18 +311,18 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     data_file.close()
 
 
-#   multiple_context_requests(5, 2, True, True)
-#   multiple_context_requests(5, 2, True, False)
-#   multiple_context_requests(5, 2, False, True)
-#   multiple_context_requests(5, 2, False, False)
-# multiple_context_requests(5, 1, True, True)
-# multiple_context_requests(5, 1, True, False)
-# multiple_context_requests(5, 1, False, True)
-# multiple_context_requests(5, 1, False, False)
+#multiple_context_requests(4, 2, True, True)
+#multiple_context_requests(4, 2, True, False)
+#multiple_context_requests(4, 2, False, True)
+#multiple_context_requests(4, 2, False, False)
+'''multiple_context_requests(5, 1, True, True)
+multiple_context_requests(5, 1, True, False)
+multiple_context_requests(5, 1, False, True)
+multiple_context_requests(5, 1, False, False)
 multiple_context_requests(5, 0, True, True)
 multiple_context_requests(5, 0, True, False)
 multiple_context_requests(5, 0, False, True)
-multiple_context_requests(5, 0, False, False)
+multiple_context_requests(5, 0, False, False)'''
 
 
 def query_requests():
