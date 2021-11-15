@@ -25,6 +25,13 @@ g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
 g.add_legend()
 plt.show()'''
 
+def increment_shots(): 
+    df = read_csv("SUPERDATAv4", index_col= 0)
+    df.loc[df["disambig"] == True, 'disambig'] = 1
+    df.loc[df["disambig"] == False, 'disambig'] = 0
+    df.to_csv(open("SUPERDATAv4", "w"))
+
+increment_shots()
 
 def split_dataframes():
     numCorrect_dict = {"value": [], 'label': []}
@@ -157,15 +164,16 @@ def tmp():
 #scatter()
 
 def multiplot(): 
-    df = pd.read_csv(open("SUPERDATAv2", "r"), index_col=0)
-    df = df[df["shots"] < 10]
-    df = df[df["order"] == "Random"]
-    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "ambig", hue = "disambig")
-    plt.ylim(.4, .75)
-    
+    df = pd.read_csv(open("SUPERDATAv3", "r"), index_col=0)
+    #df = df[df["shots"] < 10]
+    #df = df[df["ambig"] == True]
+    #df = df[df["order"] == "Random"]
+    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "ambig")
+    plt.ylim(.4, 1)
+    plt.suptitle("Shots vs. Certainty")
     plt.show()
 
-multiplot()
+#multiplot()
 # temp()
 def analyze_generic():
     for filename in os.listdir("responses"):
@@ -286,8 +294,17 @@ def addToMainDF():
     
 #addToMainDF()
 
-
-
+def fixDF():
+    inf = open("SUPERDATAv2", "r")
+    maindf = pd.read_csv(inf, index_col=0)
+    print("df loaded")
+    maindf = maindf.replace("TF", "F/T")    
+    maindf = maindf.replace("FT", "T/F")
+    outf = open("SUPERDATAv3", "w")
+    maindf.to_csv(outf)
+    
+    outf.close()
+#fixDF()
 def analyze():
     with open(FILENAME, "r", encoding="utf8") as f:
         data = f.readlines()
