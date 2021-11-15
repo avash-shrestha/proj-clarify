@@ -54,7 +54,7 @@ def convert_to_sent(r):
 
 
 # Return true if the sentence contains a human, false if it contains an animal
-def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
+def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
     encoding = 'utf-8'
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
@@ -79,8 +79,8 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     usedLists = set()
     while completed_queries < num_queries:
         contextTrue = []
-        if add_disambig:
-            tmp_shots = shots - 1
+        if num_disambig > 0:
+            tmp_shots = shots - num_disambig
         else:
             tmp_shots = shots
         for i in range(tmp_shots):
@@ -98,21 +98,15 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
             tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
         if order == 2:
             totalContext = contextTrue + contextFalse
-            random.shuffle(totalContext)
-            if add_disambig:
-                if random.choice([True, False]):
+            for i in range(num_disambig): 
                     # add human disambig first
                     totalContext.append(
                         Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
                     totalContext.append(
                         Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-                else:
-                    # add animal disambig first
-                    totalContext.append(
-                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-                    totalContext.append(
-                        Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
+            
             # check TF alternating pattern
+            random.shuffle(totalContext)
             altCheck = True
             for i in range(len(totalContext)):
                 if i % 2 == 0 and totalContext[i] not in human_urban_ctxt:
