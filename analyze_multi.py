@@ -20,7 +20,7 @@ import os
 
 def analyze():
     for filename in os.listdir("multishot responses\\2shots\\"):
-        with open("multishot responses\\2shots\\" + filename, "r", encoding="utf8") as f:
+        with open("multishot_sresponses\\2shots\\" + filename, "r", encoding="utf8") as f:
             data = f.readlines()
             numTrue, numFalse = 0, 0
             numCorrect, numIncorrect = 0, 0
