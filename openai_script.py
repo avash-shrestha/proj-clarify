@@ -17,7 +17,7 @@ import seaborn as sns
 import openai
 
 # OPENAI API
-api_key = "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"
+api_key = "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"
 NUM_QUERIES = 1
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -79,13 +79,17 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
     usedLists = set()
     while completed_queries < num_queries:
         contextTrue = []
-        for i in range(shots):
+        if add_disambig:
+            tmp_shots = shots - 1
+        else:
+            tmp_shots = shots
+        for i in range(tmp_shots):
             ctxTrue = random.choice(tuple(human_urban_ctxt))
             while ctxTrue in contextTrue:
                 ctxTrue = random.choice(tuple(human_urban_ctxt))
             contextTrue.append(ctxTrue)
         contextFalse = []
-        for i in range(shots):
+        for i in range(tmp_shots):
             ctxFalse = random.choice(tuple(animal_nature_ctxt))
             while ctxFalse in contextFalse:
                 ctxFalse = random.choice(tuple(animal_nature_ctxt))
@@ -130,6 +134,7 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
                     break
             if altCheck:
                 continue
+            print(totalContext, pick)
             usedLists.add((tuple(totalContext), pick))
             prompt = ""
             for i in range(len(totalContext)):
@@ -185,14 +190,14 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
                 usedLists.add((tuple(contextTrue), tuple(contextFalse), pick))
             prompt = ""
             if order == 1:  # Put Context True first
-                for i in range(shots):
+                for i in range(tmp_shots):
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                 if (add_disambig):
                     prompt += "Q: " + convert_to_sent(pairDisambig[0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(pairDisambig[1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
             else:  # Put Context False first
-                for i in range(shots):
+                for i in range(tmp_shots):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                 if (add_disambig):
@@ -236,10 +241,11 @@ def multiple_context_requests(shots, order, ambig=True, add_disambig=False):
 
 
 # multiple_context_requests(1, 2)
-multiple_context_requests(2, 2)
-multiple_context_requests(3, 2)
-multiple_context_requests(4, 2)
-multiple_context_requests(5, 2)
+# multiple_context_requests(2, 1, True, True)
+# multiple_context_requests(2, 0, True, True)
+# multiple_context_requests(3, 2)
+# multiple_context_requests(4, 2)
+# multiple_context_requests(5, 2)
 
 
 
