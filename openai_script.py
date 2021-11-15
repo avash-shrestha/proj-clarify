@@ -70,7 +70,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
     data_file = open("OPENAI_" + str(shots) + "shots_" +
                      "order_" + str(order) + "_" +
                      ("ambig_" if ambig else "NOTambig_") +
-                     ("disambig_" if add_disambig else "NONEdisambig_") +
+                     ("disambig" + num_disambig + "_" if num_disambig > 0 else "NONEdisambig_") +
                      "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     num_queries = NUM_QUERIES
     completed_queries = 0
@@ -172,11 +172,14 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
             # time.sleep(3.1)
 
         else:  # alternate = true
-            if (add_disambig):
-                pairDisambig = (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
-                                Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-                if (tuple(contextTrue), tuple(contextFalse), pairDisambig, pick) in usedLists:
-                    continue
+            if (num_disambig > 0):
+                disambig_list = []
+                while((tuple(contextTrue), tuple(contextFalse), tuple(disambig_list), pick) in usedLists):
+                    for i in range(num_disambig): 
+                        pairDisambig = (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
+                                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+           #     if (tuple(contextTrue), tuple(contextFalse), pairDisambig, pick) in usedLists:
+          #          continue
                 usedLists.add((tuple(contextTrue), tuple(contextFalse), pairDisambig, pick))
             else:
                 if (tuple(contextTrue), tuple(contextFalse), pick) in usedLists:
@@ -187,16 +190,18 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
                 for i in range(tmp_shots):
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-                if (add_disambig):
-                    prompt += "Q: " + convert_to_sent(pairDisambig[0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                    prompt += "Q: " + convert_to_sent(pairDisambig[1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                if (num_disambig > 0):
+                    for i in range(len(disambig_list)):
+                        prompt += "Q: " + convert_to_sent(disambig_list[i][0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                        prompt += "Q: " + convert_to_sent(disambig_list[i][1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
             else:  # Put Context False first
                 for i in range(tmp_shots):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
-                if (add_disambig):
-                    prompt += "Q: " + convert_to_sent(pairDisambig[1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
-                    prompt += "Q: " + convert_to_sent(pairDisambig[0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                if (num_disambig > 0):
+                    for i in range(len(disambig_list)):
+                        prompt += "Q: " + convert_to_sent(disambig_list[i][0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
+                        prompt += "Q: " + convert_to_sent(disambig_list[i][1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
 
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: "
             prompt = prompt.strip()
