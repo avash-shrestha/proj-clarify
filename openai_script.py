@@ -79,10 +79,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
     usedLists = set()
     while completed_queries < num_queries:
         contextTrue = []
-        if num_disambig > 0:
-            tmp_shots = shots - num_disambig
-        else:
-            tmp_shots = shots
+        tmp_shots = shots - num_disambig
         for i in range(tmp_shots):
             ctxTrue = random.choice(tuple(human_urban_ctxt))
             while ctxTrue in contextTrue:
@@ -128,7 +125,6 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
                     break
             if altCheck:
                 continue
-            print(totalContext, pick)
             usedLists.add((tuple(totalContext), pick))
             prompt = ""
             for i in range(len(totalContext)):
@@ -174,13 +170,13 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
         else:  # alternate = true
             if (num_disambig > 0):
                 disambig_list = []
-                while((tuple(contextTrue), tuple(contextFalse), tuple(disambig_list), pick) in usedLists):
+                while (tuple(contextTrue), tuple(contextFalse), tuple(disambig_list), pick) in usedLists:
                     for i in range(num_disambig): 
-                        pairDisambig = (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
-                                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-           #     if (tuple(contextTrue), tuple(contextFalse), pairDisambig, pick) in usedLists:
-          #          continue
-                usedLists.add((tuple(contextTrue), tuple(contextFalse), pairDisambig, pick))
+                        disambig_list.append((Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
+                                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context)))))
+                if (tuple(contextTrue), tuple(contextFalse), disambig_list, pick) in usedLists:
+                    continue
+                usedLists.add((tuple(contextTrue), tuple(contextFalse), disambig_list, pick))
             else:
                 if (tuple(contextTrue), tuple(contextFalse), pick) in usedLists:
                     continue
