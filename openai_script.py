@@ -17,8 +17,8 @@ import seaborn as sns
 import openai
 
 # OPENAI API
-api_key = "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"
-NUM_QUERIES = 1
+api_key = "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"
+NUM_QUERIES = 600
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -26,15 +26,23 @@ Request = namedtuple("Request", ["thing", "place"])
 template1 = ["The ", " is in a "]
 template2 = ["The ", " is in an "]
 
-human_context = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist", "builder", "dancer", "athlete"}
-animal_context = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito", "horse", "meerkat", "dolphin"} # "owl", "squirrel", "spider", "moose"}
-urban_context = {"theater", "building", "city", "street", "shop", "school", "dwelling", "factory",  "garage", "courthouse", "hotel", "warehouse"}
-nature_context = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp", "sea", "rainforest", "taiga", "grassland", "bay"}
+human_context = {"person", "child", "man", "officer", "teacher", "salesperson", "politician", "chef", "artist",
+                 "builder", "dancer", "athlete"}
+animal_context = {"tiger", "iguana", "toad", "butterfly", "wolf", "goat", "bat", "bear", "mosquito", "horse", "meerkat",
+                  "dolphin"}  # "owl", "squirrel", "spider", "moose"}
+urban_context = {"theater", "building", "city", "street", "shop", "school", "dwelling", "factory", "garage",
+                 "courthouse", "hotel", "warehouse"}
+nature_context = {"meadow", "river", "pond", "desert", "prairie", "jungle", "swamp", "sea", "rainforest", "taiga",
+                  "grassland", "bay"}
 
-human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", "architect", "butcher", "engineer", "student"}
-animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander", "bee", "condor", "chipmunk"}# "buffalo", "panda"}
-urban_ambig = {"skyscraper", "restaurant", "alley", "store", "apartment", "condominium", "house", "office", "museum", "casino", "hospital", "library"}# "airport"}
-nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah", "stream", "creek", "delta", "valley" }
+human_ambig = {"human", "toddler", "woman", "doctor", "firefighter", "soldier", "banker", "actor", "architect",
+               "butcher", "engineer", "student"}
+animal_ambig = {"hawk", "elephant", "ant", "mouse", "crocodile", "shark", "sheep", "lion", "salamander", "bee",
+                "condor", "chipmunk"}  # "buffalo", "panda"}
+urban_ambig = {"skyscraper", "restaurant", "alley", "store", "apartment", "condominium", "house", "office", "museum",
+               "casino", "hospital", "library"}  # "airport"}
+nature_ambig = {"ocean", "tundra", "forest", "cave", "canyon", "lake", "stream", "savannah", "stream", "creek", "delta",
+                "valley"}
 
 
 def generate_x_y_requests(x, y):
@@ -54,7 +62,7 @@ def convert_to_sent(r):
 
 
 # Return true if the sentence contains a human, false if it contains an animal
-def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
+def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
     encoding = 'utf-8'
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
@@ -70,7 +78,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
     data_file = open("OPENAI_" + str(shots) + "shots_" +
                      "order_" + str(order) + "_" +
                      ("ambig_" if ambig else "NOTambig_") +
-                     ("disambig" + num_disambig + "_" if num_disambig > 0 else "NONEdisambig_") +
+                     ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
                      "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     num_queries = NUM_QUERIES
     completed_queries = 0
@@ -95,13 +103,13 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
             tuple(pick_set))  # All ambiguous/non-ambiguous combos, we figure out correctness in data.py
         if order == 2:
             totalContext = contextTrue + contextFalse
-            for i in range(num_disambig): 
-                    # add human disambig first
-                    totalContext.append(
-                        Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
-                    totalContext.append(
-                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-            
+            for i in range(num_disambig):
+                # add human disambig first
+                totalContext.append(
+                    Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
+                totalContext.append(
+                    Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
+
             # check TF alternating pattern
             random.shuffle(totalContext)
             altCheck = True
@@ -157,9 +165,10 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
             prompt_dict = {"context": [], "query": []}
             for i in range(shots):
                 prompt_dict["context"].append(
-                    ((Request(prompt_lst[2 + i * 18], prompt_lst[6 + i * 18].strip('.')), prompt_lst[8 + i * 18]),
-                     (Request(prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.')), prompt_lst[17 + i * 18])))
-            prompt_dict["query"].append(Request(prompt_lst[2 + shots * 18], prompt_lst[6 + shots * 18].strip('.')))
+                    (prompt_lst[2 + i * 18], prompt_lst[6 + i * 18].strip('.'), prompt_lst[8 + i * 18]))
+                prompt_dict["context"].append(
+                    (prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.'), prompt_lst[17 + i * 18]))
+            prompt_dict["query"].append((prompt_lst[2 + shots * 18], prompt_lst[6 + shots * 18].strip('.')))
             data_file.write(str(prompt_dict))
             data_file.write("\n")
             data_file.write(whole)
@@ -171,9 +180,10 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
             if (num_disambig > 0):
                 disambig_list = []
                 while (tuple(contextTrue), tuple(contextFalse), tuple(disambig_list), pick) in usedLists:
-                    for i in range(num_disambig): 
-                        disambig_list.append((Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
-                                        Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context)))))
+                    for i in range(num_disambig):
+                        disambig_list.append(
+                            (Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))),
+                             Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context)))))
                 if (tuple(contextTrue), tuple(contextFalse), disambig_list, pick) in usedLists:
                     continue
                 usedLists.add((tuple(contextTrue), tuple(contextFalse), disambig_list, pick))
@@ -222,9 +232,10 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
             prompt_dict = {"context": [], "query": []}
             for i in range(shots):
                 prompt_dict["context"].append(
-                    ((Request(prompt_lst[2 + i * 18], prompt_lst[6 + i * 18].strip('.')), prompt_lst[8 + i * 18]),
-                     (Request(prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.')), prompt_lst[17 + i * 18])))
-            prompt_dict["query"].append(Request(prompt_lst[2 + shots * 18], prompt_lst[6 + shots * 18].strip('.')))
+                    (prompt_lst[2 + i * 18], prompt_lst[6 + i * 18].strip('.'), prompt_lst[8 + i * 18]))
+                prompt_dict["context"].append(
+                     (prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.'), prompt_lst[17 + i * 18]))
+            prompt_dict["query"].append((prompt_lst[2 + shots * 18], prompt_lst[6 + shots * 18].strip('.')))
             data_file.write(str(prompt_dict))
             data_file.write("\n")
             data_file.write(whole)
@@ -235,13 +246,21 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig = 0):
     data_file.close()
 
 
-# multiple_context_requests(1, 2)
-# multiple_context_requests(2, 1, True, True)
-# multiple_context_requests(2, 0, True, True)
-# multiple_context_requests(3, 2)
-# multiple_context_requests(4, 2)
-# multiple_context_requests(5, 2)
+# multiple_context_request(#shots, random, ambig=True, #disambig)
+# multiple_context_requests(2, 2, True, 0)  # DONE
+# multiple_context_requests(2, 2, True, 1)  # DONE
 
+# multiple_context_requests(3, 2, True, 0)  # DONE
+# multiple_context_requests(3, 2, True, 1)  # DONE
+# multiple_context_requests(3, 2, True, 2)  # DONE
 
+# multiple_context_requests(4, 2, True, 0)  # DONE
+# multiple_context_requests(4, 2, True, 1)  # DONE
+# multiple_context_requests(4, 2, True, 2)  # DONE
+# multiple_context_requests(4, 2, True, 3)  # DONE
 
-
+# multiple_context_requests(5, 2, True, 0)  # DONE
+# multiple_context_requests(5, 2, True, 1)  # DONE
+# multiple_context_requests(5, 2, True, 2)  # DONE
+# multiple_context_requests(5, 2, True, 3)  # DONE
+# multiple_context_requests(5, 2, True, 4)  # DONE
