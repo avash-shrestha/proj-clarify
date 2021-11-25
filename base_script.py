@@ -21,7 +21,7 @@ import seaborn as sns
 # api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
 # Avash's api
 api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 100
+NUM_QUERIES = 300
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
@@ -151,6 +151,20 @@ def multiple_disambig(shots, ambig = True, num_disambig = 0):
             break
         completed_queries += 1
         time.sleep(3.1)
+#multiple_disambig(2, True, 1)
+#multiple_disambig(3, True, 1)
+#multiple_disambig(3, True, 2)
+#multiple_disambig(4,True,1)
+#multiple_disambig(4,True,2)
+#multiple_disambig(4,True,3)
+#multiple_disambig(5,True, 2)
+#multiple_disambig(5,True, 3)
+#multiple_disambig(6,True,4)
+
+
+
+
+
 
 # Return true if the sentence contains a human, false if it contains an animal
 def multiple_context_requests(shots, order, ambig=True, add_disambig=False):

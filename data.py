@@ -31,7 +31,7 @@ def increment_shots():
     df.loc[df["disambig"] == False, 'disambig'] = 0
     df.to_csv(open("SUPERDATAv4", "w"))
 
-increment_shots()
+#increment_shots()
 
 def split_dataframes():
     numCorrect_dict = {"value": [], 'label': []}
@@ -162,15 +162,33 @@ def tmp():
 # tmp()
 
 #scatter()
+def countRows(): 
+    df = pd.read_csv(open("SUPERDATAv9", "r"), index_col=0)
+    orderings = ["F/T", "T/F", "Random"]
+    ambigChoices = [True, False]
+    shotChoices = [2,3,4,5]
+    nd = [0,1,2,3,4]
+    for o in orderings: 
+        for a in ambigChoices: 
+            for s in shotChoices: 
+                for n in nd: 
+                    tmpdf = df[df["order"] == o]
+                    tmpdf = tmpdf[tmpdf["ambig"] == a]
+                    tmpdf = tmpdf[tmpdf["shots"] == s]
+                    tmpdf = tmpdf[tmpdf["disambig"] == n]
 
+                    if(len(tmpdf) > 0): 
+                        print("order: " + o + ", ambig: " + str(a) + ", shots: "  + str(s) + ", disambig: " + str(n) +  ", num -- "  + str(len(tmpdf)))
+countRows()
 def multiplot(): 
-    df = pd.read_csv(open("SUPERDATAv3", "r"), index_col=0)
-    #df = df[df["shots"] < 10]
-    #df = df[df["ambig"] == True]
-    #df = df[df["order"] == "Random"]
-    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "ambig")
-    plt.ylim(.4, 1)
-    plt.suptitle("Shots vs. Certainty")
+    df = pd.read_csv(open("SUPERDATAv9", "r"), index_col=0)
+    df = df[df["shots"] < 6]
+    df = df[df["ambig"] == True]
+    df = df[df["order"] != "Random"]
+    #df = df[df["disambig"] <= 1]
+    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "order",  hue = "disambig")
+    plt.ylim(.4, .6)
+    plt.suptitle("Shots vs. Certainty, Ambiguous Prompts")
     plt.show()
 
 #multiplot()
@@ -227,15 +245,15 @@ def analyze_generic():
             outf.close()
         f.close()
         print(tmp_set)
+
 def addToMainDF(): 
-    inf = open("SUPERDATAw20", "r")
+    inf = open("SUPERDATAv8", "r")
     maindf = pd.read_csv(inf, index_col=0)
-    print("df loaded")
-    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [] }
+    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : []}
 
     dir = ""
-    for filename in os.listdir("responses_1110"):
-        with open("responses_1110\\"  + filename, "r", encoding="utf8") as f:
+    for filename in os.listdir("responses_to_add"):
+        with open("responses_to_add\\"  + filename, "r", encoding="utf8") as f:
             data = f.readlines()
             tmp_set = set()
             for line in data:
@@ -249,8 +267,9 @@ def addToMainDF():
                 prompt = line['prompt']['text'].split()
                 # number of shots
                 numShots = int(f.name[f.name.find("shots") - 1])
+                
                 isDisambig = False if "NONEdisambig" in f.name else True
-                index = 18 * numShots + 3 + (18 if isDisambig else 0) - 1
+                index = 18 * numShots + 3 - 1
                 subject = ""
                 if prompt[index] in bs.human_ambig:
                     subject = "human"
@@ -279,14 +298,12 @@ def addToMainDF():
                 datadict["subject"].append(subject)
                 datadict["order"].append(order)
                 datadict["ambig"].append(False if "NOT" in f.name else True)
-                datadict["disambig"].append(False if "NONE" in f.name else True)
-                
-        print("file finished")            
+                datadict["disambig"].append(0 if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
+                datadict["disambig_ratio"].append(0 if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
             
                 
-    outf = open("SUPERDATAv2", "w")
+    outf = open("SUPERDATAv9", "w")
     tmpdf = pd.DataFrame(data = datadict)
-    print(tmpdf)
     superdf = maindf.append(tmpdf, ignore_index= True)
     superdf.to_csv(outf)
     
@@ -295,12 +312,10 @@ def addToMainDF():
 #addToMainDF()
 
 def fixDF():
-    inf = open("SUPERDATAv2", "r")
+    inf = open("SUPERDATAv7", "r")
     maindf = pd.read_csv(inf, index_col=0)
-    print("df loaded")
-    maindf = maindf.replace("TF", "F/T")    
-    maindf = maindf.replace("FT", "T/F")
-    outf = open("SUPERDATAv3", "w")
+    maindf = maindf.assign(disambig_ratio = lambda x: round(x.disambig / x.shots, 2)) 
+    outf = open("SUPERDATAv7", "w")
     maindf.to_csv(outf)
     
     outf.close()
