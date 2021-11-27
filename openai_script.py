@@ -17,7 +17,7 @@ import seaborn as sns
 import openai
 
 # OPENAI API
-api_key = "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"
+api_key = "NOT REAL API KEY"
 NUM_QUERIES = 600
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -109,30 +109,30 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
                     Request(random.choice(tuple(human_context)), random.choice(tuple(nature_context))))
                 totalContext.append(
                     Request(random.choice(tuple(animal_context)), random.choice(tuple(urban_context))))
-
             # check TF alternating pattern
             random.shuffle(totalContext)
             altCheck = True
-            for i in range(len(totalContext)):
-                if i % 2 == 0 and totalContext[i] not in human_urban_ctxt:
-                    altCheck = False
-                    break
-                if i % 2 != 0 and totalContext[i] not in animal_nature_ctxt:
-                    altCheck = False
-                    break
-            if altCheck:
-                continue
-            # check FT alternating pattern
-            altCheck = True
-            for i in range(len(totalContext)):
-                if i % 2 == 0 and totalContext[i] not in animal_nature_ctxt:
-                    altCheck = False
-                    break
-                if i % 2 != 0 and totalContext[i] not in human_urban_ctxt:
-                    altCheck = False
-                    break
-            if altCheck:
-                continue
+            if shots != 1:
+                for i in range(len(totalContext)):
+                    if i % 2 == 0 and totalContext[i] not in human_urban_ctxt:
+                        altCheck = False
+                        break
+                    if i % 2 != 0 and totalContext[i] not in animal_nature_ctxt:
+                        altCheck = False
+                        break
+                if altCheck:
+                    continue
+                # check FT alternating pattern
+                altCheck = True
+                for i in range(len(totalContext)):
+                    if i % 2 == 0 and totalContext[i] not in animal_nature_ctxt:
+                        altCheck = False
+                        break
+                    if i % 2 != 0 and totalContext[i] not in human_urban_ctxt:
+                        altCheck = False
+                        break
+                if altCheck:
+                    continue
             usedLists.add((tuple(totalContext), pick))
             prompt = ""
             for i in range(len(totalContext)):
@@ -178,6 +178,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
         else:  # alternate = true
             if (num_disambig > 0):
+                print("not possible")
                 disambig_list = []
                 while (tuple(contextTrue), tuple(contextFalse), tuple(disambig_list), pick) in usedLists:
                     for i in range(num_disambig):
@@ -197,6 +198,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                 if (num_disambig > 0):
+                    print("T/F NOT POSSIBLE")
                     for i in range(len(disambig_list)):
                         prompt += "Q: " + convert_to_sent(disambig_list[i][0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                         prompt += "Q: " + convert_to_sent(disambig_list[i][1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
@@ -205,9 +207,10 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
                     prompt += "Q: " + convert_to_sent(contextFalse[i]).strip() + "\r\n" + "A: FALSE" + "\r\n"
                     prompt += "Q: " + convert_to_sent(contextTrue[i]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                 if (num_disambig > 0):
+                    print("F/T NOT POSSIBLE")
                     for i in range(len(disambig_list)):
-                        prompt += "Q: " + convert_to_sent(disambig_list[i][0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
                         prompt += "Q: " + convert_to_sent(disambig_list[i][1]).strip() + "\r\n" + "A: FALSE" + "\r\n"
+                        prompt += "Q: " + convert_to_sent(disambig_list[i][0]).strip() + "\r\n" + "A: TRUE" + "\r\n"
 
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: "
             prompt = prompt.strip()
@@ -247,20 +250,58 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
 
 # multiple_context_request(#shots, random, ambig=True, #disambig)
-# multiple_context_requests(2, 2, True, 0)  # DONE
-# multiple_context_requests(2, 2, True, 1)  # DONE
+# multiple_context_requests(2, 2, True, 0)  # 20 DONE
+# multiple_context_requests(2, 2, True, 1)  # 31 DONE
 
-# multiple_context_requests(3, 2, True, 0)  # DONE
-# multiple_context_requests(3, 2, True, 1)  # DONE
-# multiple_context_requests(3, 2, True, 2)  # DONE
+# multiple_context_requests(3, 2, True, 0)  # 21 DONE
+# multiple_context_requests(3, 2, True, 1)  # 32 DONE
+# multiple_context_requests(3, 2, True, 2)  # 36 DONE
 
-# multiple_context_requests(4, 2, True, 0)  # DONE
-# multiple_context_requests(4, 2, True, 1)  # DONE
-# multiple_context_requests(4, 2, True, 2)  # DONE
-# multiple_context_requests(4, 2, True, 3)  # DONE
+# multiple_context_requests(4, 2, True, 0)  # 22 DONE
+# multiple_context_requests(4, 2, True, 1)  # 33 DONE
+# multiple_context_requests(4, 2, True, 2)  # 37 DONE
+# multiple_context_requests(4, 2, True, 3)  # 40 DONE
 
-# multiple_context_requests(5, 2, True, 0)  # DONE
-# multiple_context_requests(5, 2, True, 1)  # DONE
-# multiple_context_requests(5, 2, True, 2)  # DONE
-# multiple_context_requests(5, 2, True, 3)  # DONE
-# multiple_context_requests(5, 2, True, 4)  # DONE
+# multiple_context_requests(5, 2, True, 0)  # 23 DONE
+# multiple_context_requests(5, 2, True, 1)  # 34 DONE
+# multiple_context_requests(5, 2, True, 2)  # 38 DONE
+# multiple_context_requests(5, 2, True, 3)  # 41 DONE
+# multiple_context_requests(5, 2, True, 4)  # 43 DONE
+
+# multiple_context_requests(1, 0, True, 0)  # 6 DONE
+# multiple_context_requests(2, 0, True, 0)  # 7 DONE
+# multiple_context_requests(3, 0, True, 0)  # 8 DONE
+
+# multiple_context_requests(1, 1, True, 0)  # 1 DONE
+# multiple_context_requests(2, 1, True, 0)  # 2 DONE
+# multiple_context_requests(3, 1, True, 0)  # 3 DONE
+
+# multiple_context_requests(1, 0, False, 0)  # 14 DONE
+# multiple_context_requests(2, 0, False, 0)  # 15 DONE
+# multiple_context_requests(3, 0, False, 0)  # 16 DONE
+
+# multiple_context_requests(1, 1, False, 0)  # 10 DONE
+# multiple_context_requests(2, 1, False, 0)  # 11 DONE
+# multiple_context_requests(3, 1, False, 0)  # 12 DONE
+
+# multiple_context_requests(1, 2, True, 0)  # 19 DONE
+
+# multiple_context_requests(1, 2, False, 0)  # 25 DONE
+# multiple_context_requests(2, 2, False, 0)  # 26 DONE
+# multiple_context_requests(3, 2, False, 0)  # 27 DONE
+# multiple_context_requests(4, 2, False, 0)  # 28 DONE
+# multiple_context_requests(5, 2, False, 0)  # 29 DONE
+
+# multiple_context_requests(2, 2, False, 1)  # 45 DONE
+# multiple_context_requests(3, 2, False, 1)  # 46 DONE
+# multiple_context_requests(4, 2, False, 1)  # 47 DONE
+# multiple_context_requests(5, 2, False, 1)  # 48 DONE
+
+# multiple_context_requests(3, 2, False, 2)  # 50 DONE
+# multiple_context_requests(4, 2, False, 2)  # 51 DONE
+# multiple_context_requests(5, 2, False, 2)  # 52 DONE
+
+# multiple_context_requests(4, 2, False, 3)  # 54 DONE
+# multiple_context_requests(5, 2, False, 3)  # 55 DONE
+
+# multiple_context_requests(5, 2, False, 4)  # 57 DONE

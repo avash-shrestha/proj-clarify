@@ -4,7 +4,7 @@ import math
 
 def pls():
     # put whatever u want
-    filename = open("OPENAI_5shots_order_2_ambig_disambig_4_responses_2021-11-17T_05-28-11Z.txt", 'r', encoding="utf-8")
+    filename = open("OPENAI_1shots_order_0_ambig_NONEdisambig_responses_2021-11-26T_23-55-46Z.txt", 'r', encoding="utf-8")
     data = filename.readlines()
     per_correct = 0.0
     per_certain_of_correct = 0.0
