@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
-import openai
+#import openai
 
 # OPENAI API
 api_key = "NOT REAL API KEY"
