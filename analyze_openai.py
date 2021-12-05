@@ -6,12 +6,13 @@ import pandas as pd
 
 def pls():
     # put whatever u want
-    filename = open("OPENAI_1shots_order_0_ambig_NONEdisambig_responses_2021-11-26T_23-55-46Z.txt", 'r', encoding="utf-8")
+    filename = open("CURIE_1shots_order_1_NOTambig_NONEdisambig_responses_2021-12-05T_04-02-01Z.txt", 'r', encoding="utf-8")
     data = filename.readlines()
     per_correct = 0.0
     per_certain_of_correct = 0.0
     human_flag = False
     animal_flag = False
+    wtf = 0
     for i, line in enumerate(data):
         if i % 2 == 0:
             query = ast.literal_eval(line.strip())["query"]
@@ -23,6 +24,8 @@ def pls():
                 animal_flag = False
         else:
             ans = ast.literal_eval(line.strip())
+            if ans["choices"][0]["text"].strip() == "FALSE":
+                wtf += 1
             if human_flag:
                 if ans["choices"][0]["text"].strip() == "TRUE":
                     per_correct += 1
@@ -33,12 +36,15 @@ def pls():
                 per_certain_of_correct += math.exp(ans["choices"][0]["logprobs"]["top_logprobs"][0][" FALSE"])
     print(per_correct / 600)
     print(per_certain_of_correct / 600)
+    print(wtf)
 
 def openai_df(): 
-    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : []}
+    inf = open("SUPERDATA_COMBINE2", "r")
+    maindf = pd.read_csv(inf, index_col=0)
+    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : [], "model" : []}
     #filename = open("OPENAI_1shots_order_0_ambig_NONEdisambig_responses_2021-11-26T_23-55-46Z.txt", 'r', encoding="utf-8")
-    for filename in os.listdir("openai_responses"):
-        with open("openai_responses\\" + filename, "r", encoding="utf8") as f:
+    for filename in os.listdir("responses_to_add"):
+        with open("responses_to_add\\" + filename, "r", encoding="utf8") as f:
             data = f.readlines()
             per_correct = 0.0
             per_certain_of_correct = 0.0
@@ -68,7 +74,11 @@ def openai_df():
                     if human_flag:
                         if ans["choices"][0]["text"].strip() == "TRUE":
                             per_correct += 1
-                        per_certain_of_correct = math.exp(ans["choices"][0]["logprobs"]["top_logprobs"][0][" TRUE"])
+                        try: 
+                            per_certain_of_correct = math.exp(ans["choices"][0]["logprobs"]["top_logprobs"][0][" TRUE"])
+                        except: 
+                            per_certain_of_correct = 0
+
                         if(per_certain_of_correct >= .5):
                             datadict["correct"].append(True)
                         else: 
@@ -78,16 +88,24 @@ def openai_df():
                     if animal_flag:
                         if ans["choices"][0]["text"].strip() == "FALSE":
                             per_correct += 1
-                        per_certain_of_correct = math.exp(ans["choices"][0]["logprobs"]["top_logprobs"][0][" FALSE"])
+                        try:
+                            per_certain_of_correct = math.exp(ans["choices"][0]["logprobs"]["top_logprobs"][0][" FALSE"])
+                        except: 
+                            per_certain_of_correct = 0
+
+
                         if(per_certain_of_correct >= .5):
                             datadict["correct"].append(True)
                         else: 
                             datadict["correct"].append(False)
                         datadict["certainty"].append(per_certain_of_correct)
-
-    df = pd.DataFrame(data = datadict)
-    outf = open("openai_df", "w")
-    df.to_csv(outf)
+                    datadict["model"].append("Curie")
+                    datadict["disambig_ratio"].append(num_disambig // (len(context) // 2))
+           
+    outf = open("SUPERDATAwCurie1", "w")
+    tmpdf = pd.DataFrame(data = datadict)
+    superdf = maindf.append(tmpdf, ignore_index= True)
+    superdf.to_csv(outf)
 
 
 openai_df()

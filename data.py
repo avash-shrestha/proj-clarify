@@ -186,13 +186,13 @@ def fix():
     df.to_csv(open("SUPERDATA_COMBINE2", "w"))
 #fix()
 def multiplot(): 
-    df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
+    df = pd.read_csv(open("SUPERDATAwCurie1", "r"), index_col=0)
     df = df[ df["shots"] < 6]
     df = df[ df["shots"] >= 1]
-    df = df[df["ambig"] == False]
-    #df = df[df["order"] == "F/T"]
+    df = df[df["ambig"] == True]
+    df = df[df["order"] != "Random"]
     df = df[df["disambig"] <= 0]
-    #df = df[df["model"] == "JumboJurassic"]
+    df = df[df["model"] == "Curie"]
     g = sns.catplot(x = "shots", y = "correct", data = df, kind = "bar", col = "order", hue = "subject")
     plt.ylim(0,1)
     g.set   
@@ -255,9 +255,9 @@ def analyze_generic():
         print(tmp_set)
 
 def addToMainDF(): 
-    inf = open("SUPERDATAv10", "r")
+    inf = open("SUPERDATA_COMBINE2", "r")
     maindf = pd.read_csv(inf, index_col=0)
-    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : []}
+    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : [], "model" : []}
 
     dir = ""
     for filename in os.listdir("responses_to_add"):
@@ -281,9 +281,9 @@ def addToMainDF():
                 normalizingProb = firstResponse[1] + secondResponse[1]
                 prompt = line['prompt']['text'].split()
                 # number of shots
-                numShots = 1 #int(f.name[f.name.find("shots") - 1]) 
+                numShots = int(f.name[f.name.find("shots") - 1]) 
                 
-                isDisambig = False #if "NONEdisambig" in f.name else True
+                isDisambig = False if "NONEdisambig" in f.name else True
                 index = 18 * numShots + 3 - 1
                 subject = ""
                 if prompt[index] in bs.human_ambig:
@@ -305,7 +305,7 @@ def addToMainDF():
                         is_correct = True
                 percent_certain = percent_certain / normalizingProb
                 ordern = f.name[f.name.find("order_") + len("order_")]
-                order = "T/F" if  line['prompt']['text'].find("TRUE") <  line['prompt']['text'].find("FALSE") else "F/T"
+                order = "Random" if ordern == 2 else ("T/F" if ordern == 1 else "F/T")
                 is_ambig = False
                 if (prompt[20] in bs.human_ambig and prompt[24].strip('.') in bs.nature_ambig) or (
                         prompt[20] in bs.animal_ambig and prompt[24].strip('.') in bs.urban_ambig):
@@ -317,11 +317,11 @@ def addToMainDF():
                 datadict["subject"].append(subject)
                 datadict["order"].append(order)
                 datadict["ambig"].append(is_ambig)
-                datadict["disambig"].append(0)# if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
-                datadict["disambig_ratio"].append(0)# if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
-            
+                datadict["disambig"].append(0 if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
+                datadict["disambig_ratio"].append(0 if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
+                datadict["model"].append("Curie")
                 
-    outf = open("SUPERDATAv11", "w")
+    outf = open("SUPERDATAwCurie1", "w")
     tmpdf = pd.DataFrame(data = datadict)
     superdf = maindf.append(tmpdf, ignore_index= True)
     superdf.to_csv(outf)
