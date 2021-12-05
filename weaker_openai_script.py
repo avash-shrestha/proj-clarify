@@ -17,7 +17,7 @@ import seaborn as sns
 import openai
 
 # OPENAI API
-api_key = "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"
+api_key = "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"
 NUM_QUERIES = 600
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -268,41 +268,41 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
 
 
-multiple_context_requests(2, 2, True, 0)  # 20
-multiple_context_requests(3, 2, True, 0)  # 21
-multiple_context_requests(4, 2, True, 0)  # 22
-multiple_context_requests(5, 2, True, 0)  # 23
+# multiple_context_requests(2, 2, True, 0)  # 20 DONE
+# multiple_context_requests(3, 2, True, 0)  # 21 DONE
+# multiple_context_requests(4, 2, True, 0)  # 22 DONE
+# multiple_context_requests(5, 2, True, 0)  # 23 DONE
 
 
-# multiple_context_requests(2, 2, False, 0)  # 26
-# multiple_context_requests(3, 2, False, 0)  # 27
-# multiple_context_requests(4, 2, False, 0)  # 28
-# multiple_context_requests(5, 2, False, 0)  # 29
+multiple_context_requests(2, 2, False, 0)  # 26
+multiple_context_requests(3, 2, False, 0)  # 27
+multiple_context_requests(4, 2, False, 0)  # 28
+multiple_context_requests(5, 2, False, 0)  # 29
 
-multiple_context_requests(2, 2, True, 1)  # 31
-multiple_context_requests(3, 2, True, 1)  # 32
-multiple_context_requests(4, 2, True, 1)  # 33
-multiple_context_requests(5, 2, True, 1)  # 34
+# multiple_context_requests(2, 2, True, 1)  # 31 DONE
+# multiple_context_requests(3, 2, True, 1)  # 32 DONE
+# multiple_context_requests(4, 2, True, 1)  # 33 DONE
+# multiple_context_requests(5, 2, True, 1)  # 34 DONE
 
-multiple_context_requests(3, 2, True, 2)  # 36
-multiple_context_requests(4, 2, True, 2)  # 37
-multiple_context_requests(5, 2, True, 2)  # 38
+# multiple_context_requests(3, 2, True, 2)  # 36 DONE
+# multiple_context_requests(4, 2, True, 2)  # 37 DONE
+# multiple_context_requests(5, 2, True, 2)  # 38 DONE
 
-multiple_context_requests(4, 2, True, 3)  # 40
-multiple_context_requests(5, 2, True, 3)  # 41
+# multiple_context_requests(4, 2, True, 3)  # 40 DONE
+# multiple_context_requests(5, 2, True, 3)  # 41 DONE
 
-multiple_context_requests(5, 2, True, 4)  # 43
+# multiple_context_requests(5, 2, True, 4)  # 43 DONE
 
-# multiple_context_requests(2, 2, False, 1)  # 45
-# multiple_context_requests(3, 2, False, 1)  # 46
-# multiple_context_requests(4, 2, False, 1)  # 47
-# multiple_context_requests(5, 2, False, 1)  # 48
+multiple_context_requests(2, 2, False, 1)  # 45
+multiple_context_requests(3, 2, False, 1)  # 46
+multiple_context_requests(4, 2, False, 1)  # 47
+multiple_context_requests(5, 2, False, 1)  # 48
 
-# multiple_context_requests(3, 2, False, 2)  # 50
-# multiple_context_requests(4, 2, False, 2)  # 51
-# multiple_context_requests(5, 2, False, 2)  # 52
+multiple_context_requests(3, 2, False, 2)  # 50
+multiple_context_requests(4, 2, False, 2)  # 51
+multiple_context_requests(5, 2, False, 2)  # 52
 
-# multiple_context_requests(4, 2, False, 3)  # 54
-# multiple_context_requests(5, 2, False, 3)  # 55
+multiple_context_requests(4, 2, False, 3)  # 54
+multiple_context_requests(5, 2, False, 3)  # 55
 
-# multiple_context_requests(5, 2, False, 4)  # 57
+multiple_context_requests(5, 2, False, 4)  # 57
