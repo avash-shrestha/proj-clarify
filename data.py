@@ -163,7 +163,7 @@ def tmp():
 
 #scatter()
 def countRows(): 
-    df = pd.read_csv(open("SUPERDATAv9", "r"), index_col=0)
+    df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
     orderings = ["F/T", "T/F", "Random"]
     ambigChoices = [True, False]
     shotChoices = [2,3,4,5]
@@ -179,19 +179,27 @@ def countRows():
 
                     if(len(tmpdf) > 0): 
                         print("order: " + o + ", ambig: " + str(a) + ", shots: "  + str(s) + ", disambig: " + str(n) +  ", num -- "  + str(len(tmpdf)))
-countRows()
+#countRows()
+def fix(): 
+    df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
+    df = df.drop(df[(df.order == "Random") & (df.shots == 1)].index)
+    df.to_csv(open("SUPERDATA_COMBINE2", "w"))
+#fix()
 def multiplot(): 
-    df = pd.read_csv(open("SUPERDATAv9", "r"), index_col=0)
-    df = df[df["shots"] < 6]
-    df = df[df["ambig"] == True]
-    df = df[df["order"] != "Random"]
-    #df = df[df["disambig"] <= 1]
-    g = sns.catplot(x = "shots", y = "certainty", data = df, kind = "bar", col = "order",  hue = "disambig")
-    plt.ylim(.4, .6)
-    plt.suptitle("Shots vs. Certainty, Ambiguous Prompts")
+    df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
+    df = df[ df["shots"] < 6]
+    df = df[ df["shots"] >= 1]
+    df = df[df["ambig"] == False]
+    #df = df[df["order"] == "F/T"]
+    df = df[df["disambig"] <= 0]
+    #df = df[df["model"] == "JumboJurassic"]
+    g = sns.catplot(x = "shots", y = "correct", data = df, kind = "bar", col = "order", hue = "subject")
+    plt.ylim(0,1)
+    g.set   
+    plt.suptitle("Shots vs. %Correct, Random Ordering, Ambiguous Prompts Only")
     plt.show()
 
-#multiplot()
+multiplot()
 # temp()
 def analyze_generic():
     for filename in os.listdir("responses"):
@@ -247,7 +255,7 @@ def analyze_generic():
         print(tmp_set)
 
 def addToMainDF(): 
-    inf = open("SUPERDATAv8", "r")
+    inf = open("SUPERDATAv10", "r")
     maindf = pd.read_csv(inf, index_col=0)
     datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : []}
 
@@ -257,18 +265,25 @@ def addToMainDF():
             data = f.readlines()
             tmp_set = set()
             for line in data:
-                line = ast.literal_eval(line)
-                firstResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["token"].strip('▁'),
-                                math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["logprob"]))
-                secondResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["token"].strip('▁'),
-                                math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["logprob"]))
+                try:
+                    line = ast.literal_eval(line)
+                except:
+                    continue
+
+                try: 
+                    firstResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["token"].strip('▁'),
+                                    math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["logprob"]))
+                    secondResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["token"].strip('▁'),
+                                    math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["logprob"]))
+                except: 
+                    continue
                 # print(firstResponse, secondResponse)
                 normalizingProb = firstResponse[1] + secondResponse[1]
                 prompt = line['prompt']['text'].split()
                 # number of shots
-                numShots = int(f.name[f.name.find("shots") - 1])
+                numShots = 1 #int(f.name[f.name.find("shots") - 1]) 
                 
-                isDisambig = False if "NONEdisambig" in f.name else True
+                isDisambig = False #if "NONEdisambig" in f.name else True
                 index = 18 * numShots + 3 - 1
                 subject = ""
                 if prompt[index] in bs.human_ambig:
@@ -290,19 +305,23 @@ def addToMainDF():
                         is_correct = True
                 percent_certain = percent_certain / normalizingProb
                 ordern = f.name[f.name.find("order_") + len("order_")]
-                order = "TF" if ordern == "0" else ("FT" if ordern == "1" else "Random")
+                order = "T/F" if  line['prompt']['text'].find("TRUE") <  line['prompt']['text'].find("FALSE") else "F/T"
+                is_ambig = False
+                if (prompt[20] in bs.human_ambig and prompt[24].strip('.') in bs.nature_ambig) or (
+                        prompt[20] in bs.animal_ambig and prompt[24].strip('.') in bs.urban_ambig):
+                    is_ambig = True
 
                 datadict["shots"].append(numShots)
                 datadict["correct"].append(is_correct)
                 datadict["certainty"].append(percent_certain)
                 datadict["subject"].append(subject)
                 datadict["order"].append(order)
-                datadict["ambig"].append(False if "NOT" in f.name else True)
-                datadict["disambig"].append(0 if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
-                datadict["disambig_ratio"].append(0 if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
+                datadict["ambig"].append(is_ambig)
+                datadict["disambig"].append(0)# if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
+                datadict["disambig_ratio"].append(0)# if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
             
                 
-    outf = open("SUPERDATAv9", "w")
+    outf = open("SUPERDATAv11", "w")
     tmpdf = pd.DataFrame(data = datadict)
     superdf = maindf.append(tmpdf, ignore_index= True)
     superdf.to_csv(outf)
@@ -312,11 +331,15 @@ def addToMainDF():
 #addToMainDF()
 
 def fixDF():
-    inf = open("SUPERDATAv7", "r")
-    maindf = pd.read_csv(inf, index_col=0)
-    maindf = maindf.assign(disambig_ratio = lambda x: round(x.disambig / x.shots, 2)) 
-    outf = open("SUPERDATAv7", "w")
-    maindf.to_csv(outf)
+    inf1 = open("SUPERDATA_FINAL", "r")
+    ai21df = pd.read_csv(inf1, index_col=0)
+    inf2 = open("openai_df", "r")
+    oaidf = pd.read_csv(inf2, index_col = 0)
+    ai21df = ai21df.assign(model = "JumboJurassic") 
+    oaidf = oaidf.assign(model = "OpenAI") 
+    outf = open("SUPERDATA_COMBINE", "w")
+    combdf = pd.concat([ai21df, oaidf])
+    combdf.to_csv(outf)
     
     outf.close()
 #fixDF()
