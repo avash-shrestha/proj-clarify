@@ -17,7 +17,7 @@ import seaborn as sns
 import openai
 
 # OPENAI API
-api_key = "NOT REAL API KEY"
+api_key = "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"
 NUM_QUERIES = 600
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -305,3 +305,15 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 # multiple_context_requests(5, 2, False, 3)  # 55 DONE
 
 # multiple_context_requests(5, 2, False, 4)  # 57 DONE
+
+#multiple_context_requests(4, 0, True, 0)
+#multiple_context_requests(5, 0, True, 0)
+
+#multiple_context_requests(4, 1, True, 0)
+#multiple_context_requests(5, 1, True, 0)
+
+#multiple_context_requests(4, 0, False, 0)
+#multiple_context_requests(5, 0, False, 0)
+
+#multiple_context_requests(4, 1, False, 0)
+#multiple_context_requests(5, 1, False, 0)
