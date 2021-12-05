@@ -14,7 +14,7 @@ import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
-import openai
+#import openai
 
 # OPENAI API
 api_key = "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"
