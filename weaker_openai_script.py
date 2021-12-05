@@ -274,10 +274,10 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 # multiple_context_requests(5, 2, True, 0)  # 23 DONE
 
 
-multiple_context_requests(2, 2, False, 0)  # 26
-multiple_context_requests(3, 2, False, 0)  # 27
-multiple_context_requests(4, 2, False, 0)  # 28
-multiple_context_requests(5, 2, False, 0)  # 29
+# multiple_context_requests(2, 2, False, 0)  # 26 DONE
+# multiple_context_requests(3, 2, False, 0)  # 27 DONE
+# multiple_context_requests(4, 2, False, 0)  # 28 DONE
+# multiple_context_requests(5, 2, False, 0)  # 29 DONE
 
 # multiple_context_requests(2, 2, True, 1)  # 31 DONE
 # multiple_context_requests(3, 2, True, 1)  # 32 DONE
@@ -293,16 +293,16 @@ multiple_context_requests(5, 2, False, 0)  # 29
 
 # multiple_context_requests(5, 2, True, 4)  # 43 DONE
 
-multiple_context_requests(2, 2, False, 1)  # 45
-multiple_context_requests(3, 2, False, 1)  # 46
-multiple_context_requests(4, 2, False, 1)  # 47
-multiple_context_requests(5, 2, False, 1)  # 48
+# multiple_context_requests(2, 2, False, 1)  # 45 DONE
+# multiple_context_requests(3, 2, False, 1)  # 46 DONE
+# multiple_context_requests(4, 2, False, 1)  # 47 DONE
+# multiple_context_requests(5, 2, False, 1)  # 48 DONE
 
-multiple_context_requests(3, 2, False, 2)  # 50
-multiple_context_requests(4, 2, False, 2)  # 51
-multiple_context_requests(5, 2, False, 2)  # 52
+# multiple_context_requests(3, 2, False, 2)  # 50 DONE
+# multiple_context_requests(4, 2, False, 2)  # 51 DONE
+# multiple_context_requests(5, 2, False, 2)  # 52 DONE
 
-multiple_context_requests(4, 2, False, 3)  # 54
-multiple_context_requests(5, 2, False, 3)  # 55
+# multiple_context_requests(4, 2, False, 3)  # 54 DONE
+# multiple_context_requests(5, 2, False, 3)  # 55 DONE
 
-multiple_context_requests(5, 2, False, 4)  # 57
+# multiple_context_requests(5, 2, False, 4)  # 57 DONE
