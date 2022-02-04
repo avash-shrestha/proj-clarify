@@ -25,13 +25,15 @@ g.map(sns.barplot, "is_human", "is_correct", alpha=.7)
 g.add_legend()
 plt.show()'''
 
-def increment_shots(): 
-    df = read_csv("SUPERDATAv4", index_col= 0)
+
+def increment_shots():
+    df = read_csv("SUPERDATAv4", index_col=0)
     df.loc[df["disambig"] == True, 'disambig'] = 1
     df.loc[df["disambig"] == False, 'disambig'] = 0
     df.to_csv(open("SUPERDATAv4", "w"))
 
-#increment_shots()
+
+# increment_shots()
 
 def split_dataframes():
     numCorrect_dict = {"value": [], 'label': []}
@@ -112,17 +114,18 @@ def show_values(axs, orient="v", space=.01):
     credits to Zach at statology.org for show_values
     https://www.statology.org/seaborn-barplot-show-values/
     """
+
     def _single(ax):
         if orient == "v":
             for p in ax.patches:
                 _x = p.get_x() + p.get_width() / 2
-                _y = p.get_y() + p.get_height() + .015 #(p.get_height()*0.1)
+                _y = p.get_y() + p.get_height() + .015  # (p.get_height()*0.1)
                 value = '{:.4f}'.format(p.get_height())
                 ax.text(_x, _y, value, ha="center", color="black")
         elif orient == "h":
             for p in ax.patches:
                 _x = p.get_x() + p.get_width() + float(space)
-                _y = p.get_y() + p.get_height() - (p.get_height()*0.5)
+                _y = p.get_y() + p.get_height() - (p.get_height() * 0.5)
                 value = '{:.4f}'.format(p.get_width())
                 ax.text(_x, _y, value, ha="left")
 
@@ -131,6 +134,7 @@ def show_values(axs, orient="v", space=.01):
             _single(ax)
     else:
         _single(axs)
+
 
 def scatter():
     certaintyDF = pd.read_csv(open("certaintyCorrectMainDF", "r"))
@@ -151,6 +155,7 @@ def scatter():
     show_values(g)
     plt.show()
 
+
 def tmp():
     data = sns.load_dataset("tips")
     p = sns.barplot(x="day", y="tip", data=data, ci=None).set_ybound
@@ -159,47 +164,71 @@ def tmp():
     print(type(p))
     return
     show_values(p)
+
+
 # tmp()
 
-#scatter()
-def countRows(): 
+# scatter()
+def countRows():
     df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
     orderings = ["F/T", "T/F", "Random"]
     ambigChoices = [True, False]
-    shotChoices = [2,3,4,5]
-    nd = [0,1,2,3,4]
-    for o in orderings: 
-        for a in ambigChoices: 
-            for s in shotChoices: 
-                for n in nd: 
+    shotChoices = [2, 3, 4, 5]
+    nd = [0, 1, 2, 3, 4]
+    for o in orderings:
+        for a in ambigChoices:
+            for s in shotChoices:
+                for n in nd:
                     tmpdf = df[df["order"] == o]
                     tmpdf = tmpdf[tmpdf["ambig"] == a]
                     tmpdf = tmpdf[tmpdf["shots"] == s]
                     tmpdf = tmpdf[tmpdf["disambig"] == n]
 
-                    if(len(tmpdf) > 0): 
-                        print("order: " + o + ", ambig: " + str(a) + ", shots: "  + str(s) + ", disambig: " + str(n) +  ", num -- "  + str(len(tmpdf)))
-#countRows()
-def fix(): 
+                    if (len(tmpdf) > 0):
+                        print("order: " + o + ", ambig: " + str(a) + ", shots: " + str(s) + ", disambig: " + str(
+                            n) + ", num -- " + str(len(tmpdf)))
+
+
+# countRows()
+def fix():
     df = pd.read_csv(open("SUPERDATA_COMBINE", "r"), index_col=0)
     df = df.drop(df[(df.order == "Random") & (df.shots == 1)].index)
     df.to_csv(open("SUPERDATA_COMBINE2", "w"))
-#fix()
-def multiplot(): 
-    df = pd.read_csv(open("SUPERDATAwCurie1", "r"), index_col=0)
-    df = df[ df["shots"] < 6]
-    df = df[ df["shots"] >= 1]
-    df = df[df["ambig"] == True]
+
+
+# fix()
+def multiplot1():
+    df = pd.read_csv(open("SUPERDATAwCurie5", "r"), index_col=0)
+    df = df[df["shots"] < 6]
+    df = df[df["shots"] >= 1]
+    df = df[df["ambig"] != True]
     df = df[df["order"] != "Random"]
     df = df[df["disambig"] <= 0]
-    df = df[df["model"] == "Curie"]
-    g = sns.catplot(x = "shots", y = "correct", data = df, kind = "bar", col = "order", hue = "subject")
-    plt.ylim(0,1)
-    g.set   
-    plt.suptitle("Shots vs. %Correct, Random Ordering, Ambiguous Prompts Only")
+    df = df[df["model"] != "Curie"]
+    g = sns.catplot(x="shots", y="correct", data=df, kind="bar", row="order", col="model", hue="subject")
+    plt.ylim(0, 1)
+    g.set
+    plt.suptitle("Shots vs. %Correct, Unambiguous Prompts Only")
     plt.show()
 
-multiplot()
+def multiplot2():
+    df = pd.read_csv(open("SUPERDATAwCurie5", "r"), index_col=0)
+    df = df[df["shots"] < 6]
+    df = df[df["shots"] >= 1]
+    df = df[df["ambig"] != True]
+    df = df[df["order"] != "Random"]
+    df = df[df["disambig"] <= 0]
+    df = df[df["model"] != "Curie"]
+    g = sns.catplot(x="shots", y="certainty", data=df, kind="bar", row="order", col="model", hue="subject")
+    plt.ylim(0, 1)
+    g.set
+    plt.suptitle("Shots vs. %Certainty, Unambiguous Prompts Only")
+    plt.show()
+
+multiplot1()
+multiplot2()
+
+
 # temp()
 def analyze_generic():
     for filename in os.listdir("responses"):
@@ -254,14 +283,16 @@ def analyze_generic():
         f.close()
         print(tmp_set)
 
-def addToMainDF(): 
+
+def addToMainDF():
     inf = open("SUPERDATA_COMBINE2", "r")
     maindf = pd.read_csv(inf, index_col=0)
-    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig" : [], "disambig" : [], "disambig_ratio" : [], "model" : []}
+    datadict = {"shots": [], "correct": [], "certainty": [], "subject": [], "order": [], "ambig": [], "disambig": [],
+                "disambig_ratio": [], "model": []}
 
     dir = ""
     for filename in os.listdir("responses_to_add"):
-        with open("responses_to_add\\"  + filename, "r", encoding="utf8") as f:
+        with open("responses_to_add\\" + filename, "r", encoding="utf8") as f:
             data = f.readlines()
             tmp_set = set()
             for line in data:
@@ -270,19 +301,19 @@ def addToMainDF():
                 except:
                     continue
 
-                try: 
+                try:
                     firstResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["token"].strip('▁'),
-                                    math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["logprob"]))
+                                     math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][0]["logprob"]))
                     secondResponse = (line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["token"].strip('▁'),
-                                    math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["logprob"]))
-                except: 
+                                      math.exp(line["completions"][0]["data"]["tokens"][0]["topTokens"][1]["logprob"]))
+                except:
                     continue
                 # print(firstResponse, secondResponse)
                 normalizingProb = firstResponse[1] + secondResponse[1]
                 prompt = line['prompt']['text'].split()
                 # number of shots
-                numShots = int(f.name[f.name.find("shots") - 1]) 
-                
+                numShots = int(f.name[f.name.find("shots") - 1])
+
                 isDisambig = False if "NONEdisambig" in f.name else True
                 index = 18 * numShots + 3 - 1
                 subject = ""
@@ -291,7 +322,7 @@ def addToMainDF():
                     if firstResponse[0] == "TRUE":
                         percent_certain = firstResponse[1]
                         is_correct = True
-                        
+
                     else:
                         percent_certain = secondResponse[1]
                         is_correct = False
@@ -317,32 +348,37 @@ def addToMainDF():
                 datadict["subject"].append(subject)
                 datadict["order"].append(order)
                 datadict["ambig"].append(is_ambig)
-                datadict["disambig"].append(0 if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
-                datadict["disambig_ratio"].append(0 if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
+                datadict["disambig"].append(
+                    0 if "NONE" in f.name else f.name[f.name.find("_disambig") + len("_disambig")])
+                datadict["disambig_ratio"].append(
+                    0 if "NONE" in f.name else int(f.name[f.name.find("_disambig") + len("_disambig")]) / numShots)
                 datadict["model"].append("Curie")
-                
+
     outf = open("SUPERDATAwCurie1", "w")
-    tmpdf = pd.DataFrame(data = datadict)
-    superdf = maindf.append(tmpdf, ignore_index= True)
+    tmpdf = pd.DataFrame(data=datadict)
+    superdf = maindf.append(tmpdf, ignore_index=True)
     superdf.to_csv(outf)
-    
+
     outf.close()
-    
-#addToMainDF()
+
+
+# addToMainDF()
 
 def fixDF():
     inf1 = open("SUPERDATA_FINAL", "r")
     ai21df = pd.read_csv(inf1, index_col=0)
     inf2 = open("openai_df", "r")
-    oaidf = pd.read_csv(inf2, index_col = 0)
-    ai21df = ai21df.assign(model = "JumboJurassic") 
-    oaidf = oaidf.assign(model = "OpenAI") 
+    oaidf = pd.read_csv(inf2, index_col=0)
+    ai21df = ai21df.assign(model="JumboJurassic")
+    oaidf = oaidf.assign(model="OpenAI")
     outf = open("SUPERDATA_COMBINE", "w")
     combdf = pd.concat([ai21df, oaidf])
     combdf.to_csv(outf)
-    
+
     outf.close()
-#fixDF()
+
+
+# fixDF()
 def analyze():
     with open(FILENAME, "r", encoding="utf8") as f:
         data = f.readlines()
@@ -385,6 +421,5 @@ def analyze():
         print("PROBS: ", avg_human_corr_prob / human_tot, avg_animal_corr_prob / animal_tot,
               avg_prob / (human_tot + animal_tot))
         print(tmp_set)
-
 
 # #analyze_generic()

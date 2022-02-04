@@ -307,14 +307,14 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
 # multiple_context_requests(5, 2, False, 4)  # 57 DONE
 
-multiple_context_requests(4, 0, True, 0)
-multiple_context_requests(5, 0, True, 0)
+# multiple_context_requests(4, 0, True, 0) # DONE
+# multiple_context_requests(5, 0, True, 0) # DONE
 
-multiple_context_requests(4, 1, True, 0)
-multiple_context_requests(5, 1, True, 0)
+# multiple_context_requests(4, 1, True, 0) # DONE
+# multiple_context_requests(5, 1, True, 0) # DONE
 
-multiple_context_requests(4, 0, False, 0)
-multiple_context_requests(5, 0, False, 0)
+# multiple_context_requests(4, 0, False, 0) # DONE
+# multiple_context_requests(5, 0, False, 0) # DONE
 
-multiple_context_requests(4, 1, False, 0)
-multiple_context_requests(5, 1, False, 0)
+# multiple_context_requests(4, 1, False, 0) # DONE
+# multiple_context_requests(5, 1, False, 0) # DONE

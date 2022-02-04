@@ -248,7 +248,24 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
     data_file.close()
 
-
+def active_learning(shots, order, ambig=True, num_disambig=0):
+    encoding = 'utf-8'
+    human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
+    animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
+    # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
+    pick_set = set()
+    if ambig:
+        pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
+                        generate_x_y_requests(animal_ambig, urban_ambig))
+    else:
+        pick_set.update(generate_x_y_requests(human_ambig, urban_ambig),
+                        generate_x_y_requests(animal_ambig, nature_ambig))
+    actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
+    data_file = open("ActiveLearning_OPENAI_" + str(shots) + "shots_" +
+                     "order_" + str(order) + "_" +
+                     ("ambig_" if ambig else "NOTambig_") +
+                     ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
+                     "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
 # multiple_context_request(#shots, random, ambig=True, #disambig)
 # multiple_context_requests(2, 2, True, 0)  # 20 DONE
 # multiple_context_requests(2, 2, True, 1)  # 31 DONE
@@ -306,14 +323,14 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
 # multiple_context_requests(5, 2, False, 4)  # 57 DONE
 
-#multiple_context_requests(4, 0, True, 0)
-#multiple_context_requests(5, 0, True, 0)
+# multiple_context_requests(4, 0, True, 0) # DONE
+# multiple_context_requests(5, 0, True, 0) # DONE
 
-#multiple_context_requests(4, 1, True, 0)
-#multiple_context_requests(5, 1, True, 0)
+# multiple_context_requests(4, 1, True, 0) # DONE
+# multiple_context_requests(5, 1, True, 0) # DONE
 
-#multiple_context_requests(4, 0, False, 0)
-#multiple_context_requests(5, 0, False, 0)
+# multiple_context_requests(4, 0, False, 0) # DONE
+# multiple_context_requests(5, 0, False, 0) # DONE
 
-#multiple_context_requests(4, 1, False, 0)
-#multiple_context_requests(5, 1, False, 0)
+# multiple_context_requests(4, 1, False, 0) # DONE
+# multiple_context_requests(5, 1, False, 0) # DONE
