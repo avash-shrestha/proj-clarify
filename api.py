@@ -1,2 +1,2 @@
-openai = "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"
-ai21 = "VUDTP8vw2G83FqYj6VUmBcsgeysUpIZc"
+openai = "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"
+ai21 = "xQGJKed3agvtz5SlxouqVLGK31OC6J6k"
