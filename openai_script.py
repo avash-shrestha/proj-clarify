@@ -16,11 +16,11 @@ import requests
 import seaborn as sns
 import os
 import openai
+import api
 
-openai.api_key = "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"
+openai.api_key = api.openai
 # OPENAI API
-# api_key = "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"
-NUM_QUERIES = 600
+NUM_QUERIES = 200
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 

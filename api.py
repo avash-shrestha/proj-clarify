@@ -1,0 +1,2 @@
+openai = "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"
+ai21 = "VUDTP8vw2G83FqYj6VUmBcsgeysUpIZc"

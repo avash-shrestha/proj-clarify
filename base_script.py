@@ -16,12 +16,10 @@ import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
+import api
 
-# Trevor's api
-# api_key = "KEArioXJKgpnEkhDLQbLBiGdfe0a8Knq"
-# Avash's api
-api_key = "nGAafrSAtOgan0kUVLepbhelY6HMeMJr"
-NUM_QUERIES = 300
+api_key = api.ai21
+NUM_QUERIES = 200
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
 
