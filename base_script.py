@@ -16,9 +16,9 @@ import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
-import api
+import os
 
-api_key = api.ai21
+api_key = os.environ["AI21_API_KEY"]
 NUM_QUERIES = 200
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])

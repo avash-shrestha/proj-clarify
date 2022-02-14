@@ -16,10 +16,8 @@ import requests
 import seaborn as sns
 import os
 import openai
-import api
 
-openai.api_key = api.openai
-# OPENAI API
+openai.api_key = os.environ["OPENAI_API_KEY"]
 NUM_QUERIES = 200
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -147,6 +145,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
             prompt = prompt.strip()
 
             # expect either TRUE or FALSE as the answer
+            # *** DOESNT WORK ANYMORE, DIFFERENT API CALL NOW. WORKED BEFORE. ***
             response = requests.get(
                 "https://api.openai.com/v1/engines/davinci/completions/browser_stream",
                 headers={"Authorization": "Bearer " + api_key},
@@ -217,6 +216,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: "
             prompt = prompt.strip()
             # expect either TRUE or FALSE as the answer
+            # *** DOESNT WORK ANYMORE, DIFFERENT API CALL NOW. WORKED BEFORE. ***
             response = requests.get(
                 "https://api.openai.com/v1/engines/davinci/completions/browser_stream",
                 headers={"Authorization": "Bearer " + api_key},
