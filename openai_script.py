@@ -14,10 +14,12 @@ import numpy as np
 import pandas as pd
 import requests
 import seaborn as sns
-#import openai
+import os
+import openai
 
+openai.api_key = "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"
 # OPENAI API
-api_key = "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"
+# api_key = "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"
 NUM_QUERIES = 600
 # thing is either human or animal, place is either urban or nature
 Request = namedtuple("Request", ["thing", "place"])
@@ -237,7 +239,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
                 prompt_dict["context"].append(
                     (prompt_lst[2 + i * 18], prompt_lst[6 + i * 18].strip('.'), prompt_lst[8 + i * 18]))
                 prompt_dict["context"].append(
-                     (prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.'), prompt_lst[17 + i * 18]))
+                    (prompt_lst[11 + i * 18], prompt_lst[15 + i * 18].strip('.'), prompt_lst[17 + i * 18]))
             prompt_dict["query"].append((prompt_lst[2 + shots * 18], prompt_lst[6 + shots * 18].strip('.')))
             data_file.write(str(prompt_dict))
             data_file.write("\n")
@@ -248,24 +250,104 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
     data_file.close()
 
+
 def active_learning(shots, order, ambig=True, num_disambig=0):
-    encoding = 'utf-8'
+    """
+    In this case, shots refers to how many active learning cycles we do until we stop, starting at 1 context pair
+    of human/animal correct examples. I don't think order matters. I don't think ambig matters. I don't think
+    num_disambig matters.
+    """
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
-    # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
-    pick_set = set()
-    if ambig:
-        pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
-                        generate_x_y_requests(animal_ambig, urban_ambig))
-    else:
-        pick_set.update(generate_x_y_requests(human_ambig, urban_ambig),
-                        generate_x_y_requests(animal_ambig, nature_ambig))
+    # start with 1 context pair
+    context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+    ambig_pick_set, disambig_pick_set = set(), set()
+    # ambig is the mismatches
+    ambig_pick_set.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    # disambig is the correct matches
+    disambig_pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
     data_file = open("ActiveLearning_OPENAI_" + str(shots) + "shots_" +
                      "order_" + str(order) + "_" +
                      ("ambig_" if ambig else "NOTambig_") +
                      ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
                      "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    # begin iterations
+    curr_shot = 1
+    while curr_shot <= shots:
+        # store probabilities to find smallest abs difference later
+        examples_probs = {}
+        # format context and examples to presentable tokens
+        # create 4 ambig examples
+        examples = []
+        for i in range(4):
+            examples.append(ambig_pick_set.pop())
+        # create 1 dis-ambig examples
+        examples.append(disambig_pick_set.pop())
+        context_prompt = ""
+        # make context prompt randomly
+        random_context = random.sample(context, len(context))
+        for ctxt in random_context:
+            context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
+                              ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
+        # go through each example
+        for example in examples:
+            prompt = context_prompt
+            prompt += "Q: " + convert_to_sent(example).strip() + "\r\n" + "A: "
+            prompt = prompt.strip()
+            # now lets say response works
+            # expect either TRUE or FALSE as the answer
+            response = openai.Completion.create(
+                engine="davinci",
+                prompt=prompt,
+                max_tokens=1,
+                temperature=0.0,
+                n=1,
+                logprobs=2,
+                echo=True,
+            )
+            # CHECK THIS BEFORE DOING BIG RUNS
+            cleaned_str = str(response["choices"]).replace("\n", "").replace("      ", " ").replace("    ", " ") \
+                .replace("   ", " ").replace("  ", " ").replace("{ ", "{").replace(" }", "}").replace("[ ", "[") \
+                .replace(" ]", "]").partition(": ")[2].removesuffix("]")
+            data_file.write(cleaned_str)
+            data_file.write("\n")
+            cleaned_dct = json.loads(cleaned_str)
+            # collect the probabilities of the returned token being " FALSE" and " TRUE"
+            raw_F, raw_T = math.exp(cleaned_dct["logprobs"]["top_logprobs"][-1][" FALSE"]), math.exp(cleaned_dct["logprobs"]["top_logprobs"][-1][" TRUE"])
+            # normalize them
+            norm_F, norm_T = raw_F / (raw_F + raw_T), raw_T / (raw_F + raw_T)
+            # absolute difference of normalized probabilities
+            examples_probs[example] = abs(norm_T - norm_F)
+        # find true smallest example (smallest difference in probabilities)
+        smallest_example = examples[0]
+        smallest_prob = examples_probs[smallest_example]
+        for example in examples_probs:
+            if smallest_prob > examples_probs[example]:
+                smallest_example = example
+                smallest_prob = examples_probs[smallest_example]
+        # add to context, "Active Learning"
+        context.append(smallest_example)
+            # .504 .486
+            # (.504 - .486)/(.504 + .486)
+            # normalized and then absolute difference (Margin sampling)
+            # .504 - .486
+            # we want absolute difference that is smallest (most ambiguous response from model)
+            # shuffle into context, repeat
+            # for each of those 5 examples, we are storing the results for each
+            # accuracy of the performance of the model
+            # shuffle for each new example
+            # percent difference, not prob between first two responses
+            # FIX SKELETON BELOW
+            # does the model pick the dis-ambig example more than random chance?
+            # does the accuracy on both ambig and disambig examples stay high?
+            # does the performance on disambig examples increase?
+            # as you acquire more examples, do you do better on ambiguous examples using active learning or random picking
+            # random only needs 1 call, at the end
+        curr_shot += 1
+
+
+# active_learning(1, 1)
 # multiple_context_request(#shots, random, ambig=True, #disambig)
 # multiple_context_requests(2, 2, True, 0)  # 20 DONE
 # multiple_context_requests(2, 2, True, 1)  # 31 DONE
