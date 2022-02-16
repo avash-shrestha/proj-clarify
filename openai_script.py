@@ -272,9 +272,6 @@ def random_learning(shots, order=1, ambig=True, num_disambig=0):
     # begin iterations
     curr_shot = 1
     while curr_shot <= shots:
-        # store probabilities to find smallest abs difference later
-        examples_probs = {}
-        # format context and examples to presentable tokens
         # create 4 ambig examples
         examples = []
         for i in range(4):
@@ -284,6 +281,7 @@ def random_learning(shots, order=1, ambig=True, num_disambig=0):
         context_prompt = ""
         # make context prompt randomly
         random_context = random.sample(context, len(context))
+        # format context and examples to presentable tokens
         for ctxt in random_context:
             context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
                               ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
@@ -344,7 +342,6 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
     while curr_shot <= shots:
         # store probabilities to find smallest abs difference later
         examples_probs = {}
-        # format context and examples to presentable tokens
         # create 4 ambig examples
         examples = []
         for i in range(4):
@@ -354,6 +351,7 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
         context_prompt = ""
         # make context prompt randomly
         random_context = random.sample(context, len(context))
+        # format context and examples to presentable tokens
         for ctxt in random_context:
             context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
                               ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
@@ -396,6 +394,7 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
                 smallest_prob = examples_probs[smallest_example]
         # add to context, "Active Learning"
         context.append(smallest_example)
+        # go next iteration
         curr_shot += 1
 
 # *** notes ***
