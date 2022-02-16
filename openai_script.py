@@ -250,6 +250,72 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
     data_file.close()
 
+def random_learning(shots, order=1, ambig=True, num_disambig=0):
+    human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
+    animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
+    # start with 1 context pair
+    context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+    ambig_pick_set, disambig_pick_set = set(), set()
+    # ambig is the mismatches
+    ambig_pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
+                          generate_x_y_requests(animal_ambig, urban_ambig))
+    # disambig is the correct matches
+    disambig_pick_set.update(generate_x_y_requests(human_ambig, urban_ambig),
+                             generate_x_y_requests(animal_ambig, nature_ambig))
+    actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
+    # TODO: fix name of data_file to keep only important info
+    data_file = open("RANDOMLearning_OPENAI_" + str(shots) + "shots_" +
+                     "order_" + str(order) + "_" +
+                     ("ambig_" if ambig else "NOTambig_") +
+                     ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
+                     "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    # begin iterations
+    curr_shot = 1
+    while curr_shot <= shots:
+        # store probabilities to find smallest abs difference later
+        examples_probs = {}
+        # format context and examples to presentable tokens
+        # create 4 ambig examples
+        examples = []
+        for i in range(4):
+            examples.append(ambig_pick_set.pop())
+        # create 1 dis-ambig examples
+        examples.append(disambig_pick_set.pop())
+        context_prompt = ""
+        # make context prompt randomly
+        random_context = random.sample(context, len(context))
+        for ctxt in random_context:
+            context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
+                              ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
+        # pick a random example
+        random_example = random.choice(examples)
+        # build prompt using random_example
+        prompt = context_prompt
+        prompt += "Q: " + convert_to_sent(random_example).strip() + "\r\n" + "A: "
+        prompt = prompt.strip()
+        # call API
+        response = openai.Completion.create(
+            engine="davinci",
+            prompt=prompt,
+            max_tokens=1,
+            temperature=0.0,
+            n=1,
+            logprobs=2,
+            echo=True,
+        )
+        # TODO: add info about iteration/other essential info to data_file
+        # TODO: put a marker for if the random example is from ambig or disambig set
+        # CHECK THIS BEFORE DOING BIG RUNS
+        cleaned_str = str(response["choices"]).replace("\n", "").replace("      ", " ").replace("    ", " ") \
+            .replace("   ", " ").replace("  ", " ").replace("{ ", "{").replace(" }", "}").replace("[ ", "[") \
+            .replace(" ]", "]").partition(": ")[2].removesuffix("]")
+        data_file.write(cleaned_str)
+        data_file.write("\n")
+        # add the random example to context
+        context.append(random_example)
+        # go next iteration
+        curr_shot += 1
+
 
 def active_learning(shots, order, ambig=True, num_disambig=0):
     """
@@ -267,6 +333,7 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
     # disambig is the correct matches
     disambig_pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
+    # TODO: fix name of data_file to keep only important info
     data_file = open("ActiveLearning_OPENAI_" + str(shots) + "shots_" +
                      "order_" + str(order) + "_" +
                      ("ambig_" if ambig else "NOTambig_") +
@@ -306,6 +373,7 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
                 logprobs=2,
                 echo=True,
             )
+            # TODO: add info about iteration/other essential info to data_file
             # CHECK THIS BEFORE DOING BIG RUNS
             cleaned_str = str(response["choices"]).replace("\n", "").replace("      ", " ").replace("    ", " ") \
                 .replace("   ", " ").replace("  ", " ").replace("{ ", "{").replace(" }", "}").replace("[ ", "[") \
@@ -328,6 +396,9 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
                 smallest_prob = examples_probs[smallest_example]
         # add to context, "Active Learning"
         context.append(smallest_example)
+        curr_shot += 1
+
+# *** notes ***
             # .504 .486
             # (.504 - .486)/(.504 + .486)
             # normalized and then absolute difference (Margin sampling)
@@ -344,9 +415,7 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
             # does the performance on disambig examples increase?
             # as you acquire more examples, do you do better on ambiguous examples using active learning or random picking
             # random only needs 1 call, at the end
-        curr_shot += 1
-
-
+# *** notes ***
 # active_learning(1, 1)
 # multiple_context_request(#shots, random, ambig=True, #disambig)
 # multiple_context_requests(2, 2, True, 0)  # 20 DONE
