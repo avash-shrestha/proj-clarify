@@ -250,11 +250,15 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
     data_file.close()
 
-def random_learning(shots, order=1, ambig=True, num_disambig=0):
+def random_learning(shots):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # start with 1 context pair
     context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+    # to find where smallest_example fits later
+    const_ambig, const_disambig = set(), set()
+    const_ambig.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    const_disambig.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     ambig_pick_set, disambig_pick_set = set(), set()
     # ambig is the mismatches
     ambig_pick_set.update(generate_x_y_requests(human_ambig, nature_ambig),
@@ -264,14 +268,14 @@ def random_learning(shots, order=1, ambig=True, num_disambig=0):
                              generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
     # TODO: fix name of data_file to keep only important info
-    data_file = open("RANDOMLearning_OPENAI_" + str(shots) + "shots_" +
-                     "order_" + str(order) + "_" +
-                     ("ambig_" if ambig else "NOTambig_") +
-                     ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
-                     "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    data_file = open("RANDOMLearning_OPENAI_" + str(shots) + "shots_" + "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     # begin iterations
     curr_shot = 1
     while curr_shot <= shots:
+        # store THING/PLACE pairs and raw probs to put into datafile later for easier data collection
+        info_dict = {}
+        # store everything for easier data collection
+        complete_dict = {}
         # create 4 ambig examples
         examples = []
         for i in range(4):
@@ -281,8 +285,11 @@ def random_learning(shots, order=1, ambig=True, num_disambig=0):
         context_prompt = ""
         # make context prompt randomly
         random_context = random.sample(context, len(context))
+        # add info about context
+        complete_dict["context_info"] = []
         # format context and examples to presentable tokens
         for ctxt in random_context:
+            complete_dict["context_info"].append(tuple(ctxt))
             context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
                               ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
         # pick a random example
@@ -309,13 +316,26 @@ def random_learning(shots, order=1, ambig=True, num_disambig=0):
             .replace(" ]", "]").partition(": ")[2].removesuffix("]")
         data_file.write(cleaned_str)
         data_file.write("\n")
+        cleaned_dct = json.loads(cleaned_str)
+        # collect the probabilities of the returned token being " FALSE" and " TRUE"
+        raw_F, raw_T = math.exp(cleaned_dct["logprobs"]["top_logprobs"][-1][" FALSE"]), math.exp(cleaned_dct["logprobs"]["top_logprobs"][-1][" TRUE"])
+        info_dict[(tuple(random_example))] = [raw_F, raw_T]
+        complete_dict["query_info"] = info_dict
+        if random_example in const_ambig:
+            # if random_example is an ambig pair
+            complete_dict["picked_example"] = (tuple(random_example), False)
+        else:
+            # if random_example is a disambig pair
+            complete_dict["picked_example"] = (tuple(random_example), True)
+        data_file.write(str(complete_dict))
+        data_file.write("\n")
         # add the random example to context
         context.append(random_example)
         # go next iteration
         curr_shot += 1
+# random_learning(2)
 
-
-def active_learning(shots, order, ambig=True, num_disambig=0):
+def active_learning(shots):
     """
     In this case, shots refers to how many active learning cycles we do until we stop, starting at 1 context pair
     of human/animal correct examples. I don't think order matters. I don't think ambig matters. I don't think
@@ -325,6 +345,11 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # start with 1 context pair
     context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+    # to find where smallest_example fits later
+    const_ambig, const_disambig = set(), set()
+    const_ambig.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    const_disambig.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
+    # these two sets are the ones being popped from
     ambig_pick_set, disambig_pick_set = set(), set()
     # ambig is the mismatches
     ambig_pick_set.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
@@ -332,17 +357,24 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
     disambig_pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
     # TODO: fix name of data_file to keep only important info
-    data_file = open("ActiveLearning_OPENAI_" + str(shots) + "shots_" +
-                     "order_" + str(order) + "_" +
-                     ("ambig_" if ambig else "NOTambig_") +
-                     ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
-                     "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
+    data_file = open("ActiveLearning_OPENAI_" + str(shots) + "shots_" + "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
     # begin iterations
     curr_shot = 1
     while curr_shot <= shots:
         # store probabilities to find smallest abs difference later
         examples_probs = {}
+        # store THING/PLACE pairs and raw probs to put into datafile later for easier data collection
+        info_dict = {}
+        # store everything for easier data collection
+        complete_dict = {}
+        # NOTES **********************************************************************************************
+        # create 4 matched and 1 mismatched
+        # ambig --> mismatched
+        # disambig --> matched
         # create 4 ambig examples
+        # MISMATCHED --> True
+        # Matched --> False
+        # we want it to pick the 1 mismatched example and not the 4 matched examples
         examples = []
         for i in range(4):
             examples.append(ambig_pick_set.pop())
@@ -351,8 +383,11 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
         context_prompt = ""
         # make context prompt randomly
         random_context = random.sample(context, len(context))
+        # add info about context
+        complete_dict["context_info"] = []
         # format context and examples to presentable tokens
         for ctxt in random_context:
+            complete_dict["context_info"].append(tuple(ctxt))
             context_prompt += "Q: " + convert_to_sent(ctxt).strip() + "\r\n" + "A: " + \
                               ("TRUE" if (ctxt.thing in human_context or ctxt.thing in human_ambig) else "FALSE") + "\r\n"
         # go through each example
@@ -385,6 +420,9 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
             norm_F, norm_T = raw_F / (raw_F + raw_T), raw_T / (raw_F + raw_T)
             # absolute difference of normalized probabilities
             examples_probs[example] = abs(norm_T - norm_F)
+            # add pairs and probs to info_dict for later: [raw_F, raw_T]
+            info_dict[tuple(example)] = [raw_F, raw_T]
+        complete_dict["query_info"] = info_dict
         # find true smallest example (smallest difference in probabilities)
         smallest_example = examples[0]
         smallest_prob = examples_probs[smallest_example]
@@ -392,28 +430,38 @@ def active_learning(shots, order, ambig=True, num_disambig=0):
             if smallest_prob > examples_probs[example]:
                 smallest_example = example
                 smallest_prob = examples_probs[smallest_example]
+        if smallest_example in const_ambig:
+            # if smallest_example is an ambig pair
+            complete_dict["picked_example"] = (tuple(smallest_example), False)
+        else:
+            # if smallest_example is a disambig pair
+            complete_dict["picked_example"] = (tuple(smallest_example), True)
+        # add complete_dict to data_file
+        data_file.write(str(complete_dict))
+        data_file.write("\n")
         # add to context, "Active Learning"
         context.append(smallest_example)
         # go next iteration
         curr_shot += 1
+# active_learning(2)
 
 # *** notes ***
-            # .504 .486
-            # (.504 - .486)/(.504 + .486)
-            # normalized and then absolute difference (Margin sampling)
-            # .504 - .486
-            # we want absolute difference that is smallest (most ambiguous response from model)
-            # shuffle into context, repeat
-            # for each of those 5 examples, we are storing the results for each
-            # accuracy of the performance of the model
-            # shuffle for each new example
-            # percent difference, not prob between first two responses
-            # FIX SKELETON BELOW
-            # does the model pick the dis-ambig example more than random chance?
-            # does the accuracy on both ambig and disambig examples stay high?
-            # does the performance on disambig examples increase?
-            # as you acquire more examples, do you do better on ambiguous examples using active learning or random picking
-            # random only needs 1 call, at the end
+    # .504 .486
+    # (.504 - .486)/(.504 + .486)
+    # normalized and then absolute difference (Margin sampling)
+    # .504 - .486
+    # we want absolute difference that is smallest (most ambiguous response from model)
+    # shuffle into context, repeat
+    # for each of those 5 examples, we are storing the results for each
+    # accuracy of the performance of the model
+    # shuffle for each new example
+    # percent difference, not prob between first two responses
+    # FIX SKELETON BELOW
+    # does the model pick the dis-ambig example more than random chance?
+    # does the accuracy on both ambig and disambig examples stay high?
+    # does the performance on disambig examples increase?
+    # as you acquire more examples, do you do better on ambiguous examples using active learning or random picking
+    # random only needs 1 call, at the end
 # *** notes ***
 # active_learning(1, 1)
 # multiple_context_request(#shots, random, ambig=True, #disambig)
