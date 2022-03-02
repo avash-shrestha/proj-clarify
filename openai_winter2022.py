@@ -66,10 +66,10 @@ def random_learning(shots):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # for the rest of the query
-    const_mismatch, const_match = set(), set()
-    const_mismatch.update(generate_x_y_requests(human_query, nature_query),
+    CONST_MISMATCH, CONST_MATCH = set(), set()
+    CONST_MISMATCH.update(generate_x_y_requests(human_query, nature_query),
                           generate_x_y_requests(animal_query, urban_query))
-    const_match.update(generate_x_y_requests(human_query, urban_query),
+    CONST_MATCH.update(generate_x_y_requests(human_query, urban_query),
                        generate_x_y_requests(animal_query, nature_query))
     num_run = 20
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
@@ -79,9 +79,13 @@ def random_learning(shots):
     current_run = 0
     while current_run < num_run:
         # start with 1 context pair
-        context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+        # 50/50 chance of True/False or False/True initial context
+        if random.choice([0, 1]) == 0:
+            context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+        else:
+            context = [random.choice(list(animal_nature_ctxt)), random.choice(list(human_urban_ctxt))]
         # reset the pick sets
-        match_pick_set, mismatch_pick_set = set(const_match), set(const_mismatch)
+        match_pick_set, mismatch_pick_set = set(CONST_MATCH), set(CONST_MISMATCH)
         curr_shot = 1
         while curr_shot <= shots:
             # create 4 match examples
@@ -98,7 +102,7 @@ def random_learning(shots):
         for i, ctxt in enumerate(context):
             complete_dict["context_info"].append(tuple(ctxt))
             # if ctxt is a match pair
-            if ctxt in const_match or ctxt in human_urban_ctxt or ctxt in animal_nature_ctxt:
+            if ctxt in CONST_MATCH or ctxt in human_urban_ctxt or ctxt in animal_nature_ctxt:
                 complete_dict["match_type_info"].append(True)
             else:
                 # if ctxt is a mismatch pair
@@ -141,10 +145,11 @@ def active_learning(shots):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
     # for the rest of the query
-    const_mismatch, const_match = set(), set()
-    const_mismatch.update(generate_x_y_requests(human_query, nature_query),
+    # complete sets, used to reset the pick sets every run later
+    CONST_MISMATCH, CONST_MATCH = set(), set()
+    CONST_MISMATCH.update(generate_x_y_requests(human_query, nature_query),
                           generate_x_y_requests(animal_query, urban_query))
-    const_match.update(generate_x_y_requests(human_query, urban_query),
+    CONST_MATCH.update(generate_x_y_requests(human_query, urban_query),
                        generate_x_y_requests(animal_query, nature_query))
     num_run = 2
     actual_time = strftime("%Y-%m-%dT_%H-%M-%SZ", gmtime())
@@ -155,9 +160,13 @@ def active_learning(shots):
     while curr_run < num_run:
         curr_shot = 1
         # start with 1 context pair
-        context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+        # 50/50 chance of True/False or False/True initial context
+        if random.choice([0, 1]) == 0:
+            context = [random.choice(list(human_urban_ctxt)), random.choice(list(animal_nature_ctxt))]
+        else:
+            context = [random.choice(list(animal_nature_ctxt)), random.choice(list(human_urban_ctxt))]
         # reset the pick sets
-        match_pick_set, mismatch_pick_set = set(const_match), set(const_mismatch)
+        match_pick_set, mismatch_pick_set = set(CONST_MATCH), set(CONST_MISMATCH)
         while curr_shot <= shots:
             # store probabilities to find smallest abs difference later
             examples_probs = {}
@@ -172,8 +181,10 @@ def active_learning(shots):
             # create 1 mismatch examples
             examples.append(mismatch_pick_set.pop())
             context_prompt = ""
+            # only shuffle the last n - 2 things in context, leave the first two things in initial order
+            context_to_shuffle = context[2:]
             # make context prompt randomly
-            random_context = random.sample(context, len(context))
+            random_context = context[:2] + random.sample(context_to_shuffle, len(context_to_shuffle))
             # add info about context
             complete_dict["context_info"] = []
             # format context and examples to presentable tokens
@@ -212,7 +223,7 @@ def active_learning(shots):
                 # absolute difference of normalized probabilities
                 examples_probs[example] = abs(norm_T - norm_F)
                 # add pairs and probs to info_dict for later: [raw_F, raw_T, isMatch]
-                info_dict[tuple(example)] = [raw_F, raw_T, True if example in const_match else False]
+                info_dict[tuple(example)] = [raw_F, raw_T, True if example in CONST_MATCH else False]
             complete_dict["query_info"] = info_dict
             # find true smallest example (smallest difference in probabilities)
             smallest_example = examples[0]
@@ -221,7 +232,7 @@ def active_learning(shots):
                 if smallest_prob > examples_probs[example]:
                     smallest_example = example
                     smallest_prob = examples_probs[smallest_example]
-            if smallest_example in const_match:
+            if smallest_example in CONST_MATCH:
                 # if smallest_example is a match pair
                 complete_dict["picked_example"] = (tuple(smallest_example), True)
             else:
