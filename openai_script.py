@@ -80,7 +80,8 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
                      ("ambig_" if ambig else "NOTambig_") +
                      ("disambig_" + str(num_disambig) + "_" if num_disambig > 0 else "NONEdisambig_") +
                      "responses_" + actual_time + ".txt", 'w', encoding="utf-8")
-    num_queries = NUM_QUERIES
+
+    num_queries = 150  # NUM_QUERIES
     completed_queries = 0
     # creates a 2(shots) + 1 Q/A prompt, with the first 2 being from each of the context sets and the last being just a Q
     # from the ambig_set
@@ -143,7 +144,6 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: "
             prompt = prompt.strip()
-
             # expect either TRUE or FALSE as the answer
             # *** DOESNT WORK ANYMORE, DIFFERENT API CALL NOW. WORKED BEFORE. ***
             response = requests.get(
@@ -215,6 +215,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
             prompt += "Q: " + convert_to_sent(pick).strip() + "\r\n" + "A: "
             prompt = prompt.strip()
+
             # expect either TRUE or FALSE as the answer
             # *** DOESNT WORK ANYMORE, DIFFERENT API CALL NOW. WORKED BEFORE. ***
             response = requests.get(
@@ -250,6 +251,7 @@ def multiple_context_requests(shots, order, ambig=True, num_disambig=0):
 
     data_file.close()
 
+# multiple_context_requests(5, 2)
 def random_learning(shots):
     human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
     animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
@@ -444,6 +446,15 @@ def active_learning(shots):
         # go next iteration
         curr_shot += 1
 # active_learning(2)
+
+def tst():
+    human_urban_ctxt = generate_x_y_requests(human_context, urban_context)
+    animal_nature_ctxt = generate_x_y_requests(animal_context, nature_context)
+    # ambig_set is comprised of human/nature and animal/urban pairings from ambig sets.
+    pick_set = set()
+    pick_set.update(generate_x_y_requests(human_ambig, nature_ambig), generate_x_y_requests(animal_ambig, urban_ambig))
+    pick_set.update(generate_x_y_requests(human_ambig, urban_ambig), generate_x_y_requests(animal_ambig, nature_ambig))
+
 
 # *** notes ***
     # .504 .486

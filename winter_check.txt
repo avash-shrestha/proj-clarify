@@ -1,0 +1,2851 @@
+Q: The artist is in a school.
+A: TRUE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The elephant is in a canyon.
+A: FALSEQ: The officer is in a school.
+A: TRUE
+Q: The horse is in a desert.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The person is in a school.
+A: TRUE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The meerkat is in a grassland.
+A: FALSE
+Q: The builder is in a city.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The iguana is in a sea.
+A: FALSE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The meerkat is in a pond.
+A: FALSE
+Q: The builder is in a factory.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The teacher is in a warehouse.
+A: TRUE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The meerkat is in a sea.
+A: FALSE
+Q: The man is in a building.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The officer is in a theater.
+A: TRUE
+Q: The toad is in a desert.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The wolf is in a pond.
+A: FALSE
+Q: The dancer is in a building.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The person is in a city.
+A: TRUE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The meerkat is in a grassland.
+A: FALSE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The butterfly is in a sea.
+A: FALSE
+Q: The chef is in a garage.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The butterfly is in a meadow.
+A: FALSE
+Q: The man is in a school.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The politician is in a theater.
+A: TRUE
+Q: The tiger is in a river.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The butterfly is in a prairie.
+A: FALSE
+Q: The child is in a dwelling.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The person is in a dwelling.
+A: TRUE
+Q: The horse is in a taiga.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The bear is in a jungle.
+A: FALSE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The iguana is in a desert.
+A: FALSE
+Q: The salesperson is in a shop.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The dancer is in a warehouse.
+A: TRUE
+Q: The mosquito is in a river.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The teacher is in a school.
+A: TRUE
+Q: The goat is in a bay.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The goat is in a rainforest.
+A: FALSE
+Q: The dancer is in a street.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The child is in a city.
+A: TRUE
+Q: The mosquito is in a desert.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The sheep is in a forest.
+A: TRUEQ: The horse is in a desert.
+A: FALSE
+Q: The athlete is in a hotel.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The salesperson is in a shop.
+A: TRUE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The chef is in a theater.
+A: TRUE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: FALSEQ: The dancer is in a city.
+A: TRUE
+Q: The meerkat is in a river.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The athlete is in a theater.
+A: TRUE
+Q: The goat is in a pond.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The salesperson is in a courthouse.
+A: TRUE
+Q: The horse is in a river.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The butterfly is in a river.
+A: FALSE
+Q: The man is in a factory.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The teacher is in a hotel.
+A: TRUE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The butterfly is in a pond.
+A: FALSE
+Q: The athlete is in a city.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The officer is in a shop.
+A: TRUE
+Q: The horse is in a grassland.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The tiger is in a desert.
+A: FALSE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The goat is in a river.
+A: FALSE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The child is in a school.
+A: TRUE
+Q: The mosquito is in a desert.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The tiger is in a desert.
+A: FALSE
+Q: The person is in a building.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The horse is in a pond.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The child is in a street.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The sheep is in a forest.
+A: TRUEQ: The athlete is in a dwelling.
+A: TRUE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The bear is in a swamp.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The chef is in a shop.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: TRUEQ: The mosquito is in a swamp.
+A: FALSE
+Q: The child is in a dwelling.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The child is in a city.
+A: TRUE
+Q: The butterfly is in a meadow.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The person is in a garage.
+A: TRUE
+Q: The mosquito is in a prairie.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The dolphin is in a meadow.
+A: FALSE
+Q: The person is in a garage.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The officer is in a garage.
+A: TRUE
+Q: The meerkat is in a taiga.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The man is in a building.
+A: TRUE
+Q: The goat is in a river.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The child is in a factory.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The horse is in a prairie.
+A: FALSE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The butterfly is in a rainforest.
+A: FALSE
+Q: The builder is in a hotel.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The goat is in a desert.
+A: FALSE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The bear is in a river.
+A: FALSE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The iguana is in a sea.
+A: FALSE
+Q: The builder is in a theater.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The builder is in a street.
+A: TRUE
+Q: The goat is in a desert.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The officer is in a school.
+A: TRUE
+Q: The meerkat is in a river.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The horse is in a pond.
+A: FALSE
+Q: The dancer is in a building.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The butterfly is in a prairie.
+A: FALSE
+Q: The person is in a hotel.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The chef is in a street.
+A: TRUE
+Q: The tiger is in a river.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The condor is in a stream.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The man is in a building.
+A: TRUE
+Q: The bat is in a pond.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The teacher is in a school.
+A: TRUE
+Q: The iguana is in a sea.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The politician is in a warehouse.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The artist is in a building.
+A: TRUE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The artist is in a factory.
+A: TRUE
+Q: The bat is in a river.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The wolf is in a meadow.
+A: FALSE
+Q: The dancer is in a street.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The salesperson is in a street.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: TRUEQ: The salesperson is in a city.
+A: TRUE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The meerkat is in a jungle.
+A: FALSE
+Q: The child is in a theater.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The elephant is in a canyon.
+A: FALSEQ: The man is in a warehouse.
+A: TRUE
+Q: The toad is in a pond.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The wolf is in a jungle.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The dancer is in a street.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The salesperson is in a theater.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The officer is in a courthouse.
+A: TRUE
+Q: The iguana is in a sea.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The butterfly is in a prairie.
+A: FALSE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The bat is in a rainforest.
+A: FALSE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The chef is in a school.
+A: TRUE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The bat is in a taiga.
+A: FALSE
+Q: The man is in a theater.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The artist is in a city.
+A: TRUE
+Q: The mosquito is in a bay.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The politician is in a shop.
+A: TRUE
+Q: The meerkat is in a grassland.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The chef is in a hotel.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The butterfly is in a desert.
+A: FALSE
+Q: The artist is in a building.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The butterfly is in a prairie.
+A: FALSE
+Q: The child is in a dwelling.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The elephant is in a canyon.
+A: FALSEQ: The artist is in a street.
+A: TRUE
+Q: The dolphin is in a desert.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The elephant is in a canyon.
+A: FALSEQ: The salesperson is in a street.
+A: TRUE
+Q: The bat is in a grassland.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The student is in an apartment.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The man is in a hotel.
+A: TRUE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The officer is in a school.
+A: TRUE
+Q: The meerkat is in a desert.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: FALSEQ: The dancer is in a theater.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The chef is in a courthouse.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: TRUEQ: The teacher is in a city.
+A: TRUE
+Q: The tiger is in a river.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The toad is in a river.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The man is in a garage.
+A: TRUE
+Q: The horse is in a sea.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The dancer is in a dwelling.
+A: TRUE
+Q: The bear is in a sea.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: TRUEQ: The mosquito is in a jungle.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The chef is in a building.
+A: TRUE
+Q: The meerkat is in a desert.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The salesperson is in a theater.
+A: TRUE
+Q: The bear is in a sea.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The dolphin is in a grassland.
+A: FALSE
+Q: The artist is in a school.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The butterfly is in a rainforest.
+A: FALSE
+Q: The salesperson is in a warehouse.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The officer is in a warehouse.
+A: TRUE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The butterfly is in a meadow.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The wolf is in a taiga.
+A: FALSE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The butterfly is in a taiga.
+A: FALSE
+Q: The man is in a school.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The person is in a city.
+A: TRUE
+Q: The meerkat is in a taiga.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The goat is in a taiga.
+A: FALSE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The wolf is in a taiga.
+A: FALSE
+Q: The person is in a hotel.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The builder is in a factory.
+A: TRUE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The builder is in a theater.
+A: TRUE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The salesperson is in a dwelling.
+A: TRUE
+Q: The mosquito is in a sea.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The child is in a shop.
+A: TRUE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The officer is in a factory.
+A: TRUE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The butterfly is in a meadow.
+A: FALSE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The bat is in a river.
+A: FALSE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The meerkat is in a sea.
+A: FALSE
+Q: The man is in a factory.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The goat is in a bay.
+A: FALSE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The bear is in a pond.
+A: FALSE
+Q: The person is in a building.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The mosquito is in a bay.
+A: FALSE
+Q: The salesperson is in a street.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The child is in a dwelling.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The child is in a school.
+A: TRUE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The dancer is in a garage.
+A: TRUE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The meerkat is in a jungle.
+A: FALSE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The teacher is in a courthouse.
+A: TRUE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The wolf is in a jungle.
+A: FALSE
+Q: The chef is in a city.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The athlete is in a city.
+A: TRUE
+Q: The iguana is in a meadow.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The student is in an apartment.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The politician is in a courthouse.
+A: TRUE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The elephant is in a canyon.
+A: FALSEQ: The artist is in a factory.
+A: TRUE
+Q: The goat is in a sea.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The teacher is in a theater.
+A: TRUE
+Q: The meerkat is in a taiga.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The politician is in a courthouse.
+A: TRUE
+Q: The bear is in a sea.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The condor is in a stream.
+A: FALSE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The mosquito is in a grassland.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The ant is in a valley.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The butterfly is in a prairie.
+A: FALSE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The chef is in a building.
+A: TRUE
+Q: The mosquito is in a sea.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The teacher is in a hotel.
+A: TRUE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The dancer is in a building.
+A: TRUE
+Q: The bear is in a pond.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The soldier is in a museum.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The bear is in a sea.
+A: FALSE
+Q: The dancer is in a warehouse.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The teacher is in a dwelling.
+A: TRUE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The chipmunk is in a stream.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The artist is in a city.
+A: TRUE
+Q: The dolphin is in a river.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The politician is in a street.
+A: TRUE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The child is in a shop.
+A: TRUE
+Q: The tiger is in a bay.
+A: FALSE
+Q: The soldier is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The tiger is in a grassland.
+A: FALSE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: TRUEQ: The butterfly is in a meadow.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The butcher is in a store.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The chef is in a hotel.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: FALSEQ: The officer is in a building.
+A: TRUE
+Q: The toad is in a bay.
+A: FALSE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: TRUEQ: The politician is in a hotel.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The butcher is in a store.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The actor is in a condominium.
+A: TRUE
+Q: The condor is in a stream.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The dolphin is in a sea.
+A: FALSE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The lion is in a tundra.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The sheep is in a forest.
+A: FALSEQ: The officer is in a building.
+A: TRUE
+Q: The horse is in a swamp.
+A: FALSE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The elephant is in a canyon.
+A: FALSEQ: The goat is in a bay.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The woman is in a restaurant.
+A: TRUE
+Q: The human is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The soldier is in a library.
+A: TRUEQ: The wolf is in a grassland.
+A: FALSE
+Q: The person is in a hotel.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The condor is in a canyon.
+A: FALSE
+Q: The architect is in a skyscraper.
+A: TRUE
+Q: The ant is in a cave.
+A: FALSE
+Q: The toddler is in a library.
+A: TRUEQ: The officer is in a city.
+A: TRUE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The student is in an apartment.
+A: TRUE
+Q: The ant is in a valley.
+A: FALSE
+Q: The firefighter is in a store.
+A: TRUE
+Q: The human is in an alley.
+A: TRUE
+Q: The sheep is in a forest.
+A: FALSEQ: The athlete is in a shop.
+A: TRUE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The engineer is in a museum.
+A: TRUE
+Q: The woman is in a skyscraper.
+A: TRUE
+Q: The banker is in a restaurant.
+A: TRUE
+Q: The elephant is in a stream.
+A: FALSE
+Q: The soldier is in a library.
+A: TRUEQ: The tiger is in a grassland.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The toddler is in an apartment.
+A: TRUE
+Q: The actor is in a library.
+A: TRUE
+Q: The salamander is in a forest.
+A: FALSE
+Q: The doctor is in a casino.
+A: TRUE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The toddler is in a library.
+A: TRUEQ: The bat is in a swamp.
+A: FALSE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The doctor is in an office.
+A: TRUE
+Q: The chipmunk is in a canyon.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a library.
+A: TRUE
+Q: The sheep is in a savannah.
+A: FALSE
+Q: The chipmunk is in a cave.
+A: FALSEQ: The butterfly is in a taiga.
+A: FALSE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The architect is in a restaurant.
+A: TRUE
+Q: The shark is in an ocean.
+A: FALSE
+Q: The sheep is in a cave.
+A: FALSE
+Q: The lion is in a creek.
+A: FALSE
+Q: The firefighter is in an alley.
+A: TRUE
+Q: The engineer is in a condominium.
+A: TRUE
+Q: The butcher is in a house.
+A: TRUE
+Q: The chipmunk is in a cave.
+A: FALSE

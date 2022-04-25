@@ -1,0 +1,3151 @@
+Q: The person is in a city.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The tiger is in a desert.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The officer is in a theater.
+A: TRUE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The toad is in a swamp.
+A: FALSE
+Q: The chef is in a school.
+A: TRUE
+Q: The man is in a theater.
+A: TRUE
+Q: The doctor is in a creek.
+A:Q: The bear is in a rainforest.
+A: FALSE
+Q: The dancer is in a dwelling.
+A: TRUE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The builder is in a building.
+A: TRUE
+Q: The athlete is in a school.
+A: TRUE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The athlete is in a theater.
+A: TRUE
+Q: The tiger is in a river.
+A: FALSE
+Q: The butterfly is in a desert.
+A: FALSE
+Q: The banker is in a valley.
+A:Q: The salesperson is in a shop.
+A: TRUE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The bat is in a pond.
+A: FALSE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The child is in a shop.
+A: TRUE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The goat is in a rainforest.
+A: FALSE
+Q: The builder is in a theater.
+A: TRUE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The bee is in an apartment.
+A:Q: The builder is in a shop.
+A: TRUE
+Q: The horse is in a bay.
+A: FALSE
+Q: The tiger is in a jungle.
+A: FALSE
+Q: The chef is in a theater.
+A: TRUE
+Q: The dolphin is in a grassland.
+A: FALSE
+Q: The person is in a theater.
+A: TRUE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The man is in a hotel.
+A: TRUE
+Q: The teacher is in a building.
+A: TRUE
+Q: The engineer is in a valley.
+A:Q: The toad is in a grassland.
+A: FALSE
+Q: The tiger is in a pond.
+A: FALSE
+Q: The meerkat is in a jungle.
+A: FALSE
+Q: The teacher is in a dwelling.
+A: TRUE
+Q: The builder is in a hotel.
+A: TRUE
+Q: The chef is in a city.
+A: TRUE
+Q: The chef is in a theater.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The meerkat is in a bay.
+A: FALSE
+Q: The butcher is in a delta.
+A:Q: The man is in a hotel.
+A: TRUE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The chef is in a theater.
+A: TRUE
+Q: The bat is in a bay.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The butterfly is in a swamp.
+A: FALSE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The officer is in a garage.
+A: TRUE
+Q: The mouse is in an office.
+A:Q: The builder is in a school.
+A: TRUE
+Q: The person is in a school.
+A: TRUE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The horse is in a swamp.
+A: FALSE
+Q: The toad is in a jungle.
+A: FALSE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The builder is in a city.
+A: TRUE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The artist is in a garage.
+A: TRUE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The sheep is in an apartment.
+A:Q: The builder is in a building.
+A: TRUE
+Q: The person is in a street.
+A: TRUE
+Q: The bear is in a desert.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The iguana is in a sea.
+A: FALSE
+Q: The child is in a hotel.
+A: TRUE
+Q: The teacher is in a dwelling.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The tiger is in a desert.
+A: FALSE
+Q: The hawk is in a hospital.
+A:Q: The man is in a factory.
+A: TRUE
+Q: The bear is in a pond.
+A: FALSE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The bat is in a jungle.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The meerkat is in a meadow.
+A: FALSE
+Q: The artist is in a garage.
+A: TRUE
+Q: The athlete is in a factory.
+A: TRUE
+Q: The chef is in a shop.
+A: TRUE
+Q: The hawk is in a restaurant.
+A:Q: The artist is in a theater.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The toad is in a sea.
+A: FALSE
+Q: The artist is in a school.
+A: TRUE
+Q: The artist is in a hotel.
+A: TRUE
+Q: The teacher is in a school.
+A: TRUE
+Q: The man is in a school.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The engineer is in a savannah.
+A:Q: The officer is in a school.
+A: TRUE
+Q: The bear is in a bay.
+A: FALSE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The man is in a street.
+A: TRUE
+Q: The teacher is in a garage.
+A: TRUE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The tiger is in a taiga.
+A: FALSE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The officer is in a garage.
+A: TRUE
+Q: The mouse is in an office.
+A:Q: The athlete is in a theater.
+A: TRUE
+Q: The man is in a garage.
+A: TRUE
+Q: The person is in a street.
+A: TRUE
+Q: The officer is in a factory.
+A: TRUE
+Q: The chef is in a city.
+A: TRUE
+Q: The wolf is in a river.
+A: FALSE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The toad is in a jungle.
+A: FALSE
+Q: The iguana is in a meadow.
+A: FALSE
+Q: The meerkat is in a bay.
+A: FALSE
+Q: The toddler is in a stream.
+A:Q: The person is in a warehouse.
+A: TRUE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The athlete is in a garage.
+A: TRUE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The wolf is in a grassland.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The artist is in a street.
+A: TRUE
+Q: The mosquito is in a prairie.
+A: FALSE
+Q: The horse is in a rainforest.
+A: FALSE
+Q: The bat is in a swamp.
+A: FALSE
+Q: The butcher is in a creek.
+A:Q: The bat is in a sea.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The horse is in a sea.
+A: FALSE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The salesperson is in a street.
+A: TRUE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The wolf is in a grassland.
+A: FALSE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The dancer is in a shop.
+A: TRUE
+Q: The mouse is in an office.
+A:Q: The dolphin is in a taiga.
+A: FALSE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The person is in a city.
+A: TRUE
+Q: The dancer is in a shop.
+A: TRUE
+Q: The child is in a building.
+A: TRUE
+Q: The tiger is in a desert.
+A: FALSE
+Q: The tiger is in a taiga.
+A: FALSE
+Q: The dancer is in a dwelling.
+A: TRUE
+Q: The architect is in a lake.
+A:Q: The person is in a shop.
+A: TRUE
+Q: The builder is in a school.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The iguana is in a sea.
+A: FALSE
+Q: The child is in a warehouse.
+A: TRUE
+Q: The tiger is in a river.
+A: FALSE
+Q: The officer is in a hotel.
+A: TRUE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The crocodile is in an office.
+A:Q: The dolphin is in a grassland.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The dancer is in a school.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The officer is in a garage.
+A: TRUE
+Q: The artist is in a garage.
+A: TRUE
+Q: The bat is in a swamp.
+A: FALSE
+Q: The athlete is in a courthouse.
+A: TRUE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The engineer is in a forest.
+A:Q: The child is in a warehouse.
+A: TRUE
+Q: The chef is in a shop.
+A: TRUE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The politician is in a garage.
+A: TRUE
+Q: The iguana is in a desert.
+A: FALSE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The tiger is in a bay.
+A: FALSE
+Q: The child is in a school.
+A: TRUE
+Q: The mosquito is in a desert.
+A: FALSE
+Q: The bee is in a museum.
+A:Q: The officer is in a courthouse.
+A: TRUE
+Q: The butterfly is in a desert.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The artist is in a school.
+A: TRUE
+Q: The athlete is in a factory.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The man is in a hotel.
+A: TRUE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The butterfly is in a swamp.
+A: FALSE
+Q: The mouse is in an office.
+A:Q: The tiger is in a jungle.
+A: FALSE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The chef is in a shop.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The man is in a street.
+A: TRUE
+Q: The officer is in a school.
+A: TRUE
+Q: The person is in a city.
+A: TRUE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The doctor is in a stream.
+A:Q: The teacher is in a theater.
+A: TRUE
+Q: The chef is in a building.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The chef is in a school.
+A: TRUE
+Q: The iguana is in a desert.
+A: FALSE
+Q: The artist is in a shop.
+A: TRUE
+Q: The wolf is in a river.
+A: FALSE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The politician is in a factory.
+A: TRUE
+Q: The woman is in an ocean.
+A:Q: The iguana is in a bay.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The horse is in a taiga.
+A: FALSE
+Q: The toad is in a bay.
+A: FALSE
+Q: The man is in a hotel.
+A: TRUE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The teacher is in a building.
+A: TRUE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The butcher is in a tundra.
+A:Q: The goat is in a swamp.
+A: FALSE
+Q: The officer is in a city.
+A: TRUE
+Q: The person is in a building.
+A: TRUE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The person is in a school.
+A: TRUE
+Q: The meerkat is in a grassland.
+A: FALSE
+Q: The officer is in a street.
+A: TRUE
+Q: The man is in a courthouse.
+A: TRUE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The actor is in a tundra.
+A:Q: The child is in a street.
+A: TRUE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The builder is in a street.
+A: TRUE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The horse is in a rainforest.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The toad is in a river.
+A: FALSE
+Q: The dancer is in a theater.
+A: TRUE
+Q: The goat is in a bay.
+A: FALSE
+Q: The elephant is in an apartment.
+A:Q: The goat is in a prairie.
+A: FALSE
+Q: The man is in a school.
+A: TRUE
+Q: The chef is in a theater.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The mosquito is in a jungle.
+A: FALSE
+Q: The chef is in a building.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The person is in a garage.
+A: TRUE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The iguana is in a desert.
+A: FALSE
+Q: The hawk is in a restaurant.
+A:Q: The wolf is in a desert.
+A: FALSE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The man is in a city.
+A: TRUE
+Q: The meerkat is in a rainforest.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The shark is in a hospital.
+A:Q: The builder is in a school.
+A: TRUE
+Q: The officer is in a hotel.
+A: TRUE
+Q: The tiger is in a bay.
+A: FALSE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The wolf is in a river.
+A: FALSE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The person is in a factory.
+A: TRUE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The teacher is in a building.
+A: TRUE
+Q: The mouse is in a museum.
+A:Q: The bat is in a taiga.
+A: FALSE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The chef is in a building.
+A: TRUE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The horse is in a jungle.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The banker is in a tundra.
+A:Q: The man is in a garage.
+A: TRUE
+Q: The bat is in a desert.
+A: FALSE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The horse is in a swamp.
+A: FALSE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The chef is in a theater.
+A: TRUE
+Q: The child is in a hotel.
+A: TRUE
+Q: The officer is in a theater.
+A: TRUE
+Q: The chipmunk is in a restaurant.
+A:Q: The bear is in a river.
+A: FALSE
+Q: The goat is in a bay.
+A: FALSE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The teacher is in a city.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The builder is in a garage.
+A: TRUE
+Q: The man is in a hotel.
+A: TRUE
+Q: The meerkat is in a grassland.
+A: FALSE
+Q: The toddler is in a valley.
+A:Q: The toad is in a rainforest.
+A: FALSE
+Q: The toad is in a pond.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The politician is in a city.
+A: TRUE
+Q: The bear is in a meadow.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The teacher is in a factory.
+A: TRUE
+Q: The politician is in a street.
+A: TRUE
+Q: The teacher is in a school.
+A: TRUE
+Q: The goat is in a rainforest.
+A: FALSE
+Q: The banker is in a delta.
+A:Q: The tiger is in a sea.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The chef is in a school.
+A: TRUE
+Q: The butterfly is in a desert.
+A: FALSE
+Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The child is in a building.
+A: TRUE
+Q: The butterfly is in a taiga.
+A: FALSE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The meerkat is in a taiga.
+A: FALSE
+Q: The ant is in a skyscraper.
+A:Q: The person is in a factory.
+A: TRUE
+Q: The goat is in a bay.
+A: FALSE
+Q: The builder is in a shop.
+A: TRUE
+Q: The bear is in a desert.
+A: FALSE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The chef is in a factory.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The bat is in a pond.
+A: FALSE
+Q: The politician is in a theater.
+A: TRUE
+Q: The builder is in a factory.
+A: TRUE
+Q: The butcher is in a stream.
+A:Q: The chef is in a theater.
+A: TRUE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The wolf is in a river.
+A: FALSE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The athlete is in a building.
+A: TRUE
+Q: The dolphin is in a sea.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The child is in a garage.
+A: TRUE
+Q: The salamander is in a museum.
+A:Q: The child is in a hotel.
+A: TRUE
+Q: The mosquito is in a bay.
+A: FALSE
+Q: The meerkat is in a rainforest.
+A: FALSE
+Q: The iguana is in a jungle.
+A: FALSE
+Q: The man is in a garage.
+A: TRUE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The toad is in a bay.
+A: FALSE
+Q: The artist is in a factory.
+A: TRUE
+Q: The artist is in a garage.
+A: TRUE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The shark is in a house.
+A:Q: The mosquito is in a grassland.
+A: FALSE
+Q: The politician is in a shop.
+A: TRUE
+Q: The wolf is in a pond.
+A: FALSE
+Q: The child is in a hotel.
+A: TRUE
+Q: The artist is in a factory.
+A: TRUE
+Q: The politician is in a warehouse.
+A: TRUE
+Q: The horse is in a meadow.
+A: FALSE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The man is in a theater.
+A: TRUE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The crocodile is in an apartment.
+A:Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The bear is in a swamp.
+A: FALSE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The iguana is in a meadow.
+A: FALSE
+Q: The athlete is in a garage.
+A: TRUE
+Q: The man is in a street.
+A: TRUE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The student is in a valley.
+A:Q: The bat is in a desert.
+A: FALSE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The artist is in a shop.
+A: TRUE
+Q: The butterfly is in a swamp.
+A: FALSE
+Q: The tiger is in a grassland.
+A: FALSE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The tiger is in a bay.
+A: FALSE
+Q: The person is in a dwelling.
+A: TRUE
+Q: The woman is in a stream.
+A:Q: The meerkat is in a river.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The athlete is in a building.
+A: TRUE
+Q: The dolphin is in a pond.
+A: FALSE
+Q: The athlete is in a garage.
+A: TRUE
+Q: The goat is in a sea.
+A: FALSE
+Q: The chef is in a garage.
+A: TRUE
+Q: The athlete is in a city.
+A: TRUE
+Q: The engineer is in a canyon.
+A:Q: The dolphin is in a pond.
+A: FALSE
+Q: The person is in a garage.
+A: TRUE
+Q: The officer is in a school.
+A: TRUE
+Q: The builder is in a theater.
+A: TRUE
+Q: The dolphin is in a sea.
+A: FALSE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The mosquito is in a river.
+A: FALSE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The mouse is in a condominium.
+A:Q: The child is in a factory.
+A: TRUE
+Q: The athlete is in a theater.
+A: TRUE
+Q: The builder is in a hotel.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The person is in a garage.
+A: TRUE
+Q: The toad is in a river.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The shark is in a casino.
+A:Q: The bat is in a grassland.
+A: FALSE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The child is in a hotel.
+A: TRUE
+Q: The horse is in a taiga.
+A: FALSE
+Q: The child is in a shop.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The artist is in a shop.
+A: TRUE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The engineer is in a lake.
+A:Q: The wolf is in a sea.
+A: FALSE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The child is in a school.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The officer is in a hotel.
+A: TRUE
+Q: The dancer is in a warehouse.
+A: TRUE
+Q: The bat is in a bay.
+A: FALSE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The firefighter is in a tundra.
+A:Q: The bat is in a desert.
+A: FALSE
+Q: The child is in a shop.
+A: TRUE
+Q: The bear is in a bay.
+A: FALSE
+Q: The bear is in a sea.
+A: FALSE
+Q: The butterfly is in a swamp.
+A: FALSE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The wolf is in a desert.
+A: FALSE
+Q: The athlete is in a factory.
+A: TRUE
+Q: The salamander is in an apartment.
+A:Q: The artist is in a building.
+A: TRUE
+Q: The horse is in a jungle.
+A: FALSE
+Q: The horse is in a rainforest.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The iguana is in a jungle.
+A: FALSE
+Q: The man is in a street.
+A: TRUE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The meerkat is in a bay.
+A: FALSE
+Q: The goat is in a river.
+A: FALSE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The hawk is in a library.
+A:Q: The horse is in a grassland.
+A: FALSE
+Q: The officer is in a building.
+A: TRUE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The bat is in a sea.
+A: FALSE
+Q: The child is in a hotel.
+A: TRUE
+Q: The wolf is in a river.
+A: FALSE
+Q: The toad is in a jungle.
+A: FALSE
+Q: The artist is in a factory.
+A: TRUE
+Q: The architect is in a savannah.
+A:Q: The butterfly is in a desert.
+A: FALSE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The chef is in a garage.
+A: TRUE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The butterfly is in a taiga.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The elephant is in a store.
+A:Q: The dancer is in a courthouse.
+A: TRUE
+Q: The horse is in a sea.
+A: FALSE
+Q: The iguana is in a desert.
+A: FALSE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The toad is in a bay.
+A: FALSE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The human is in a delta.
+A:Q: The toad is in a pond.
+A: FALSE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The person is in a theater.
+A: TRUE
+Q: The man is in a garage.
+A: TRUE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The bat is in a pond.
+A: FALSE
+Q: The chef is in a factory.
+A: TRUE
+Q: The condor is in a casino.
+A:Q: The person is in a dwelling.
+A: TRUE
+Q: The goat is in a taiga.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The person is in a warehouse.
+A: TRUE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The builder is in a factory.
+A: TRUE
+Q: The toddler is in a savannah.
+A:Q: The artist is in a hotel.
+A: TRUE
+Q: The child is in a factory.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The toad is in a river.
+A: FALSE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The politician is in a shop.
+A: TRUE
+Q: The toad is in a pond.
+A: FALSE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The artist is in a theater.
+A: TRUE
+Q: The hawk is in a store.
+A:Q: The person is in a dwelling.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The horse is in a taiga.
+A: FALSE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The bat is in a grassland.
+A: FALSE
+Q: The child is in a building.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The artist is in a garage.
+A: TRUE
+Q: The crocodile is in an apartment.
+A:Q: The goat is in a jungle.
+A: FALSE
+Q: The officer is in a shop.
+A: TRUE
+Q: The meerkat is in a grassland.
+A: FALSE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The teacher is in a street.
+A: TRUE
+Q: The teacher is in a building.
+A: TRUE
+Q: The athlete is in a city.
+A: TRUE
+Q: The engineer is in a stream.
+A:Q: The meerkat is in a meadow.
+A: FALSE
+Q: The iguana is in a swamp.
+A: FALSE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The tiger is in a grassland.
+A: FALSE
+Q: The child is in a warehouse.
+A: TRUE
+Q: The man is in a factory.
+A: TRUE
+Q: The artist is in a courthouse.
+A: TRUE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The meerkat is in a taiga.
+A: FALSE
+Q: The artist is in a factory.
+A: TRUE
+Q: The crocodile is in a casino.
+A:Q: The wolf is in a jungle.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The person is in a warehouse.
+A: TRUE
+Q: The officer is in a garage.
+A: TRUE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The artist is in a building.
+A: TRUE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The man is in a hotel.
+A: TRUE
+Q: The lion is in a casino.
+A:Q: The dolphin is in a desert.
+A: FALSE
+Q: The builder is in a school.
+A: TRUE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The artist is in a dwelling.
+A: TRUE
+Q: The dancer is in a street.
+A: TRUE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The woman is in a savannah.
+A:Q: The horse is in a meadow.
+A: FALSE
+Q: The builder is in a building.
+A: TRUE
+Q: The builder is in a hotel.
+A: TRUE
+Q: The toad is in a bay.
+A: FALSE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The dancer is in a street.
+A: TRUE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The artist is in a city.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The firefighter is in a cave.
+A:Q: The toad is in a bay.
+A: FALSE
+Q: The chef is in a courthouse.
+A: TRUE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The builder is in a dwelling.
+A: TRUE
+Q: The artist is in a street.
+A: TRUE
+Q: The goat is in a meadow.
+A: FALSE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The athlete is in a garage.
+A: TRUE
+Q: The actor is in a forest.
+A:Q: The wolf is in a pond.
+A: FALSE
+Q: The person is in a factory.
+A: TRUE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The teacher is in a shop.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The horse is in a desert.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The politician is in a theater.
+A: TRUE
+Q: The actor is in a tundra.
+A:Q: The dancer is in a shop.
+A: TRUE
+Q: The artist is in a garage.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The bat is in a bay.
+A: FALSE
+Q: The teacher is in a city.
+A: TRUE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The athlete is in a city.
+A: TRUE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The person is in a factory.
+A: TRUE
+Q: The bee is in a restaurant.
+A:Q: The athlete is in a theater.
+A: TRUE
+Q: The bat is in a river.
+A: FALSE
+Q: The politician is in a theater.
+A: TRUE
+Q: The builder is in a shop.
+A: TRUE
+Q: The chef is in a theater.
+A: TRUE
+Q: The meerkat is in a river.
+A: FALSE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The mosquito is in a river.
+A: FALSE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The architect is in a cave.
+A:Q: The builder is in a hotel.
+A: TRUE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The meerkat is in a jungle.
+A: FALSE
+Q: The officer is in a city.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The bat is in a desert.
+A: FALSE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The builder is in a dwelling.
+A: TRUE
+Q: The toad is in a swamp.
+A: FALSE
+Q: The soldier is in an ocean.
+A:Q: The teacher is in a shop.
+A: TRUE
+Q: The horse is in a grassland.
+A: FALSE
+Q: The butterfly is in a jungle.
+A: FALSE
+Q: The artist is in a factory.
+A: TRUE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The goat is in a desert.
+A: FALSE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The person is in a dwelling.
+A: TRUE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The person is in a shop.
+A: TRUE
+Q: The elephant is in a library.
+A:Q: The chef is in a factory.
+A: TRUE
+Q: The horse is in a grassland.
+A: FALSE
+Q: The artist is in a building.
+A: TRUE
+Q: The athlete is in a courthouse.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The horse is in a meadow.
+A: FALSE
+Q: The child is in a theater.
+A: TRUE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The ant is in a restaurant.
+A:Q: The horse is in a meadow.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The artist is in a dwelling.
+A: TRUE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The meerkat is in a jungle.
+A: FALSE
+Q: The officer is in a shop.
+A: TRUE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The shark is in a store.
+A:Q: The toad is in a sea.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The person is in a warehouse.
+A: TRUE
+Q: The tiger is in a prairie.
+A: FALSE
+Q: The iguana is in a pond.
+A: FALSE
+Q: The person is in a shop.
+A: TRUE
+Q: The artist is in a school.
+A: TRUE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The bat is in a pond.
+A: FALSE
+Q: The woman is in a tundra.
+A:Q: The iguana is in a bay.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The goat is in a bay.
+A: FALSE
+Q: The bat is in a grassland.
+A: FALSE
+Q: The butterfly is in a grassland.
+A: FALSE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The politician is in a city.
+A: TRUE
+Q: The teacher is in a city.
+A: TRUE
+Q: The politician is in a hotel.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The sheep is in a casino.
+A:Q: The dolphin is in a swamp.
+A: FALSE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The person is in a city.
+A: TRUE
+Q: The wolf is in a desert.
+A: FALSE
+Q: The man is in a city.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The elephant is in a restaurant.
+A:Q: The goat is in a meadow.
+A: FALSE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The builder is in a dwelling.
+A: TRUE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The toad is in a river.
+A: FALSE
+Q: The artist is in a garage.
+A: TRUE
+Q: The hawk is in a skyscraper.
+A:Q: The horse is in a river.
+A: FALSE
+Q: The salesperson is in a theater.
+A: TRUE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The bear is in a desert.
+A: FALSE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The meerkat is in a river.
+A: FALSE
+Q: The child is in a warehouse.
+A: TRUE
+Q: The person is in a school.
+A: TRUE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The goat is in a taiga.
+A: FALSE
+Q: The salamander is in a skyscraper.
+A:Q: The horse is in a pond.
+A: FALSE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The man is in a courthouse.
+A: TRUE
+Q: The mosquito is in a bay.
+A: FALSE
+Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The dancer is in a city.
+A: TRUE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The firefighter is in a delta.
+A:Q: The horse is in a desert.
+A: FALSE
+Q: The goat is in a prairie.
+A: FALSE
+Q: The person is in a warehouse.
+A: TRUE
+Q: The toad is in a river.
+A: FALSE
+Q: The butterfly is in a grassland.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The artist is in a city.
+A: TRUE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The artist is in a shop.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The elephant is in a condominium.
+A:Q: The person is in a factory.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The dolphin is in a pond.
+A: FALSE
+Q: The horse is in a river.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The person is in a dwelling.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The person is in a building.
+A: TRUE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The human is in a lake.
+A:Q: The mosquito is in a meadow.
+A: FALSE
+Q: The meerkat is in a swamp.
+A: FALSE
+Q: The person is in a building.
+A: TRUE
+Q: The dancer is in a street.
+A: TRUE
+Q: The artist is in a building.
+A: TRUE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The child is in a dwelling.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The tiger is in a pond.
+A: FALSE
+Q: The tiger is in a sea.
+A: FALSE
+Q: The elephant is in a store.
+A:Q: The teacher is in a courthouse.
+A: TRUE
+Q: The butterfly is in a jungle.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The politician is in a city.
+A: TRUE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The goat is in a river.
+A: FALSE
+Q: The bat is in a jungle.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The bee is in a library.
+A:Q: The horse is in a swamp.
+A: FALSE
+Q: The athlete is in a hotel.
+A: TRUE
+Q: The man is in a building.
+A: TRUE
+Q: The horse is in a river.
+A: FALSE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The toad is in a river.
+A: FALSE
+Q: The soldier is in a lake.
+A:Q: The artist is in a city.
+A: TRUE
+Q: The politician is in a hotel.
+A: TRUE
+Q: The person is in a school.
+A: TRUE
+Q: The artist is in a theater.
+A: TRUE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The toad is in a desert.
+A: FALSE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The athlete is in a courthouse.
+A: TRUE
+Q: The woman is in a lake.
+A:Q: The officer is in a shop.
+A: TRUE
+Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The mosquito is in a desert.
+A: FALSE
+Q: The man is in a garage.
+A: TRUE
+Q: The man is in a factory.
+A: TRUE
+Q: The artist is in a street.
+A: TRUE
+Q: The student is in an ocean.
+A:Q: The politician is in a factory.
+A: TRUE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The athlete is in a factory.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The bear is in a bay.
+A: FALSE
+Q: The builder is in a theater.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The chef is in a shop.
+A: TRUE
+Q: The toddler is in a delta.
+A:Q: The iguana is in a bay.
+A: FALSE
+Q: The iguana is in a swamp.
+A: FALSE
+Q: The politician is in a school.
+A: TRUE
+Q: The toad is in a pond.
+A: FALSE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The chef is in a city.
+A: TRUE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The child is in a theater.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The soldier is in a cave.
+A:Q: The goat is in a bay.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The salesperson is in a street.
+A: TRUE
+Q: The meerkat is in a swamp.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The bat is in a prairie.
+A: FALSE
+Q: The child is in a school.
+A: TRUE
+Q: The teacher is in a factory.
+A: TRUE
+Q: The toad is in a river.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The chipmunk is in a museum.
+A:Q: The bear is in a meadow.
+A: FALSE
+Q: The bear is in a swamp.
+A: FALSE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The child is in a shop.
+A: TRUE
+Q: The toad is in a desert.
+A: FALSE
+Q: The bat is in a bay.
+A: FALSE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The builder is in a factory.
+A: TRUE
+Q: The salesperson is in a shop.
+A: TRUE
+Q: The mouse is in a house.
+A:Q: The officer is in a factory.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The teacher is in a shop.
+A: TRUE
+Q: The tiger is in a jungle.
+A: FALSE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The butterfly is in a meadow.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The doctor is in a savannah.
+A:Q: The person is in a shop.
+A: TRUE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The toad is in a bay.
+A: FALSE
+Q: The wolf is in a river.
+A: FALSE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The hawk is in a skyscraper.
+A:Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The politician is in a city.
+A: TRUE
+Q: The man is in a city.
+A: TRUE
+Q: The meerkat is in a meadow.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The dolphin is in a river.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The sheep is in a museum.
+A:Q: The chef is in a street.
+A: TRUE
+Q: The politician is in a garage.
+A: TRUE
+Q: The person is in a hotel.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The man is in a street.
+A: TRUE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The mosquito is in a bay.
+A: FALSE
+Q: The shark is in a restaurant.
+A:Q: The man is in a warehouse.
+A: TRUE
+Q: The dancer is in a theater.
+A: TRUE
+Q: The bat is in a pond.
+A: FALSE
+Q: The man is in a school.
+A: TRUE
+Q: The tiger is in a jungle.
+A: FALSE
+Q: The officer is in a hotel.
+A: TRUE
+Q: The toad is in a grassland.
+A: FALSE
+Q: The teacher is in a dwelling.
+A: TRUE
+Q: The tiger is in a sea.
+A: FALSE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The banker is in a canyon.
+A:Q: The chef is in a courthouse.
+A: TRUE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The bat is in a jungle.
+A: FALSE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The mosquito is in a sea.
+A: FALSE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The officer is in a garage.
+A: TRUE
+Q: The goat is in a prairie.
+A: FALSE
+Q: The bear is in a desert.
+A: FALSE
+Q: The man is in a city.
+A: TRUE
+Q: The human is in a canyon.
+A:Q: The iguana is in a river.
+A: FALSE
+Q: The horse is in a sea.
+A: FALSE
+Q: The politician is in a factory.
+A: TRUE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The child is in a shop.
+A: TRUE
+Q: The politician is in a school.
+A: TRUE
+Q: The officer is in a shop.
+A: TRUE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The banker is in a creek.
+A:Q: The dancer is in a courthouse.
+A: TRUE
+Q: The builder is in a warehouse.
+A: TRUE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The tiger is in a bay.
+A: FALSE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The dancer is in a shop.
+A: TRUE
+Q: The butterfly is in a desert.
+A: FALSE
+Q: The salamander is in a hospital.
+A:Q: The child is in a building.
+A: TRUE
+Q: The bat is in a grassland.
+A: FALSE
+Q: The horse is in a jungle.
+A: FALSE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The politician is in a shop.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The bear is in a bay.
+A: FALSE
+Q: The salamander is in a restaurant.
+A:Q: The athlete is in a warehouse.
+A: TRUE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The mosquito is in a desert.
+A: FALSE
+Q: The person is in a shop.
+A: TRUE
+Q: The officer is in a shop.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The condor is in a restaurant.
+A:Q: The toad is in a jungle.
+A: FALSE
+Q: The person is in a garage.
+A: TRUE
+Q: The person is in a building.
+A: TRUE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The iguana is in a swamp.
+A: FALSE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The hawk is in a hospital.
+A:Q: The person is in a dwelling.
+A: TRUE
+Q: The bat is in a prairie.
+A: FALSE
+Q: The tiger is in a pond.
+A: FALSE
+Q: The athlete is in a shop.
+A: TRUE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The horse is in a jungle.
+A: FALSE
+Q: The bear is in a prairie.
+A: FALSE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The child is in a shop.
+A: TRUE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The elephant is in a hospital.
+A:Q: The dolphin is in a pond.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The man is in a factory.
+A: TRUE
+Q: The bat is in a desert.
+A: FALSE
+Q: The man is in a shop.
+A: TRUE
+Q: The athlete is in a building.
+A: TRUE
+Q: The bat is in a grassland.
+A: FALSE
+Q: The bat is in a bay.
+A: FALSE
+Q: The officer is in a dwelling.
+A: TRUE
+Q: The sheep is in an alley.
+A:Q: The officer is in a courthouse.
+A: TRUE
+Q: The builder is in a garage.
+A: TRUE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The chef is in a city.
+A: TRUE
+Q: The meerkat is in a meadow.
+A: FALSE
+Q: The bear is in a pond.
+A: FALSE
+Q: The dolphin is in a bay.
+A: FALSE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The iguana is in a swamp.
+A: FALSE
+Q: The butcher is in an ocean.
+A:Q: The chef is in a hotel.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The bat is in a sea.
+A: FALSE
+Q: The artist is in a shop.
+A: TRUE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The man is in a building.
+A: TRUE
+Q: The bear is in a pond.
+A: FALSE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The sheep is in an office.
+A:Q: The child is in a courthouse.
+A: TRUE
+Q: The toad is in a jungle.
+A: FALSE
+Q: The iguana is in a swamp.
+A: FALSE
+Q: The builder is in a hotel.
+A: TRUE
+Q: The man is in a school.
+A: TRUE
+Q: The politician is in a shop.
+A: TRUE
+Q: The officer is in a shop.
+A: TRUE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The bat is in a swamp.
+A: FALSE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The bee is in an office.
+A:Q: The dolphin is in a sea.
+A: FALSE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The child is in a shop.
+A: TRUE
+Q: The man is in a theater.
+A: TRUE
+Q: The iguana is in a jungle.
+A: FALSE
+Q: The wolf is in a desert.
+A: FALSE
+Q: The officer is in a street.
+A: TRUE
+Q: The iguana is in a desert.
+A: FALSE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The politician is in a building.
+A: TRUE
+Q: The firefighter is in a valley.
+A:Q: The dolphin is in a taiga.
+A: FALSE
+Q: The man is in a factory.
+A: TRUE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The mosquito is in a jungle.
+A: FALSE
+Q: The wolf is in a desert.
+A: FALSE
+Q: The man is in a theater.
+A: TRUE
+Q: The dancer is in a school.
+A: TRUE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The chef is in a street.
+A: TRUE
+Q: The elephant is in a museum.
+A:Q: The horse is in a pond.
+A: FALSE
+Q: The builder is in a theater.
+A: TRUE
+Q: The officer is in a hotel.
+A: TRUE
+Q: The wolf is in a river.
+A: FALSE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The builder is in a building.
+A: TRUE
+Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The teacher is in a city.
+A: TRUE
+Q: The iguana is in a jungle.
+A: FALSE
+Q: The teacher is in a street.
+A: TRUE
+Q: The mouse is in an alley.
+A:Q: The iguana is in a sea.
+A: FALSE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The goat is in a grassland.
+A: FALSE
+Q: The chef is in a city.
+A: TRUE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The politician is in a warehouse.
+A: TRUE
+Q: The teacher is in a street.
+A: TRUE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The officer is in a dwelling.
+A: TRUE
+Q: The toddler is in a savannah.
+A:Q: The dolphin is in a desert.
+A: FALSE
+Q: The child is in a city.
+A: TRUE
+Q: The child is in a building.
+A: TRUE
+Q: The meerkat is in a prairie.
+A: FALSE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The toad is in a sea.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The officer is in a city.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The politician is in a factory.
+A: TRUE
+Q: The soldier is in a tundra.
+A:Q: The dolphin is in a sea.
+A: FALSE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The meerkat is in a jungle.
+A: FALSE
+Q: The dancer is in a theater.
+A: TRUE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The person is in a theater.
+A: TRUE
+Q: The mouse is in a store.
+A:Q: The officer is in a hotel.
+A: TRUE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The salesperson is in a warehouse.
+A: TRUE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The tiger is in a sea.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The officer is in a factory.
+A: TRUE
+Q: The lion is in a library.
+A:Q: The artist is in a building.
+A: TRUE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The meerkat is in a rainforest.
+A: FALSE
+Q: The horse is in a sea.
+A: FALSE
+Q: The athlete is in a city.
+A: TRUE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The tiger is in a sea.
+A: FALSE
+Q: The man is in a factory.
+A: TRUE
+Q: The child is in a street.
+A: TRUE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The butcher is in a savannah.
+A:Q: The goat is in a pond.
+A: FALSE
+Q: The horse is in a desert.
+A: FALSE
+Q: The teacher is in a theater.
+A: TRUE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The meerkat is in a desert.
+A: FALSE
+Q: The child is in a theater.
+A: TRUE
+Q: The wolf is in a river.
+A: FALSE
+Q: The politician is in a building.
+A: TRUE
+Q: The artist is in a courthouse.
+A: TRUE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The engineer is in an ocean.
+A:Q: The chef is in a garage.
+A: TRUE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The bear is in a bay.
+A: FALSE
+Q: The tiger is in a river.
+A: FALSE
+Q: The builder is in a factory.
+A: TRUE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The bat is in a desert.
+A: FALSE
+Q: The salesperson is in a shop.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The child is in a city.
+A: TRUE
+Q: The toddler is in a lake.
+A:Q: The officer is in a city.
+A: TRUE
+Q: The teacher is in a building.
+A: TRUE
+Q: The bear is in a rainforest.
+A: FALSE
+Q: The child is in a building.
+A: TRUE
+Q: The iguana is in a bay.
+A: FALSE
+Q: The officer is in a garage.
+A: TRUE
+Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The firefighter is in a valley.
+A:Q: The teacher is in a courthouse.
+A: TRUE
+Q: The dolphin is in a bay.
+A: FALSE
+Q: The goat is in a grassland.
+A: FALSE
+Q: The builder is in a building.
+A: TRUE
+Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The chef is in a building.
+A: TRUE
+Q: The salesperson is in a street.
+A: TRUE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The condor is in an alley.
+A:Q: The meerkat is in a meadow.
+A: FALSE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The chef is in a garage.
+A: TRUE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The builder is in a factory.
+A: TRUE
+Q: The wolf is in a desert.
+A: FALSE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The artist is in a school.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The politician is in a city.
+A: TRUE
+Q: The chipmunk is in a library.
+A:Q: The chef is in a hotel.
+A: TRUE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The man is in a hotel.
+A: TRUE
+Q: The butterfly is in a grassland.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The bat is in a river.
+A: FALSE
+Q: The tiger is in a river.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The mouse is in a house.
+A:Q: The meerkat is in a pond.
+A: FALSE
+Q: The builder is in a theater.
+A: TRUE
+Q: The salesperson is in a hotel.
+A: TRUE
+Q: The mosquito is in a taiga.
+A: FALSE
+Q: The goat is in a sea.
+A: FALSE
+Q: The teacher is in a shop.
+A: TRUE
+Q: The toad is in a swamp.
+A: FALSE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The athlete is in a warehouse.
+A: TRUE
+Q: The lion is in a casino.
+A:Q: The toad is in a river.
+A: FALSE
+Q: The builder is in a factory.
+A: TRUE
+Q: The goat is in a pond.
+A: FALSE
+Q: The man is in a theater.
+A: TRUE
+Q: The athlete is in a hotel.
+A: TRUE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The meerkat is in a rainforest.
+A: FALSE
+Q: The dolphin is in a pond.
+A: FALSE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The artist is in a school.
+A: TRUE
+Q: The sheep is in an office.
+A:Q: The meerkat is in a pond.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The man is in a theater.
+A: TRUE
+Q: The tiger is in a jungle.
+A: FALSE
+Q: The builder is in a building.
+A: TRUE
+Q: The person is in a dwelling.
+A: TRUE
+Q: The toad is in a desert.
+A: FALSE
+Q: The bat is in a prairie.
+A: FALSE
+Q: The bear is in a sea.
+A: FALSE
+Q: The teacher is in a shop.
+A: TRUE
+Q: The actor is in a cave.
+A:Q: The athlete is in a street.
+A: TRUE
+Q: The goat is in a desert.
+A: FALSE
+Q: The mosquito is in a pond.
+A: FALSE
+Q: The meerkat is in a swamp.
+A: FALSE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The bear is in a sea.
+A: FALSE
+Q: The man is in a factory.
+A: TRUE
+Q: The officer is in a shop.
+A: TRUE
+Q: The artist is in a street.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The woman is in a creek.
+A:Q: The dancer is in a street.
+A: TRUE
+Q: The tiger is in a taiga.
+A: FALSE
+Q: The bear is in a jungle.
+A: FALSE
+Q: The teacher is in a garage.
+A: TRUE
+Q: The bat is in a pond.
+A: FALSE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The child is in a hotel.
+A: TRUE
+Q: The salesperson is in a shop.
+A: TRUE
+Q: The politician is in a city.
+A: TRUE
+Q: The tiger is in a grassland.
+A: FALSE
+Q: The lion is in a library.
+A:Q: The bear is in a prairie.
+A: FALSE
+Q: The politician is in a building.
+A: TRUE
+Q: The tiger is in a prairie.
+A: FALSE
+Q: The officer is in a building.
+A: TRUE
+Q: The athlete is in a hotel.
+A: TRUE
+Q: The chef is in a theater.
+A: TRUE
+Q: The bat is in a rainforest.
+A: FALSE
+Q: The artist is in a shop.
+A: TRUE
+Q: The bat is in a swamp.
+A: FALSE
+Q: The goat is in a meadow.
+A: FALSE
+Q: The architect is in a tundra.
+A:Q: The tiger is in a jungle.
+A: FALSE
+Q: The butterfly is in a meadow.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The iguana is in a jungle.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The tiger is in a prairie.
+A: FALSE
+Q: The child is in a theater.
+A: TRUE
+Q: The chef is in a school.
+A: TRUE
+Q: The dolphin is in a pond.
+A: FALSE
+Q: The doctor is in a lake.
+A:Q: The politician is in a school.
+A: TRUE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The dancer is in a shop.
+A: TRUE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The meerkat is in a bay.
+A: FALSE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The child is in a dwelling.
+A: TRUE
+Q: The man is in a city.
+A: TRUE
+Q: The man is in a theater.
+A: TRUE
+Q: The goat is in a prairie.
+A: FALSE
+Q: The mouse is in a condominium.
+A:Q: The meerkat is in a prairie.
+A: FALSE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The teacher is in a courthouse.
+A: TRUE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The horse is in a desert.
+A: FALSE
+Q: The goat is in a prairie.
+A: FALSE
+Q: The iguana is in a taiga.
+A: FALSE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The officer is in a dwelling.
+A: TRUE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The bee is in an office.
+A:Q: The builder is in a warehouse.
+A: TRUE
+Q: The politician is in a building.
+A: TRUE
+Q: The horse is in a jungle.
+A: FALSE
+Q: The toad is in a desert.
+A: FALSE
+Q: The bear is in a pond.
+A: FALSE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The dancer is in a warehouse.
+A: TRUE
+Q: The teacher is in a hotel.
+A: TRUE
+Q: The person is in a building.
+A: TRUE
+Q: The meerkat is in a bay.
+A: FALSE
+Q: The crocodile is in a hospital.
+A:Q: The artist is in a city.
+A: TRUE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The man is in a dwelling.
+A: TRUE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The crocodile is in a store.
+A:Q: The goat is in a swamp.
+A: FALSE
+Q: The chef is in a dwelling.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The bat is in a bay.
+A: FALSE
+Q: The child is in a courthouse.
+A: TRUE
+Q: The politician is in a garage.
+A: TRUE
+Q: The person is in a street.
+A: TRUE
+Q: The mosquito is in a sea.
+A: FALSE
+Q: The man is in a garage.
+A: TRUE
+Q: The iguana is in a sea.
+A: FALSE
+Q: The hawk is in a restaurant.
+A:Q: The builder is in a theater.
+A: TRUE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The artist is in a street.
+A: TRUE
+Q: The bat is in a prairie.
+A: FALSE
+Q: The dolphin is in a meadow.
+A: FALSE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The builder is in a courthouse.
+A: TRUE
+Q: The butterfly is in a bay.
+A: FALSE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The crocodile is in a hospital.
+A:Q: The tiger is in a river.
+A: FALSE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The dolphin is in a river.
+A: FALSE
+Q: The chef is in a garage.
+A: TRUE
+Q: The officer is in a courthouse.
+A: TRUE
+Q: The dolphin is in a bay.
+A: FALSE
+Q: The dolphin is in a taiga.
+A: FALSE
+Q: The man is in a street.
+A: TRUE
+Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The lion is in a skyscraper.
+A:Q: The artist is in a school.
+A: TRUE
+Q: The politician is in a garage.
+A: TRUE
+Q: The person is in a hotel.
+A: TRUE
+Q: The meerkat is in a sea.
+A: FALSE
+Q: The goat is in a desert.
+A: FALSE
+Q: The mosquito is in a grassland.
+A: FALSE
+Q: The dolphin is in a swamp.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The dancer is in a dwelling.
+A: TRUE
+Q: The teacher is in a city.
+A: TRUE
+Q: The engineer is in a savannah.
+A:Q: The horse is in a swamp.
+A: FALSE
+Q: The builder is in a garage.
+A: TRUE
+Q: The horse is in a rainforest.
+A: FALSE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The dancer is in a hotel.
+A: TRUE
+Q: The wolf is in a taiga.
+A: FALSE
+Q: The butterfly is in a sea.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The condor is in a casino.
+A:Q: The dolphin is in a pond.
+A: FALSE
+Q: The toad is in a meadow.
+A: FALSE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The chef is in a garage.
+A: TRUE
+Q: The artist is in a theater.
+A: TRUE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The butterfly is in a rainforest.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The salesperson is in a dwelling.
+A: TRUE
+Q: The mosquito is in a jungle.
+A: FALSE
+Q: The human is in a delta.
+A:Q: The bat is in a rainforest.
+A: FALSE
+Q: The dancer is in a theater.
+A: TRUE
+Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The dolphin is in a prairie.
+A: FALSE
+Q: The dancer is in a dwelling.
+A: TRUE
+Q: The chef is in a shop.
+A: TRUE
+Q: The chef is in a garage.
+A: TRUE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The athlete is in a street.
+A: TRUE
+Q: The woman is in a savannah.
+A:Q: The mosquito is in a rainforest.
+A: FALSE
+Q: The person is in a shop.
+A: TRUE
+Q: The politician is in a garage.
+A: TRUE
+Q: The athlete is in a city.
+A: TRUE
+Q: The man is in a building.
+A: TRUE
+Q: The goat is in a desert.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The goat is in a pond.
+A: FALSE
+Q: The salesperson is in a shop.
+A: TRUE
+Q: The bear is in a bay.
+A: FALSE
+Q: The banker is in a valley.
+A:Q: The bear is in a desert.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The person is in a building.
+A: TRUE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The artist is in a dwelling.
+A: TRUE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The butterfly is in a grassland.
+A: FALSE
+Q: The wolf is in a grassland.
+A: FALSE
+Q: The builder is in a shop.
+A: TRUE
+Q: The butcher is in a savannah.
+A:Q: The person is in a factory.
+A: TRUE
+Q: The builder is in a theater.
+A: TRUE
+Q: The wolf is in a sea.
+A: FALSE
+Q: The goat is in a sea.
+A: FALSE
+Q: The bat is in a desert.
+A: FALSE
+Q: The artist is in a warehouse.
+A: TRUE
+Q: The teacher is in a shop.
+A: TRUE
+Q: The goat is in a swamp.
+A: FALSE
+Q: The wolf is in a rainforest.
+A: FALSE
+Q: The dancer is in a street.
+A: TRUE
+Q: The shark is in a library.
+A:Q: The mosquito is in a sea.
+A: FALSE
+Q: The butterfly is in a prairie.
+A: FALSE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The athlete is in a street.
+A: TRUE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The child is in a building.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The man is in a school.
+A: TRUE
+Q: The iguana is in a pond.
+A: FALSE
+Q: The toddler is in a stream.
+A:Q: The chef is in a warehouse.
+A: TRUE
+Q: The toad is in a bay.
+A: FALSE
+Q: The wolf is in a grassland.
+A: FALSE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The iguana is in a rainforest.
+A: FALSE
+Q: The iguana is in a pond.
+A: FALSE
+Q: The teacher is in a building.
+A: TRUE
+Q: The bat is in a bay.
+A: FALSE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The architect is in a forest.
+A:Q: The salesperson is in a building.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The meerkat is in a pond.
+A: FALSE
+Q: The horse is in a sea.
+A: FALSE
+Q: The dancer is in a school.
+A: TRUE
+Q: The politician is in a school.
+A: TRUE
+Q: The bear is in a bay.
+A: FALSE
+Q: The mosquito is in a meadow.
+A: FALSE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The dancer is in a warehouse.
+A: TRUE
+Q: The lion is in a condominium.
+A:Q: The athlete is in a garage.
+A: TRUE
+Q: The toad is in a taiga.
+A: FALSE
+Q: The iguana is in a meadow.
+A: FALSE
+Q: The teacher is in a building.
+A: TRUE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The toad is in a sea.
+A: FALSE
+Q: The person is in a street.
+A: TRUE
+Q: The goat is in a meadow.
+A: FALSE
+Q: The athlete is in a dwelling.
+A: TRUE
+Q: The salesperson is in a school.
+A: TRUE
+Q: The salamander is in a museum.
+A:Q: The iguana is in a grassland.
+A: FALSE
+Q: The bear is in a taiga.
+A: FALSE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The officer is in a theater.
+A: TRUE
+Q: The mosquito is in a jungle.
+A: FALSE
+Q: The artist is in a building.
+A: TRUE
+Q: The man is in a courthouse.
+A: TRUE
+Q: The politician is in a warehouse.
+A: TRUE
+Q: The artist is in a city.
+A: TRUE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The woman is in a stream.
+A:Q: The officer is in a factory.
+A: TRUE
+Q: The tiger is in a grassland.
+A: FALSE
+Q: The officer is in a warehouse.
+A: TRUE
+Q: The dancer is in a school.
+A: TRUE
+Q: The horse is in a meadow.
+A: FALSE
+Q: The man is in a warehouse.
+A: TRUE
+Q: The artist is in a factory.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The toad is in a swamp.
+A: FALSE
+Q: The hawk is in an alley.
+A:Q: The dolphin is in a meadow.
+A: FALSE
+Q: The goat is in a rainforest.
+A: FALSE
+Q: The teacher is in a garage.
+A: TRUE
+Q: The person is in a street.
+A: TRUE
+Q: The bear is in a swamp.
+A: FALSE
+Q: The salesperson is in a building.
+A: TRUE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The bat is in a taiga.
+A: FALSE
+Q: The artist is in a street.
+A: TRUE
+Q: The teacher is in a dwelling.
+A: TRUE
+Q: The soldier is in a cave.
+A:Q: The man is in a factory.
+A: TRUE
+Q: The dolphin is in a pond.
+A: FALSE
+Q: The tiger is in a prairie.
+A: FALSE
+Q: The iguana is in a grassland.
+A: FALSE
+Q: The man is in a building.
+A: TRUE
+Q: The wolf is in a jungle.
+A: FALSE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The officer is in a city.
+A: TRUE
+Q: The tiger is in a desert.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The mouse is in a restaurant.
+A:Q: The officer is in a courthouse.
+A: TRUE
+Q: The horse is in a prairie.
+A: FALSE
+Q: The dolphin is in a bay.
+A: FALSE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The bear is in a swamp.
+A: FALSE
+Q: The chef is in a building.
+A: TRUE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The athlete is in a school.
+A: TRUE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The wolf is in a prairie.
+A: FALSE
+Q: The actor is in a cave.
+A:Q: The butterfly is in a sea.
+A: FALSE
+Q: The salesperson is in a factory.
+A: TRUE
+Q: The butterfly is in a pond.
+A: FALSE
+Q: The bear is in a desert.
+A: FALSE
+Q: The person is in a garage.
+A: TRUE
+Q: The dancer is in a factory.
+A: TRUE
+Q: The teacher is in a warehouse.
+A: TRUE
+Q: The dolphin is in a rainforest.
+A: FALSE
+Q: The dancer is in a city.
+A: TRUE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The shark is in an apartment.
+A:Q: The salesperson is in a courthouse.
+A: TRUE
+Q: The salesperson is in a warehouse.
+A: TRUE
+Q: The goat is in a taiga.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The bat is in a meadow.
+A: FALSE
+Q: The toad is in a rainforest.
+A: FALSE
+Q: The wolf is in a pond.
+A: FALSE
+Q: The builder is in a street.
+A: TRUE
+Q: The person is in a garage.
+A: TRUE
+Q: The man is in a theater.
+A: TRUE
+Q: The student is in a canyon.
+A:Q: The goat is in a bay.
+A: FALSE
+Q: The dolphin is in a jungle.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The child is in a city.
+A: TRUE
+Q: The tiger is in a swamp.
+A: FALSE
+Q: The horse is in a pond.
+A: FALSE
+Q: The teacher is in a school.
+A: TRUE
+Q: The salesperson is in a garage.
+A: TRUE
+Q: The athlete is in a factory.
+A: TRUE
+Q: The teacher is in a street.
+A: TRUE
+Q: The banker is in a tundra.
+A:Q: The butterfly is in a swamp.
+A: FALSE
+Q: The horse is in a bay.
+A: FALSE
+Q: The bear is in a grassland.
+A: FALSE
+Q: The dancer is in a garage.
+A: TRUE
+Q: The athlete is in a school.
+A: TRUE
+Q: The politician is in a courthouse.
+A: TRUE
+Q: The iguana is in a prairie.
+A: FALSE
+Q: The officer is in a shop.
+A: TRUE
+Q: The politician is in a dwelling.
+A: TRUE
+Q: The tiger is in a pond.
+A: FALSE
+Q: The sheep is in a house.
+A:Q: The teacher is in a dwelling.
+A: TRUE
+Q: The officer is in a street.
+A: TRUE
+Q: The dancer is in a courthouse.
+A: TRUE
+Q: The chef is in a factory.
+A: TRUE
+Q: The wolf is in a swamp.
+A: FALSE
+Q: The tiger is in a grassland.
+A: FALSE
+Q: The goat is in a jungle.
+A: FALSE
+Q: The dancer is in a dwelling.
+A: TRUE
+Q: The bear is in a river.
+A: FALSE
+Q: The butterfly is in a river.
+A: FALSE
+Q: The architect is in a canyon.
+A:Q: The dolphin is in a taiga.
+A: FALSE
+Q: The mosquito is in a swamp.
+A: FALSE
+Q: The person is in a courthouse.
+A: TRUE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The teacher is in a factory.
+A: TRUE
+Q: The iguana is in a river.
+A: FALSE
+Q: The chef is in a hotel.
+A: TRUE
+Q: The officer is in a shop.
+A: TRUE
+Q: The meerkat is in a rainforest.
+A: FALSE
+Q: The bear is in a swamp.
+A: FALSE
+Q: The elephant is in an office.
+A:Q: The person is in a warehouse.
+A: TRUE
+Q: The athlete is in a street.
+A: TRUE
+Q: The wolf is in a meadow.
+A: FALSE
+Q: The builder is in a city.
+A: TRUE
+Q: The bear is in a meadow.
+A: FALSE
+Q: The chef is in a building.
+A: TRUE
+Q: The wolf is in a bay.
+A: FALSE
+Q: The wolf is in a river.
+A: FALSE
+Q: The man is in a hotel.
+A: TRUE
+Q: The bat is in a jungle.
+A: FALSE
+Q: The student is in a cave.
+A:Q: The wolf is in a grassland.
+A: FALSE
+Q: The tiger is in a rainforest.
+A: FALSE
+Q: The chef is in a warehouse.
+A: TRUE
+Q: The toad is in a prairie.
+A: FALSE
+Q: The officer is in a school.
+A: TRUE
+Q: The athlete is in a garage.
+A: TRUE
+Q: The butterfly is in a meadow.
+A: FALSE
+Q: The goat is in a grassland.
+A: FALSE
+Q: The athlete is in a school.
+A: TRUE
+Q: The salesperson is in a city.
+A: TRUE
+Q: The doctor is in a cave.
+A:
